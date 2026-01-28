@@ -73,13 +73,13 @@ export default function HowItWorks() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Section Header */}
         <div className="mx-auto max-w-2xl text-center mb-20">
-          <p className="text-body font-bold text-primary-600 mb-2">
+          <h2 className="text-base font-semibold leading-7 text-primary-600">
             Simple Process
-          </p>
-          <h2 className="font-heading text-secondary-900">
-            How Curo Works
           </h2>
-          <p className="mt-6 text-body-lg text-secondary-400">
+          <p className="mt-2 text-3xl font-bold tracking-tight text-secondary-900 sm:text-4xl">
+            How Curo Works
+          </p>
+          <p className="mt-6 text-lg leading-8 text-secondary-600">
             Send secure checks in three simple steps. No complicated setup, no confusing apps—just
             straightforward, safe payments.
           </p>
@@ -122,12 +122,12 @@ export default function HowItWorks() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="font-heading text-secondary-900 mb-4" style={{ fontSize: '1.5rem', lineHeight: '1.1' }}>
+                  <h3 className="text-xl font-bold text-secondary-900 mb-4">
                     {step.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-body text-secondary-400 mb-6">
+                  <p className="text-base text-secondary-600 leading-7 mb-6">
                     {step.description}
                   </p>
 
@@ -147,7 +147,7 @@ export default function HowItWorks() {
                           d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
                         />
                       </svg>
-                      <p className="text-body-sm text-secondary-300">
+                      <p className="text-xs text-secondary-500">
                         {step.imageAlt}
                       </p>
                     </div>
@@ -179,11 +179,11 @@ export default function HowItWorks() {
 
         {/* Bottom Callout */}
         <div className="mt-16 mx-auto max-w-3xl">
-          <div className="bg-info-50 border border-info-200 rounded-xl p-6 flex items-start space-x-4">
+          <div className="bg-accent-50 border border-accent-200 rounded-xl p-6 flex items-start space-x-4">
             <div className="flex-shrink-0">
-              <div className="h-10 w-10 bg-info-100 rounded-full flex items-center justify-center">
+              <div className="h-10 w-10 bg-accent-100 rounded-full flex items-center justify-center">
                 <svg
-                  className="h-6 w-6 text-info-600"
+                  className="h-6 w-6 text-accent-600"
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth="2"
@@ -198,10 +198,10 @@ export default function HowItWorks() {
               </div>
             </div>
             <div>
-              <h4 className="font-heading text-info-900 mb-1" style={{ fontSize: '1rem', lineHeight: '1.1' }}>
+              <h4 className="text-base font-semibold text-accent-900 mb-1">
                 No Account Required for Recipients
               </h4>
-              <p className="text-body-sm text-info-700">
+              <p className="text-sm text-accent-700 leading-6">
                 Your recipients don't need to sign up for Curo. They simply scan the QR code,
                 verify their identity with a one-time code, and choose how they want to receive
                 their money—ACH bank transfer or instant debit card deposit.

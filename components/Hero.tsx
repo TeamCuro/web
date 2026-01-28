@@ -20,17 +20,17 @@ export default function Hero() {
                   d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"
                 />
               </svg>
-              <span className="text-body-sm font-bold">Bank-Level Security</span>
+              <span className="text-sm font-semibold">Bank-Level Security</span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="font-heading text-secondary-900 mb-6">
+            <h1 className="text-4xl font-bold tracking-tight text-secondary-900 sm:text-5xl lg:text-6xl mb-6">
               Send checks with{" "}
               <span className="text-primary-600">confidence and control</span>
             </h1>
 
             {/* Subheadline */}
-            <p className="text-body-lg text-secondary-500 mb-8">
+            <p className="text-lg sm:text-xl text-secondary-600 mb-8 leading-relaxed">
               The simplicity of a check, the security of modern payments. Perfect for trustees,
               caregivers, and anyone who values clear, trackable money management.
             </p>
@@ -38,9 +38,9 @@ export default function Hero() {
             {/* Key Benefits List */}
             <ul className="space-y-4 mb-10">
               <li className="flex items-start space-x-3">
-                <div className="flex-shrink-0 h-6 w-6 bg-success-100 rounded-full flex items-center justify-center mt-0.5">
+                <div className="flex-shrink-0 h-6 w-6 bg-accent-100 rounded-full flex items-center justify-center mt-0.5">
                   <svg
-                    className="h-4 w-4 text-success-600"
+                    className="h-4 w-4 text-accent-600"
                     fill="none"
                     viewBox="0 0 24 24"
                     strokeWidth="2.5"
@@ -53,15 +53,15 @@ export default function Hero() {
                     />
                   </svg>
                 </div>
-                <p className="text-body text-secondary-400">
-                  <strong className="font-bold text-secondary-900">Never lost or stolen</strong> –
+                <p className="text-base text-secondary-700">
+                  <strong className="font-semibold text-secondary-900">Never lost or stolen</strong> –
                   QR-based checks can't be cashed by the wrong person
                 </p>
               </li>
               <li className="flex items-start space-x-3">
-                <div className="flex-shrink-0 h-6 w-6 bg-success-100 rounded-full flex items-center justify-center mt-0.5">
+                <div className="flex-shrink-0 h-6 w-6 bg-accent-100 rounded-full flex items-center justify-center mt-0.5">
                   <svg
-                    className="h-4 w-4 text-success-600"
+                    className="h-4 w-4 text-accent-600"
                     fill="none"
                     viewBox="0 0 24 24"
                     strokeWidth="2.5"
@@ -74,15 +74,15 @@ export default function Hero() {
                     />
                   </svg>
                 </div>
-                <p className="text-body text-secondary-400">
-                  <strong className="font-bold text-secondary-900">Manage payments for others</strong> –
+                <p className="text-base text-secondary-700">
+                  <strong className="font-semibold text-secondary-900">Manage payments for others</strong> –
                   Built for trustees and caregivers with permission controls
                 </p>
               </li>
               <li className="flex items-start space-x-3">
-                <div className="flex-shrink-0 h-6 w-6 bg-success-100 rounded-full flex items-center justify-center mt-0.5">
+                <div className="flex-shrink-0 h-6 w-6 bg-accent-100 rounded-full flex items-center justify-center mt-0.5">
                   <svg
-                    className="h-4 w-4 text-success-600"
+                    className="h-4 w-4 text-accent-600"
                     fill="none"
                     viewBox="0 0 24 24"
                     strokeWidth="2.5"
@@ -95,8 +95,8 @@ export default function Hero() {
                     />
                   </svg>
                 </div>
-                <p className="text-body text-secondary-400">
-                  <strong className="font-bold text-secondary-900">Recipients don't need an account</strong> –
+                <p className="text-base text-secondary-700">
+                  <strong className="font-semibold text-secondary-900">Recipients don't need an account</strong> –
                   They simply scan, verify, and choose how to receive funds
                 </p>
               </li>
@@ -106,7 +106,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href="#get-started"
-                className="btn btn-primary btn-normal"
+                className="inline-flex items-center justify-center rounded-lg bg-primary-600 px-8 py-4 text-base font-semibold text-white shadow-lg hover:bg-primary-700 transition-all hover:shadow-xl transform hover:-translate-y-0.5"
               >
                 Get Early Access
                 <svg
@@ -125,7 +125,7 @@ export default function Hero() {
               </a>
               <a
                 href="#how-it-works"
-                className="btn btn-outline btn-normal"
+                className="inline-flex items-center justify-center rounded-lg bg-white border-2 border-secondary-300 px-8 py-4 text-base font-semibold text-secondary-900 hover:bg-secondary-50 transition-colors"
               >
                 See How It Works
               </a>
@@ -142,8 +142,8 @@ export default function Hero() {
                   <span className="text-xs text-white font-semibold">+50</span>
                 </div>
               </div>
-              <p className="text-body-sm text-secondary-400">
-                Join <strong className="font-bold text-secondary-900">50+ families</strong> managing payments with confidence
+              <p className="text-sm text-secondary-600">
+                Join <strong className="text-secondary-900">50+ families</strong> managing payments with confidence
               </p>
             </div>
           </div>
@@ -179,9 +179,9 @@ export default function Hero() {
               {/* Floating Card Element - Check Preview */}
               <div className="absolute -bottom-6 -left-6 bg-white rounded-lg shadow-xl p-4 max-w-[200px] border border-secondary-200">
                 <div className="flex items-start space-x-3">
-                  <div className="h-12 w-12 bg-success-100 rounded flex items-center justify-center flex-shrink-0">
+                  <div className="h-12 w-12 bg-accent-100 rounded flex items-center justify-center flex-shrink-0">
                     <svg
-                      className="h-6 w-6 text-success-600"
+                      className="h-6 w-6 text-accent-600"
                       fill="none"
                       viewBox="0 0 24 24"
                       strokeWidth="2"
@@ -228,7 +228,7 @@ export default function Hero() {
 
             {/* Decorative blur orbs */}
             <div className="absolute -z-10 -top-20 -right-20 h-72 w-72 rounded-full bg-primary-200 opacity-20 blur-3xl"></div>
-            <div className="absolute -z-10 -bottom-20 -left-20 h-72 w-72 rounded-full bg-success-200 opacity-20 blur-3xl"></div>
+            <div className="absolute -z-10 -bottom-20 -left-20 h-72 w-72 rounded-full bg-accent-200 opacity-20 blur-3xl"></div>
           </div>
         </div>
       </div>

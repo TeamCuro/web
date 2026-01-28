@@ -84,7 +84,7 @@ export default function Footer() {
           <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
             {/* Product Column */}
             <div>
-              <h3 className="text-body font-bold text-white" style={{ fontSize: '1rem', lineHeight: '1.4' }}>Product</h3>
+              <h3 className="text-sm font-semibold leading-6 text-white">Product</h3>
               <ul role="list" className="mt-6 space-y-4">
                 {navigation.product.map((item) => (
                   <li key={item.name}>
@@ -101,7 +101,7 @@ export default function Footer() {
 
             {/* Legal Column */}
             <div>
-              <h3 className="text-body font-bold text-white" style={{ fontSize: '1rem', lineHeight: '1.4' }}>Legal</h3>
+              <h3 className="text-sm font-semibold leading-6 text-white">Legal</h3>
               <ul role="list" className="mt-6 space-y-4">
                 {navigation.legal.map((item) => (
                   <li key={item.name}>
