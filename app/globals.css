@@ -1,61 +1,365 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Roboto:wght@400;500;700&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --color-primary-50: #f0f9ff;
-  --color-primary-100: #e0f2fe;
-  --color-primary-200: #bae6fd;
-  --color-primary-300: #7dd3fc;
-  --color-primary-400: #38bdf8;
-  --color-primary-500: #0ea5e9;
-  --color-primary-600: #0284c7;
-  --color-primary-700: #0369a1;
-  --color-primary-800: #075985;
-  --color-primary-900: #0c4a6e;
-  --color-primary-950: #082f49;
+  /* Typography - Fonts */
+  --font-heading: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Roboto', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Roboto', ui-sans-serif, system-ui, sans-serif;
 
-  --color-secondary-50: #f8fafc;
-  --color-secondary-100: #f1f5f9;
-  --color-secondary-200: #e2e8f0;
-  --color-secondary-300: #cbd5e1;
-  --color-secondary-400: #94a3b8;
-  --color-secondary-500: #64748b;
-  --color-secondary-600: #475569;
-  --color-secondary-700: #334155;
-  --color-secondary-800: #1e293b;
-  --color-secondary-900: #0f172a;
-  --color-secondary-950: #020617;
+  /* Typography - Headings (1.1x line height) */
+  --text-h1: 3.5rem;      /* 56px */
+  --text-h1--line-height: 3.85rem;  /* 61.6px */
+  --text-h2: 3rem;        /* 48px */
+  --text-h2--line-height: 3.3rem;   /* 52.8px */
+  --text-h3: 2.5rem;      /* 40px */
+  --text-h3--line-height: 2.75rem;  /* 44px */
+  --text-h4: 2rem;        /* 32px */
+  --text-h4--line-height: 2.2rem;   /* 35.2px */
 
-  --color-accent-50: #f0fdf4;
-  --color-accent-100: #dcfce7;
-  --color-accent-200: #bbf7d0;
-  --color-accent-300: #86efac;
-  --color-accent-400: #4ade80;
-  --color-accent-500: #22c55e;
-  --color-accent-600: #16a34a;
-  --color-accent-700: #15803d;
-  --color-accent-800: #166534;
-  --color-accent-900: #14532d;
-  --color-accent-950: #052e16;
+  /* Typography - Body (1.4x line height) */
+  --text-body-lg: 1.25rem;    /* 20px */
+  --text-body-lg--line-height: 1.75rem;  /* 28px */
+  --text-body-md: 1.125rem;   /* 18px */
+  --text-body-md--line-height: 1.575rem; /* 25.2px */
+  --text-body: 1rem;          /* 16px */
+  --text-body--line-height: 1.4rem;      /* 22.4px */
+  --text-body-sm: 0.875rem;   /* 14px */
+  --text-body-sm--line-height: 1.225rem; /* 19.6px */
+
+  /* Primary - Dark Blue (#092C4C) */
+  --color-primary-50: #e8eef3;
+  --color-primary-100: #d1dde7;
+  --color-primary-200: #a3bbcf;
+  --color-primary-300: #7599b7;
+  --color-primary-400: #47779f;
+  --color-primary-500: #1a5587;
+  --color-primary-600: #092C4C;
+  --color-primary-700: #07233d;
+  --color-primary-800: #051a2e;
+  --color-primary-900: #03111f;
+  --color-primary-950: #020810;
+
+  /* Secondary - Neutral Greys (for text and UI elements) */
+  --color-secondary-50: #fafafa;
+  --color-secondary-100: #E0E0E0;
+  --color-secondary-200: #BDBDBD;
+  --color-secondary-300: #828282;
+  --color-secondary-400: #4F4F4F;
+  --color-secondary-500: #333333;
+  --color-secondary-600: #282828;
+  --color-secondary-700: #1D1D1D;
+  --color-secondary-800: #121212;
+  --color-secondary-900: #000000;
+  --color-secondary-950: #000000;
+
+  /* Accent - Orange (#F2994A) */
+  --color-accent-50: #fef6ee;
+  --color-accent-100: #fdecdd;
+  --color-accent-200: #fbd9bb;
+  --color-accent-300: #f9c699;
+  --color-accent-400: #f5ad6c;
+  --color-accent-500: #F2994A;
+  --color-accent-600: #e07b1f;
+  --color-accent-700: #b8631a;
+  --color-accent-800: #8f4d14;
+  --color-accent-900: #66370f;
+  --color-accent-950: #3d2109;
+
+  /* State Colors */
+  --color-info-50: #e9f3fd;
+  --color-info-100: #d3e7fb;
+  --color-info-200: #a7cff7;
+  --color-info-300: #7bb7f3;
+  --color-info-400: #4f9fef;
+  --color-info-500: #2F80ED;
+  --color-info-600: #1a66d4;
+  --color-info-700: #144da0;
+  --color-info-800: #0f3a78;
+  --color-info-900: #0a264f;
+  --color-info-950: #051328;
+
+  --color-success-50: #e9f7ef;
+  --color-success-100: #d3efdf;
+  --color-success-200: #a7dfbf;
+  --color-success-300: #7bcf9f;
+  --color-success-400: #4fbf7f;
+  --color-success-500: #27AE60;
+  --color-success-600: #1f8b4d;
+  --color-success-700: #17683a;
+  --color-success-800: #104526;
+  --color-success-900: #082213;
+  --color-success-950: #04110a;
+
+  --color-warning-50: #fdf8e8;
+  --color-warning-100: #fbf1d1;
+  --color-warning-200: #f7e3a3;
+  --color-warning-300: #f3d575;
+  --color-warning-400: #efc747;
+  --color-warning-500: #E2B93B;
+  --color-warning-600: #c9a02a;
+  --color-warning-700: #9a7a20;
+  --color-warning-800: #6b5516;
+  --color-warning-900: #3c300d;
+  --color-warning-950: #1e1806;
+
+  --color-error-50: #fdeded;
+  --color-error-100: #fbdbdb;
+  --color-error-200: #f7b7b7;
+  --color-error-300: #f39393;
+  --color-error-400: #ef6f6f;
+  --color-error-500: #EB5757;
+  --color-error-600: #d63030;
+  --color-error-700: #a32424;
+  --color-error-800: #701919;
+  --color-error-900: #3d0e0e;
+  --color-error-950: #1f0707;
 
   --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
-  --foreground-rgb: 15, 23, 42; /* secondary-900 */
+  --foreground-rgb: 0, 0, 0; /* secondary-900 black */
   --background-rgb: 255, 255, 255;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
-  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  font-family: 'Roboto', ui-sans-serif, system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.4;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Heading Styles */
+h1, .h1 {
+  font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+  font-size: 3.5rem;
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+h2, .h2 {
+  font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+  font-size: 3rem;
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+h3, .h3 {
+  font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+  font-size: 2.5rem;
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+h4, .h4 {
+  font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+  font-size: 2rem;
+  line-height: 1.1;
+  font-weight: 600;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+
+  /* Font Family Utilities */
+  .font-heading {
+    font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+  }
+
+  .font-body {
+    font-family: 'Roboto', ui-sans-serif, system-ui, sans-serif;
+  }
+
+  /* Body Text Sizes */
+  .text-body-lg {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .text-body-md {
+    font-size: 1.125rem;
+    line-height: 1.575rem;
+  }
+
+  .text-body {
+    font-size: 1rem;
+    line-height: 1.4rem;
+  }
+
+  .text-body-sm {
+    font-size: 0.875rem;
+    line-height: 1.225rem;
+  }
+}
+
+/* Form Input Styles */
+/* Padding: left 2x, top-bottom 1x, right 2x font size */
+/* Width: 320px, Height: 55px, Radius: 4px, Border: 1px grey */
+.input-field {
+  width: 320px;
+  height: 55px;
+  padding: 1rem 2rem; /* 16px top-bottom, 32px left-right */
+  border-radius: 4px;
+  border: 1px solid #BDBDBD;
+  font-family: 'Roboto', ui-sans-serif, system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.4rem;
+  color: #333333;
+  background-color: #ffffff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-field::placeholder {
+  color: #828282;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #092C4C;
+  box-shadow: 0 0 0 2px rgba(9, 44, 76, 0.1);
+}
+
+.input-field.error {
+  border-color: #EB5757;
+}
+
+.input-field.error:focus {
+  box-shadow: 0 0 0 2px rgba(235, 87, 87, 0.1);
+}
+
+/* Full width input variant */
+.input-field-full {
+  width: 100%;
+  height: 55px;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  border: 1px solid #BDBDBD;
+  font-family: 'Roboto', ui-sans-serif, system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.4rem;
+  color: #333333;
+  background-color: #ffffff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-field-full::placeholder {
+  color: #828282;
+}
+
+.input-field-full:focus {
+  outline: none;
+  border-color: #092C4C;
+  box-shadow: 0 0 0 2px rgba(9, 44, 76, 0.1);
+}
+
+.input-field-full.error {
+  border-color: #EB5757;
+}
+
+/* Button Styles */
+/* Padding: left-right 5x, top-bottom 1x font size */
+/* Base button style */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 5rem; /* 16px top-bottom, 80px left-right */
+  border-radius: 8px;
+  font-family: 'Roboto', ui-sans-serif, system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+/* Button Sizes */
+.btn-sm {
+  min-width: 241px;
+  height: 48px;
+  padding: 0.75rem 2.5rem;
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+
+.btn-normal {
+  min-width: 275px;
+  height: 55px;
+  padding: 1rem 2.5rem;
+  white-space: nowrap;
+}
+
+.btn-md {
+  min-width: 300px;
+  height: 62px;
+  padding: 1.125rem 3rem;
+  font-size: 1.125rem;
+  white-space: nowrap;
+}
+
+.btn-lg {
+  min-width: 333px;
+  height: 68px;
+  padding: 1.25rem 3.5rem;
+  font-size: 1.25rem;
+  white-space: nowrap;
+}
+
+/* Button full width variant */
+.btn-full {
+  width: 100%;
+}
+
+/* Primary Button - Dark Blue */
+.btn-primary {
+  background-color: #092C4C;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #07233d;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(9, 44, 76, 0.3);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Secondary Button - Orange Accent */
+.btn-secondary {
+  background-color: #F2994A;
+  color: #ffffff;
+}
+
+.btn-secondary:hover {
+  background-color: #e07b1f;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(242, 153, 74, 0.3);
+}
+
+/* Outline Button */
+.btn-outline {
+  background-color: transparent;
+  color: #092C4C;
+  border: 2px solid #BDBDBD;
+}
+
+.btn-outline:hover {
+  background-color: #fafafa;
+  border-color: #092C4C;
 }

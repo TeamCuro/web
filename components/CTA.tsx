@@ -86,7 +86,7 @@ export default function CTA() {
       <section id="get-started" className="py-24 sm:py-32 bg-primary-600">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <div className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-accent-500 mb-6">
+            <div className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-success-500 mb-6">
               <svg
                 className="h-8 w-8 text-white"
                 fill="none"
@@ -101,10 +101,10 @@ export default function CTA() {
                 />
               </svg>
             </div>
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl mb-4">
+            <h2 className="font-heading text-white mb-4">
               You're on the list!
             </h2>
-            <p className="text-lg text-primary-100 mb-8">
+            <p className="text-body-lg text-primary-100 mb-8">
               We'll be in touch soon with early access details and updates about Curo.
               Check your inbox for a confirmation email.
             </p>
@@ -124,10 +124,10 @@ export default function CTA() {
     <section id="get-started" className="py-24 sm:py-32 bg-primary-600">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <h2 className="font-heading text-white">
             Ready to send checks with confidence?
           </h2>
-          <p className="mt-4 text-lg text-primary-100">
+          <p className="mt-4 text-body-lg text-primary-100">
             Join the waitlist for early access to Curo. Be among the first to experience
             secure, modern check payments.
           </p>
@@ -141,9 +141,9 @@ export default function CTA() {
             <div>
               <label
                 htmlFor="firstName"
-                className="block text-sm font-semibold text-secondary-900 mb-2"
+                className="block text-body-sm font-bold text-secondary-900 mb-2"
               >
-                First Name <span className="text-red-500">*</span>
+                First Name <span className="text-error-500">*</span>
               </label>
               <input
                 type="text"
@@ -151,15 +151,11 @@ export default function CTA() {
                 name="firstName"
                 value={formData.firstName}
                 onChange={handleChange}
-                className={`block w-full rounded-lg border-2 px-4 py-3.5 text-secondary-900 shadow-sm ${
-                  errors.firstName
-                    ? "border-red-400 focus:border-red-500 focus:ring-red-500"
-                    : "border-secondary-300 focus:border-primary-600 focus:ring-primary-600"
-                } placeholder:text-secondary-400 focus:ring-2 sm:text-sm sm:leading-6 transition-all`}
+                className={`input-field-full ${errors.firstName ? "error" : ""}`}
                 placeholder="John"
               />
               {errors.firstName && (
-                <p className="mt-2 text-sm text-red-600">{errors.firstName}</p>
+                <p className="mt-2 text-body-sm text-error-500">{errors.firstName}</p>
               )}
             </div>
 
@@ -167,9 +163,9 @@ export default function CTA() {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-semibold text-secondary-900 mb-2"
+                className="block text-body-sm font-bold text-secondary-900 mb-2"
               >
-                Email Address <span className="text-red-500">*</span>
+                Email Address <span className="text-error-500">*</span>
               </label>
               <input
                 type="email"
@@ -177,15 +173,11 @@ export default function CTA() {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className={`block w-full rounded-lg border-2 px-4 py-3.5 text-secondary-900 shadow-sm ${
-                  errors.email
-                    ? "border-red-400 focus:border-red-500 focus:ring-red-500"
-                    : "border-secondary-300 focus:border-primary-600 focus:ring-primary-600"
-                } placeholder:text-secondary-400 focus:ring-2 sm:text-sm sm:leading-6 transition-all`}
+                className={`input-field-full ${errors.email ? "error" : ""}`}
                 placeholder="you@example.com"
               />
               {errors.email && (
-                <p className="mt-2 text-sm text-red-600">{errors.email}</p>
+                <p className="mt-2 text-body-sm text-error-500">{errors.email}</p>
               )}
             </div>
 
@@ -193,16 +185,16 @@ export default function CTA() {
             <div>
               <label
                 htmlFor="useCase"
-                className="block text-sm font-semibold text-secondary-900 mb-2"
+                className="block text-body-sm font-bold text-secondary-900 mb-2"
               >
-                How will you use Curo? <span className="text-secondary-500 text-xs">(Optional)</span>
+                How will you use Curo? <span className="text-secondary-300 text-body-sm font-normal">(Optional)</span>
               </label>
               <select
                 id="useCase"
                 name="useCase"
                 value={formData.useCase}
                 onChange={handleChange}
-                className="block w-full rounded-lg border-2 border-secondary-300 px-4 py-3.5 text-secondary-900 shadow-sm focus:border-primary-600 focus:ring-2 focus:ring-primary-600 sm:text-sm sm:leading-6 transition-all bg-white"
+                className="input-field-full"
               >
                 <option value="">Select an option</option>
                 <option value="trustee-caregiver">
@@ -224,13 +216,13 @@ export default function CTA() {
                     type="checkbox"
                     checked={formData.consent}
                     onChange={handleChange}
-                    className={`h-5 w-5 rounded border-2 border-secondary-300 text-primary-600 focus:ring-2 focus:ring-primary-600 focus:ring-offset-2 transition-all ${
-                      errors.consent ? "border-red-400" : ""
+                    className={`h-5 w-5 rounded border border-secondary-200 text-primary-600 focus:ring-2 focus:ring-primary-600 focus:ring-offset-2 transition-all ${
+                      errors.consent ? "border-error-500" : ""
                     }`}
                   />
                 </div>
                 <div className="ml-3">
-                  <label htmlFor="consent" className="text-sm text-secondary-700">
+                  <label htmlFor="consent" className="text-body-sm text-secondary-400">
                     I agree to receive updates about Curo and accept the{" "}
                     <a
                       href="/terms"
@@ -245,10 +237,10 @@ export default function CTA() {
                     >
                       Privacy Policy
                     </a>
-                    <span className="text-red-500 ml-1">*</span>
+                    <span className="text-error-500 ml-1">*</span>
                   </label>
                   {errors.consent && (
-                    <p className="mt-1 text-sm text-red-600">{errors.consent}</p>
+                    <p className="mt-1 text-body-sm text-error-500">{errors.consent}</p>
                   )}
                 </div>
               </div>
@@ -259,7 +251,7 @@ export default function CTA() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full flex items-center justify-center rounded-lg bg-primary-600 px-8 py-4 text-base font-semibold text-white shadow-lg hover:bg-primary-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-xl transform hover:-translate-y-0.5"
+                className="btn btn-primary btn-full btn-normal"
               >
                 {isSubmitting ? (
                   <>
@@ -306,8 +298,8 @@ export default function CTA() {
               </button>
             </div>
 
-            <p className="text-xs text-secondary-500 text-center">
-              <span className="text-red-500">*</span> Required fields
+            <p className="text-body-sm text-secondary-300 text-center">
+              <span className="text-error-500">*</span> Required fields
             </p>
           </form>
           </div>
@@ -329,7 +321,7 @@ export default function CTA() {
                 d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"
               />
             </svg>
-            <span className="text-sm">Your data is secure</span>
+            <span className="text-body-sm">Your data is secure</span>
           </div>
           <div className="hidden sm:block h-4 w-px bg-primary-400"></div>
           <div className="flex items-center space-x-2">
@@ -346,7 +338,7 @@ export default function CTA() {
                 d="M21.75 9v.906a2.25 2.25 0 01-1.183 1.981l-6.478 3.488M2.25 9v.906a2.25 2.25 0 001.183 1.981l6.478 3.488m8.839 2.51l-4.66-2.51m0 0l-1.023-.55a2.25 2.25 0 00-2.134 0l-1.022.55m0 0l-4.661 2.51m16.5 1.615a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V8.844a2.25 2.25 0 011.183-1.98l7.5-4.04a2.25 2.25 0 012.134 0l7.5 4.04a2.25 2.25 0 011.183 1.98V19.5z"
               />
             </svg>
-            <span className="text-sm">No spam, ever</span>
+            <span className="text-body-sm">No spam, ever</span>
           </div>
           <div className="hidden sm:block h-4 w-px bg-primary-400"></div>
           <div className="flex items-center space-x-2">
@@ -363,7 +355,7 @@ export default function CTA() {
                 d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
               />
             </svg>
-            <span className="text-sm">Unsubscribe anytime</span>
+            <span className="text-body-sm">Unsubscribe anytime</span>
           </div>
         </div>
       </div>

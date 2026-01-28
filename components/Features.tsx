@@ -132,15 +132,15 @@ export default function Features() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Section Header */}
         <div className="mx-auto max-w-2xl text-center mb-16">
-          <h2 className="text-base font-semibold leading-7 text-primary-600">
+          <p className="text-body font-bold text-primary-600 mb-2">
             Everything You Need
-          </h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-secondary-900 sm:text-4xl">
+          </p>
+          <h2 className="font-heading text-secondary-900">
             The security of modern payments,
             <br />
             the simplicity of a check
-          </p>
-          <p className="mt-6 text-lg leading-8 text-secondary-600">
+          </h2>
+          <p className="mt-6 text-body-lg text-secondary-400">
             Curo combines the familiar check experience with bank-level security, giving you
             complete control over your payments without sacrificing convenience.
           </p>
@@ -160,10 +160,10 @@ export default function Features() {
                 </div>
 
                 {/* Content */}
-                <h3 className="mt-6 text-xl font-semibold text-secondary-900">
+                <h4 className="mt-6 font-heading text-secondary-900">
                   {feature.title}
-                </h3>
-                <p className="mt-4 text-base leading-7 text-secondary-600">
+                </h4>
+                <p className="mt-4 text-body text-secondary-400">
                   {feature.description}
                 </p>
 
@@ -176,13 +176,13 @@ export default function Features() {
 
         {/* Bottom CTA */}
         <div className="mt-16 text-center">
-          <p className="text-base text-secondary-600 mb-6">
+          <p className="text-body text-secondary-400 mb-6">
             Trusted by families, trustees, and caregivers who need reliable payment solutions
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             {/* Trust badges placeholder */}
             <div className="flex items-center space-x-6">
-              <div className="flex items-center space-x-2 text-secondary-700">
+              <div className="flex items-center space-x-2 text-secondary-500">
                 <svg
                   className="h-5 w-5 text-primary-600"
                   fill="none"
@@ -196,10 +196,10 @@ export default function Features() {
                     d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"
                   />
                 </svg>
-                <span className="text-sm font-medium">Bank-Level Encryption</span>
+                <span className="text-body-sm font-medium">Bank-Level Encryption</span>
               </div>
-              <div className="h-6 w-px bg-secondary-300"></div>
-              <div className="flex items-center space-x-2 text-secondary-700">
+              <div className="h-6 w-px bg-secondary-200"></div>
+              <div className="flex items-center space-x-2 text-secondary-500">
                 <svg
                   className="h-5 w-5 text-primary-600"
                   fill="none"
@@ -213,14 +213,14 @@ export default function Features() {
                     d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"
                   />
                 </svg>
-                <span className="text-sm font-medium">KYC Verified</span>
+                <span className="text-body-sm font-medium">KYC Verified</span>
               </div>
-              <div className="h-6 w-px bg-secondary-300"></div>
-              <div className="flex items-center space-x-2 text-secondary-700">
-                <div className="h-8 w-8 bg-secondary-200 rounded flex items-center justify-center text-xs font-bold text-secondary-600">
+              <div className="h-6 w-px bg-secondary-200"></div>
+              <div className="flex items-center space-x-2 text-secondary-500">
+                <div className="h-8 w-8 bg-secondary-100 rounded flex items-center justify-center text-body-sm font-bold text-secondary-500">
                   $
                 </div>
-                <span className="text-sm font-medium">FDIC-Insured Partners</span>
+                <span className="text-body-sm font-medium">FDIC-Insured Partners</span>
               </div>
             </div>
           </div>
