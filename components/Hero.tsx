@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-secondary-50 to-white">
@@ -152,28 +154,15 @@ export default function Hero() {
           <div className="relative lg:ml-8">
             {/* Main Image Placeholder */}
             <div className="relative rounded-2xl bg-gradient-to-br from-primary-100 to-primary-200 p-8 shadow-2xl">
-              <div className="aspect-[4/3] bg-white rounded-xl shadow-inner flex items-center justify-center border-2 border-dashed border-primary-300">
-                <div className="text-center p-8">
-                  <svg
-                    className="mx-auto h-24 w-24 text-primary-400 mb-4"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
-                    />
-                  </svg>
-                  <p className="text-primary-600 font-medium">Hero Image Placeholder</p>
-                  <p className="text-sm text-primary-500 mt-2">
-                    e.g., Person scanning QR check on phone
-                    <br />
-                    Recommended: 800x600px
-                  </p>
-                </div>
+              <div className="aspect-[4/3] rounded-xl shadow-inner overflow-hidden">
+                <Image
+                  src="/curo-lp-hero-image.png"
+                  alt="Person scanning QR check on phone"
+                  width={800}
+                  height={600}
+                  className="h-full w-full object-cover"
+                  priority
+                />
               </div>
 
               {/* Floating Card Element - Check Preview */}
