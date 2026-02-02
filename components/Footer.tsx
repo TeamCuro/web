@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -54,12 +56,14 @@ export default function Footer() {
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           {/* Logo and Tagline */}
           <div className="space-y-8">
-            <a href="/" className="flex items-center space-x-3">
-              {/* Logo Placeholder - matches header */}
-              <div className="h-10 w-10 bg-primary-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">C</span>
-              </div>
-              <span className="text-2xl font-bold text-white">Curo</span>
+            <a href="/" className="flex items-center">
+              <Image
+                src="/logo.png"
+                alt="Curo Pay"
+                width={160}
+                height={67}
+                className="h-12 w-auto brightness-0 invert"
+              />
             </a>
             <p className="text-sm leading-6 text-secondary-400">
               Modern check payments made simple and secure. Send with confidence, receive with
