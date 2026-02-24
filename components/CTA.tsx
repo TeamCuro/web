@@ -44,20 +44,40 @@ export default function CTA() {
 
     setIsSubmitting(true);
 
-    // Simulate API call
-    // TODO: Replace with actual API endpoint
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSuccess(true);
-
-      // Reset form
-      setFormData({
-        firstName: "",
-        email: "",
-        useCase: "",
-        consent: false,
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/info@getcuro.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          firstName: formData.firstName,
+          email: formData.email,
+          useCase: formData.useCase,
+          _subject: "New Curo Waitlist Signup",
+          _honey: "",
+        }),
       });
-    }, 1500);
+
+      const result = await response.json();
+
+      if (result.success === "true" || result.success === true) {
+        setIsSuccess(true);
+        setFormData({
+          firstName: "",
+          email: "",
+          useCase: "",
+          consent: false,
+        });
+      } else {
+        setErrors({ _form: "Something went wrong. Please try again." });
+      }
+    } catch {
+      setErrors({ _form: "Something went wrong. Please try again." });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -245,6 +265,11 @@ export default function CTA() {
                 </div>
               </div>
             </div>
+
+            {/* Form-level error */}
+            {errors._form && (
+              <p className="text-body-sm text-error-500 text-center">{errors._form}</p>
+            )}
 
             {/* Submit Button */}
             <div>
