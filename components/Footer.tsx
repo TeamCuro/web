@@ -127,7 +127,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row md:items-center md:justify-between">
             {/* Copyright */}
             <p className="text-xs leading-5 text-secondary-400">
-              &copy; {currentYear} Curo, Inc. All rights reserved.
+              &copy; {currentYear} Curo Co LLC. All rights reserved.
             </p>
 
             {/* Trust Badges */}

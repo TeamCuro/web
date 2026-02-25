@@ -288,7 +288,7 @@ export default function TermsOfService() {
       <footer className="bg-secondary-900 py-8">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
           <p className="text-sm text-secondary-400">
-            &copy; 2026 Curo, Inc. All rights reserved.
+            &copy; 2026 Curo Co LLC. All rights reserved.
           </p>
           <div className="mt-4 flex justify-center space-x-6">
             <Link href="/privacy" className="text-sm text-secondary-400 hover:text-white">
