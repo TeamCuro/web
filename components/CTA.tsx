@@ -39,6 +39,10 @@ export default function CTA() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    if (formData._honey) {
+      return;
+    }
+
     if (!validateForm()) {
       return;
     }
@@ -99,11 +103,12 @@ export default function CTA() {
       [name]: type === "checkbox" ? checked : value,
     }));
 
-    // Clear error for this field when user starts typing
-    if (errors[name]) {
+    // Clear field-level and form-level errors when user edits any input
+    if (errors[name] || errors._form) {
       setErrors((prev) => {
         const newErrors = { ...prev };
         delete newErrors[name];
+        delete newErrors._form;
         return newErrors;
       });
     }
