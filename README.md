@@ -67,7 +67,7 @@ Open [http://localhost:3000](http://localhost:3000) to view the site.
 
 ## Form Submissions
 
-The waitlist form in `components/CTA.tsx` uses [FormSubmit.co](https://formsubmit.co) as a no-account, no-backend form endpoint. On submission, FormSubmit emails the collected fields (`firstName`, `email`, `useCase`, `consent`) to `info@getcuro.com`.
+The waitlist form in `components/CTA.tsx` uses [FormSubmit.co](https://formsubmit.co) as a no-account, no-backend form endpoint. On submission, FormSubmit emails the collected fields (`firstName`, `email`, `useCase`, `consent`) to `0419ebb025863ab88db0f5f681c6f88f`.
 
 **How it works:**
 1. The form POSTs to `https://formsubmit.co/ajax/<endpoint>` via `fetch`
@@ -75,7 +75,7 @@ The waitlist form in `components/CTA.tsx` uses [FormSubmit.co](https://formsubmi
 3. A hidden honeypot input (`_honey`) is included — bots that auto-fill forms will populate it, and FormSubmit discards those submissions server-side
 4. On first use, FormSubmit sends an activation email to confirm the endpoint
 
-**Pending setup:** `info@getcuro.com` must be active and the one-time activation email confirmed before live submissions are delivered. Once confirmed, replace the email address in the fetch URL with the hash string provided by FormSubmit.
+**Pending setup:** Confirm the one-time activation email for the configured FormSubmit endpoint before live submissions are delivered.
 
 ## Features
 
