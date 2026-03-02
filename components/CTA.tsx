@@ -8,6 +8,7 @@ export default function CTA() {
     email: "",
     useCase: "",
     consent: false,
+    _honey: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -38,26 +39,57 @@ export default function CTA() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    if (formData._honey) {
+      return;
+    }
+
     if (!validateForm()) {
       return;
     }
 
     setIsSubmitting(true);
 
-    // Simulate API call
-    // TODO: Replace with actual API endpoint
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSuccess(true);
-
-      // Reset form
-      setFormData({
-        firstName: "",
-        email: "",
-        useCase: "",
-        consent: false,
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/info@getcuro.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          firstName: formData.firstName,
+          email: formData.email,
+          useCase: formData.useCase,
+          consent: formData.consent,
+          _subject: "New Curo Waitlist Signup",
+          _honey: formData._honey,
+        }),
       });
-    }, 1500);
+
+      if (!response.ok) {
+        setErrors({ _form: "Something went wrong. Please try again." });
+        return;
+      }
+
+      const result = await response.json();
+
+      if (result.success === "true" || result.success === true) {
+        setIsSuccess(true);
+        setFormData({
+          firstName: "",
+          email: "",
+          useCase: "",
+          consent: false,
+          _honey: "",
+        });
+      } else {
+        setErrors({ _form: "Something went wrong. Please try again." });
+      }
+    } catch {
+      setErrors({ _form: "Something went wrong. Please try again." });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -71,11 +103,12 @@ export default function CTA() {
       [name]: type === "checkbox" ? checked : value,
     }));
 
-    // Clear error for this field when user starts typing
-    if (errors[name]) {
+    // Clear field-level and form-level errors when user edits any input
+    if (errors[name] || errors._form) {
       setErrors((prev) => {
         const newErrors = { ...prev };
         delete newErrors[name];
+        delete newErrors._form;
         return newErrors;
       });
     }
@@ -137,6 +170,16 @@ export default function CTA() {
         <div className="mx-auto max-w-xl">
           <div className="bg-white rounded-2xl shadow-2xl p-8 sm:p-10">
             <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Honeypot — hidden from real users, bots auto-fill it */}
+            <input
+              type="text"
+              name="_honey"
+              value={formData._honey}
+              onChange={handleChange}
+              style={{ display: "none" }}
+              tabIndex={-1}
+              autoComplete="off"
+            />
             {/* First Name */}
             <div>
               <label
@@ -245,6 +288,11 @@ export default function CTA() {
                 </div>
               </div>
             </div>
+
+            {/* Form-level error */}
+            {errors._form && (
+              <p className="text-body-sm text-error-500 text-center">{errors._form}</p>
+            )}
 
             {/* Submit Button */}
             <div>
