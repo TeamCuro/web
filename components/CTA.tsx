@@ -48,9 +48,10 @@ export default function CTA() {
     }
 
     setIsSubmitting(true);
+    setErrors({});
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/info@getcuro.com", {
+      const response = await fetch("https://formsubmit.co/ajax/0419ebb025863ab88db0f5f681c6f88f", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -66,14 +67,37 @@ export default function CTA() {
         }),
       });
 
-      if (!response.ok) {
-        setErrors({ _form: "Something went wrong. Please try again." });
+      // FormSubmit may return different JSON shapes; treat 2xx as success unless
+      // the payload explicitly reports failure.
+      const rawResponse = await response.text();
+      let result: Record<string, unknown> | null = null;
+      if (rawResponse) {
+        try {
+          result = JSON.parse(rawResponse) as Record<string, unknown>;
+        } catch {
+          result = null;
+        }
+      }
+
+      const success = result?.success;
+      const explicitFailure = success === false || success === "false";
+      const explicitSuccess =
+        success === true ||
+        success === "true" ||
+        success === 1 ||
+        success === "1" ||
+        success === "success";
+
+      if (!response.ok || explicitFailure) {
+        const message =
+          typeof result?.message === "string" && result.message.trim()
+            ? result.message
+            : "Something went wrong. Please try again.";
+        setErrors({ _form: message });
         return;
       }
 
-      const result = await response.json();
-
-      if (result.success === "true" || result.success === true) {
+      if (explicitSuccess || response.ok) {
         setIsSuccess(true);
         setFormData({
           firstName: "",
@@ -85,7 +109,8 @@ export default function CTA() {
       } else {
         setErrors({ _form: "Something went wrong. Please try again." });
       }
-    } catch {
+    } catch (error) {
+      console.error("Waitlist form submission failed", error);
       setErrors({ _form: "Something went wrong. Please try again." });
     } finally {
       setIsSubmitting(false);
