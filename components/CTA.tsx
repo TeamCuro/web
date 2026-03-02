@@ -8,6 +8,7 @@ export default function CTA() {
     email: "",
     useCase: "",
     consent: false,
+    _honey: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -55,10 +56,16 @@ export default function CTA() {
           firstName: formData.firstName,
           email: formData.email,
           useCase: formData.useCase,
+          consent: formData.consent,
           _subject: "New Curo Waitlist Signup",
-          _honey: "",
+          _honey: formData._honey,
         }),
       });
+
+      if (!response.ok) {
+        setErrors({ _form: "Something went wrong. Please try again." });
+        return;
+      }
 
       const result = await response.json();
 
@@ -69,6 +76,7 @@ export default function CTA() {
           email: "",
           useCase: "",
           consent: false,
+          _honey: "",
         });
       } else {
         setErrors({ _form: "Something went wrong. Please try again." });
@@ -157,6 +165,16 @@ export default function CTA() {
         <div className="mx-auto max-w-xl">
           <div className="bg-white rounded-2xl shadow-2xl p-8 sm:p-10">
             <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Honeypot — hidden from real users, bots auto-fill it */}
+            <input
+              type="text"
+              name="_honey"
+              value={formData._honey}
+              onChange={handleChange}
+              style={{ display: "none" }}
+              tabIndex={-1}
+              autoComplete="off"
+            />
             {/* First Name */}
             <div>
               <label
