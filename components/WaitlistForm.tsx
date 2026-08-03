@@ -4,6 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 import type { ReactNode } from "react";
 
+const REGISTER_URL = "https://app.getcuro.com/register";
+
 interface SecondaryLink {
   label: string;
   href: string;
@@ -17,8 +19,6 @@ interface WaitlistFormProps {
   defaultUseCase?: string;
   secondaryLink?: SecondaryLink;
   badges?: ReactNode;
-  successHeading?: string;
-  successBody?: string;
 }
 
 export default function WaitlistForm({
@@ -29,8 +29,6 @@ export default function WaitlistForm({
   defaultUseCase = "",
   secondaryLink,
   badges,
-  successHeading = "You're on the list!",
-  successBody = "We'll be in touch soon with early access details and updates about Curo. Check your inbox for a confirmation email.",
 }: WaitlistFormProps) {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -41,7 +39,6 @@ export default function WaitlistForm({
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   const validateForm = () => {
@@ -127,14 +124,7 @@ export default function WaitlistForm({
       }
 
       if (explicitSuccess || response.ok) {
-        setIsSuccess(true);
-        setFormData({
-          firstName: "",
-          email: "",
-          useCase: defaultUseCase,
-          consent: false,
-          _honey: "",
-        });
+        window.location.assign(REGISTER_URL);
       } else {
         setErrors({ _form: "Something went wrong. Please try again." });
       }
@@ -165,30 +155,6 @@ export default function WaitlistForm({
       });
     }
   };
-
-  if (isSuccess) {
-    return (
-      <section id={id} className="scroll-mt-20 py-24 sm:py-32 bg-primary-600">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <div className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-success-500 mb-6">
-              <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-              </svg>
-            </div>
-            <h2 className="font-heading text-white mb-4">{successHeading}</h2>
-            <p className="text-body-lg text-primary-100 mb-8">{successBody}</p>
-            <button
-              onClick={() => setIsSuccess(false)}
-              className="text-white underline hover:text-primary-100 transition-colors"
-            >
-              Submit another response
-            </button>
-          </div>
-        </div>
-      </section>
-    );
-  }
 
   return (
     <section id={id} className="scroll-mt-20 py-24 sm:py-32 bg-primary-600">
