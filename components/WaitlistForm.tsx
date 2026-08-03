@@ -1,0 +1,372 @@
+"use client";
+
+import { useState } from "react";
+import Link from "next/link";
+import type { ReactNode } from "react";
+
+interface SecondaryLink {
+  label: string;
+  href: string;
+}
+
+interface WaitlistFormProps {
+  id?: string;
+  heading: string;
+  subheading: string;
+  submitLabel?: string;
+  defaultUseCase?: string;
+  secondaryLink?: SecondaryLink;
+  badges?: ReactNode;
+  successHeading?: string;
+  successBody?: string;
+}
+
+export default function WaitlistForm({
+  id = "get-started",
+  heading,
+  subheading,
+  submitLabel = "Create your account",
+  defaultUseCase = "",
+  secondaryLink,
+  badges,
+  successHeading = "You're on the list!",
+  successBody = "We'll be in touch soon with early access details and updates about Curo. Check your inbox for a confirmation email.",
+}: WaitlistFormProps) {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    email: "",
+    useCase: defaultUseCase,
+    consent: false,
+    _honey: "",
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [errors, setErrors] = useState<Record<string, string>>({});
+
+  const validateForm = () => {
+    const newErrors: Record<string, string> = {};
+
+    if (!formData.firstName.trim()) {
+      newErrors.firstName = "First name is required";
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Please enter a valid email address";
+    }
+
+    if (!formData.consent) {
+      newErrors.consent = "You must agree to continue";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (formData._honey) {
+      return;
+    }
+
+    if (!validateForm()) {
+      return;
+    }
+
+    setIsSubmitting(true);
+    setErrors({});
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/0419ebb025863ab88db0f5f681c6f88f", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          firstName: formData.firstName,
+          email: formData.email,
+          useCase: formData.useCase,
+          consent: formData.consent,
+          _subject: "New Curo Waitlist Signup",
+          _honey: formData._honey,
+        }),
+      });
+
+      // FormSubmit may return different JSON shapes; treat 2xx as success unless
+      // the payload explicitly reports failure.
+      const rawResponse = await response.text();
+      let result: Record<string, unknown> | null = null;
+      if (rawResponse) {
+        try {
+          result = JSON.parse(rawResponse) as Record<string, unknown>;
+        } catch {
+          result = null;
+        }
+      }
+
+      const success = result?.success;
+      const explicitFailure = success === false || success === "false";
+      const explicitSuccess =
+        success === true ||
+        success === "true" ||
+        success === 1 ||
+        success === "1" ||
+        success === "success";
+
+      if (!response.ok || explicitFailure) {
+        const message =
+          typeof result?.message === "string" && result.message.trim()
+            ? result.message
+            : "Something went wrong. Please try again.";
+        setErrors({ _form: message });
+        return;
+      }
+
+      if (explicitSuccess || response.ok) {
+        setIsSuccess(true);
+        setFormData({
+          firstName: "",
+          email: "",
+          useCase: defaultUseCase,
+          consent: false,
+          _honey: "",
+        });
+      } else {
+        setErrors({ _form: "Something went wrong. Please try again." });
+      }
+    } catch (error) {
+      console.error("Waitlist form submission failed", error);
+      setErrors({ _form: "Something went wrong. Please try again." });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value, type } = e.target;
+    const checked = (e.target as HTMLInputElement).checked;
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value,
+    }));
+
+    // Clear field-level and form-level errors when user edits any input
+    if (errors[name] || errors._form) {
+      setErrors((prev) => {
+        const newErrors = { ...prev };
+        delete newErrors[name];
+        delete newErrors._form;
+        return newErrors;
+      });
+    }
+  };
+
+  if (isSuccess) {
+    return (
+      <section id={id} className="scroll-mt-20 py-24 sm:py-32 bg-primary-600">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center">
+            <div className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-success-500 mb-6">
+              <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+              </svg>
+            </div>
+            <h2 className="font-heading text-white mb-4">{successHeading}</h2>
+            <p className="text-body-lg text-primary-100 mb-8">{successBody}</p>
+            <button
+              onClick={() => setIsSuccess(false)}
+              className="text-white underline hover:text-primary-100 transition-colors"
+            >
+              Submit another response
+            </button>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  return (
+    <section id={id} className="scroll-mt-20 py-24 sm:py-32 bg-primary-600">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl text-center mb-12">
+          <h2 className="font-heading text-white">{heading}</h2>
+          <p className="mt-4 text-body-lg text-primary-100">{subheading}</p>
+        </div>
+
+        {/* Form */}
+        <div className="mx-auto max-w-xl">
+          <div className="bg-white rounded-2xl shadow-2xl p-8 sm:p-10">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Honeypot — hidden from real users, bots auto-fill it */}
+              <input
+                type="text"
+                name="_honey"
+                value={formData._honey}
+                onChange={handleChange}
+                style={{ display: "none" }}
+                tabIndex={-1}
+                autoComplete="off"
+              />
+              {/* First Name */}
+              <div>
+                <label htmlFor={`${id}-firstName`} className="block text-body-sm font-bold text-secondary-900 mb-2">
+                  First Name <span className="text-error-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  id={`${id}-firstName`}
+                  name="firstName"
+                  value={formData.firstName}
+                  onChange={handleChange}
+                  className={`input-field-full ${errors.firstName ? "error" : ""}`}
+                  placeholder="John"
+                />
+                {errors.firstName && <p className="mt-2 text-body-sm text-error-500">{errors.firstName}</p>}
+              </div>
+
+              {/* Email */}
+              <div>
+                <label htmlFor={`${id}-email`} className="block text-body-sm font-bold text-secondary-900 mb-2">
+                  Email Address <span className="text-error-500">*</span>
+                </label>
+                <input
+                  type="email"
+                  id={`${id}-email`}
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className={`input-field-full ${errors.email ? "error" : ""}`}
+                  placeholder="you@example.com"
+                />
+                {errors.email && <p className="mt-2 text-body-sm text-error-500">{errors.email}</p>}
+              </div>
+
+              {/* Use Case Dropdown */}
+              <div>
+                <label htmlFor={`${id}-useCase`} className="block text-body-sm font-bold text-secondary-900 mb-2">
+                  How will you use Curo?{" "}
+                  <span className="text-secondary-300 text-body-sm font-normal">(Optional)</span>
+                </label>
+                <select
+                  id={`${id}-useCase`}
+                  name="useCase"
+                  value={formData.useCase}
+                  onChange={handleChange}
+                  className="input-field-full"
+                >
+                  <option value="">Select an option</option>
+                  <option value="trustee-caregiver">Managing payments as a trustee or caregiver</option>
+                  <option value="personal">Sending personal checks</option>
+                  <option value="rent-no-bank">Splitting rent or paying without a bank account</option>
+                  <option value="partner">Referring clients as an attorney, POA, or bank/CU</option>
+                  <option value="business">Business or organizational use</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              {/* Consent Checkbox */}
+              <div>
+                <div className="flex items-start">
+                  <div className="flex h-6 items-center">
+                    <input
+                      id={`${id}-consent`}
+                      name="consent"
+                      type="checkbox"
+                      checked={formData.consent}
+                      onChange={handleChange}
+                      className={`h-5 w-5 rounded border border-secondary-200 text-primary-600 focus:ring-2 focus:ring-primary-600 focus:ring-offset-2 transition-all ${
+                        errors.consent ? "border-error-500" : ""
+                      }`}
+                    />
+                  </div>
+                  <div className="ml-3">
+                    <label htmlFor={`${id}-consent`} className="text-body-sm text-secondary-400">
+                      I agree to receive updates about Curo and accept the{" "}
+                      <Link href="/terms" className="text-primary-600 underline hover:text-primary-700 transition-colors">
+                        Terms of Service
+                      </Link>{" "}
+                      and{" "}
+                      <Link href="/privacy" className="text-primary-600 underline hover:text-primary-700 transition-colors">
+                        Privacy Policy
+                      </Link>
+                      <span className="text-error-500 ml-1">*</span>
+                    </label>
+                    {errors.consent && <p className="mt-1 text-body-sm text-error-500">{errors.consent}</p>}
+                  </div>
+                </div>
+              </div>
+
+              {/* Form-level error */}
+              {errors._form && <p className="text-body-sm text-error-500 text-center">{errors._form}</p>}
+
+              {/* Submit Button */}
+              <div>
+                <button type="submit" disabled={isSubmitting} className="btn btn-primary btn-full btn-normal">
+                  {isSubmitting ? (
+                    <>
+                      <svg
+                        className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <circle
+                          className="opacity-25"
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          stroke="currentColor"
+                          strokeWidth="4"
+                        ></circle>
+                        <path
+                          className="opacity-75"
+                          fill="currentColor"
+                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                        ></path>
+                      </svg>
+                      Joining...
+                    </>
+                  ) : (
+                    <>
+                      {submitLabel}
+                      <svg className="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                      </svg>
+                    </>
+                  )}
+                </button>
+              </div>
+
+              <p className="text-body-sm text-secondary-300 text-center">
+                <span className="text-error-500">*</span> Required fields
+              </p>
+            </form>
+          </div>
+
+          {secondaryLink && (
+            <div className="mt-6 text-center">
+              <Link
+                href={secondaryLink.href}
+                className="inline-flex items-center justify-center min-h-11 px-4 text-body font-bold text-white underline hover:text-primary-100 transition-colors"
+              >
+                {secondaryLink.label}
+              </Link>
+            </div>
+          )}
+        </div>
+
+        {/* Trust badges */}
+        {badges && (
+          <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 text-primary-100">
+            {badges}
+          </div>
+        )}
+      </div>
+    </section>
+  );
+}
