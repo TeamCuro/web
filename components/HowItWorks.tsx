@@ -4,9 +4,9 @@ export default function HowItWorks() {
   const steps = [
     {
       number: "01",
-      title: "Create Your Check",
+      title: "Create",
       description:
-        "Enter the amount, add your recipient's contact info, and choose how you want to deliver it—email, SMS, or mail a physical check with a QR code.",
+        "Enter the amount and who it's for. Curo verifies your identity and certifies the funds before anything moves — no account or routing number is ever exposed.",
       icon: (
         <svg
           className="h-10 w-10"
@@ -27,9 +27,9 @@ export default function HowItWorks() {
     },
     {
       number: "02",
-      title: "Send Securely",
+      title: "Send securely",
       description:
-        "Your check is protected with a unique QR code and sent instantly. Only the intended recipient can claim it—no risk of theft or loss.",
+        "Print it, mail it, or send it instantly. Every check carries a secure QR code, so the recipient can claim it without opening an account.",
       icon: (
         <svg
           className="h-10 w-10"
@@ -50,9 +50,9 @@ export default function HowItWorks() {
     },
     {
       number: "03",
-      title: "Track & Confirm",
+      title: "Track & confirm",
       description:
-        "Get real-time updates when your check is delivered, claimed, and deposited. Complete transparency from start to finish.",
+        "Watch it clear in real time and keep an audit-ready record automatically. When it's done, you'll see: Your payment is confirmed.",
       icon: (
         <svg
           className="h-10 w-10"
@@ -74,20 +74,16 @@ export default function HowItWorks() {
   ];
 
   return (
-    <section id="how-it-works" className="py-24 sm:py-32 bg-gradient-to-b from-white to-secondary-50">
+    <section id="how-it-works" className="scroll-mt-20 py-24 sm:py-32 bg-gradient-to-b from-white to-secondary-50">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Section Header */}
         <div className="mx-auto max-w-2xl text-center mb-20">
-          <p className="text-body font-bold text-primary-600 mb-2">
-            Simple Process
+          <p className="text-body font-bold text-accent-600 mb-2 uppercase tracking-wide">
+            How It Works
           </p>
           <h2 className="font-heading text-secondary-900">
-            How Curo Works
+            Three steps, and it behaves like the check you already know.
           </h2>
-          <p className="mt-6 text-body-lg text-secondary-400">
-            Send secure checks in three simple steps. No complicated setup, no confusing apps—just
-            straightforward, safe payments.
-          </p>
         </div>
 
         {/* Steps Grid */}
