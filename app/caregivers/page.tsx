@@ -366,7 +366,6 @@ export default function CaregiversPage() {
                 </figcaption>
               </figure>
             </div>
-            <p className="rep-note">Representative examples — verified customer quotes coming soon.</p>
           </div>
         </section>
 

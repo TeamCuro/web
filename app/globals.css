@@ -568,9 +568,6 @@ section { position: relative; }
 .also-note p { margin: 0; font-size: 15.5px; line-height: 1.55; color: var(--fg-3); }
 .also-note b { color: var(--color-primary); }
 
-/* Testimonial "representative examples" note */
-.rep-note { font-family: var(--font-mono); font-size: 12.5px; color: var(--fg-4); margin-top: 22px; text-align: center; }
-
 /* ==========================================================================
    App product mockups — dark, demo data (recreated screens, no real info)
    ========================================================================== */
