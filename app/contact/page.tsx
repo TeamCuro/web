@@ -1,0 +1,8 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import LeadForm from "@/components/LeadForm";
+import { PageHero, SiteShell } from "@/components/Marketing";
+export const metadata: Metadata = { title: "Contact CuroPay", description: "Contact CuroPay by email, phone, mail, or send us a message." };
+export default function ContactPage(){return <SiteShell><PageHero eyebrow="Contact" title="Get in touch." description="Questions that aren’t about a specific payment or a partnership? Send them our way. If you already use CuroPay or you’re exploring a partnership, the shortcuts below will get you an answer faster." />
+ <section className="section tint"><div className="wrap contact-grid"><div className="contact-methods"><article className="contact-method"><h3>Email us</h3><p><a href="mailto:support@getcuro.com">support@getcuro.com</a><br/>We reply within one business day.</p></article><article className="contact-method"><h3>Call us</h3><p><a href="tel:+12562131733">(256) 213-1733</a><br/>A real person answers, Mon–Fri, 8am–8pm ET.</p></article><article className="contact-method"><h3>Mailing address</h3><p>CuroPay, Inc.<br/>600 Boulevard South, Ste 104<br/>Huntsville, AL 35802</p></article><article className="contact-method"><h3>Looking for something specific?</h3><p><Link href="https://app.getcuro.com/login">Already a user? Sign in →</Link><br/><Link href="/partners">Attorney, bank, or CU? Become a partner →</Link><br/><Link href="/#how">New to CuroPay? See how it works →</Link></p></article></div><div className="form-card"><LeadForm kind="contact" /></div></div></section>
+ </SiteShell>}

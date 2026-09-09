@@ -3,7 +3,7 @@ import type { MetadataRoute } from "next";
 const baseUrl = "https://getcuro.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = ["", "/caregivers", "/seniors", "/compare", "/partners", "/terms", "/privacy"];
+  const routes = ["", "/caregivers", "/seniors", "/compare", "/partners", "/contact", "/pricing", "/terms", "/privacy"];
 
   return routes.map((route) => ({
     url: `${baseUrl}${route}`,

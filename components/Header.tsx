@@ -1,95 +1,26 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
-import { CloseIcon, MenuIcon } from "./icons";
+import { useState } from "react";
 
-const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "For Caregivers", href: "/caregivers" },
-  { label: "For Seniors", href: "/seniors" },
-  { label: "Compare", href: "/compare" },
-];
+const links = [["Home", "/"], ["For Caregivers", "/caregivers"], ["For Seniors", "/seniors"], ["Compare", "/compare"]] as const;
 
-interface HeaderProps {
-  ctaLabel?: string;
-  ctaHref?: string;
-  activeHref?: string;
+export function Brand({ inverse = false }: { inverse?: boolean }) {
+  return <Link className={`brand ${inverse ? "brand-inverse" : ""}`} href="/" aria-label="CuroPay home">
+    <span className="brand-mark" aria-hidden="true"><svg viewBox="0 0 34 34" fill="none"><rect x="1" y="1" width="32" height="32" rx="9" fill="currentColor" /><path d="M17 6.5 24 9v4.8c0 4.3-2.9 7.6-7 8.7-4.1-1.1-7-4.4-7-8.7V9l7-2.5Z" fill="#27AE60" /><path d="m13.7 15.4 2.3 2.3 4-4.3" stroke="#fff" strokeWidth="2.1" strokeLinecap="round" strokeLinejoin="round" /></svg></span>
+    <span>CuroPay</span>
+  </Link>;
 }
 
-export default function Header({ ctaLabel = "Get Started", ctaHref = "#get-started", activeHref }: HeaderProps) {
+export default function Header({ activeHref }: { activeHref?: string }) {
   const [open, setOpen] = useState(false);
-
-  return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-secondary-200">
-      <nav className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="flex h-20 items-center justify-between">
-          <Link href="/" className="flex items-center">
-            <Image src="/logo.png" alt="Curo" width={160} height={67} className="h-12 w-auto" priority />
-          </Link>
-
-          <ul className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  aria-current={activeHref === link.href ? "page" : undefined}
-                  className={`text-body font-medium transition-colors ${
-                    activeHref === link.href ? "text-primary-600 font-bold" : "text-secondary-500 hover:text-primary-600"
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-
-          <div className="hidden lg:flex items-center">
-            <Link href={ctaHref} className="btn btn-primary btn-sm">
-              {ctaLabel}
-            </Link>
-          </div>
-
-          {/* Mobile menu toggle */}
-          <button
-            type="button"
-            className="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-md text-secondary-500 hover:bg-secondary-50"
-            aria-expanded={open}
-            aria-controls="mobile-menu"
-            aria-label={open ? "Close menu" : "Open menu"}
-            onClick={() => setOpen((v) => !v)}
-          >
-            {open ? <CloseIcon /> : <MenuIcon />}
-          </button>
-        </div>
-      </nav>
-
-      {open && (
-        <div id="mobile-menu" className="lg:hidden border-t border-secondary-200 bg-white">
-          <ul className="px-6 py-4 space-y-1">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  onClick={() => setOpen(false)}
-                  aria-current={activeHref === link.href ? "page" : undefined}
-                  className={`flex items-center min-h-11 py-3 text-body font-medium ${
-                    activeHref === link.href ? "text-primary-600 font-bold" : "text-secondary-700 hover:text-primary-600"
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-            <li className="pt-2 pb-2">
-              <Link href={ctaHref} onClick={() => setOpen(false)} className="btn btn-primary btn-full btn-normal">
-                {ctaLabel}
-              </Link>
-            </li>
-          </ul>
-        </div>
-      )}
-    </header>
-  );
+  return <header className="site-header"><div className="wrap nav-inner">
+    <Brand />
+    <nav className={open ? "nav-menu open" : "nav-menu"} aria-label="Primary">
+      {links.map(([label, href]) => <Link key={href} href={href} aria-current={activeHref === href ? "page" : undefined} onClick={() => setOpen(false)}>{label}</Link>)}
+      <div className="nav-mobile-actions"><Link href="https://app.getcuro.com/login">Sign in</Link><Link className="button button-primary" href="https://app.getcuro.com/register">Create account</Link></div>
+    </nav>
+    <div className="nav-actions"><Link className="signin" href="https://app.getcuro.com/login">Sign in</Link><Link className="button button-primary button-small" href="https://app.getcuro.com/register">Create account</Link></div>
+    <button className="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded={open} onClick={() => setOpen(!open)}><span /><span /><span /></button>
+  </div></header>;
 }

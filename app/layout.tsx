@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Curo | Modern Check Payments Made Simple & Secure",
-  description: "Send secure digital checks with QR codes. Perfect for trustees, caregivers, and anyone who values the simplicity of checks with the security of modern payments.",
+  metadataBase: new URL("https://getcuro.com"),
+  title: "CuroPay | Certified Money, Familiar as a Check",
+  description: "Identity-verified, funds-certified digital checks you can print, mail, or send instantly — without exposing account details.",
   keywords: ["digital checks", "e-checks", "secure payments", "trustee payments", "caregiver payments", "QR check"],
   icons: {
     icon: [
