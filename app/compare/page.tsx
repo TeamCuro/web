@@ -206,10 +206,10 @@ export default function ComparePage() {
         {/* ONE-LINE FRAME */}
         <section className="sec bg-navy">
           <div className="wrap wrap-narrow center" style={{ margin: "0 auto" }}>
-            <p className="lede" style={{ color: "#cdd9e4", margin: 0 }}>
+            <p className="lede" style={{ color: "var(--fg-on-navy-strong)", margin: 0 }}>
               Paper checks and money orders mean fraud, delays, and exposed account numbers. P2P apps offer no
               verification and no recourse. CuroPay is the only one built to move the money itself —{" "}
-              <strong style={{ color: "#fff" }}>certified, verified, and controlled.</strong>
+              <strong style={{ color: "var(--color-white)" }}>certified, verified, and controlled.</strong>
             </p>
           </div>
         </section>

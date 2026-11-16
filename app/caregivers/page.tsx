@@ -334,7 +334,7 @@ export default function CaregiversPage() {
               <h2>A recommendation they can stand behind.</h2>
             </div>
             <div className="tstack">
-              <figure className="tcard" style={{ borderStyle: "solid", borderColor: "var(--border-default)", background: "#fff" }}>
+              <figure className="tcard" style={{ borderStyle: "solid", borderColor: "var(--border-default)", background: "var(--color-white)" }}>
                 <blockquote className="t-quote" style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "var(--fg-2)", lineHeight: 1.62, margin: 0 }}>
                   &ldquo;I can hand a client a clean, exportable record at the annual accounting instead of
                   reconstructing it from cashier&rsquo;s checks and email threads.&rdquo;
@@ -344,7 +344,7 @@ export default function CaregiversPage() {
                   <span className="t-role">Elder-law attorney / Trustee</span>
                 </figcaption>
               </figure>
-              <figure className="tcard" style={{ borderStyle: "solid", borderColor: "var(--border-default)", background: "#fff" }}>
+              <figure className="tcard" style={{ borderStyle: "solid", borderColor: "var(--border-default)", background: "var(--color-white)" }}>
                 <blockquote className="t-quote" style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "var(--fg-2)", lineHeight: 1.62, margin: 0 }}>
                   &ldquo;Reconciling a client&rsquo;s trust used to mean chasing paper. Every transfer already
                   carries the record I need, so the review takes a fraction of the time.&rdquo;
@@ -354,7 +354,7 @@ export default function CaregiversPage() {
                   <span className="t-role">CPA</span>
                 </figcaption>
               </figure>
-              <figure className="tcard" style={{ borderStyle: "solid", borderColor: "var(--border-default)", background: "#fff" }}>
+              <figure className="tcard" style={{ borderStyle: "solid", borderColor: "var(--border-default)", background: "var(--color-white)" }}>
                 <blockquote className="t-quote" style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "var(--fg-2)", lineHeight: 1.62, margin: 0 }}>
                   &ldquo;Before CuroPay, every payment for my mom meant a text to my brother and a folder of
                   receipts. Now the approval happens before the money moves, and my sister sees exactly what cleared

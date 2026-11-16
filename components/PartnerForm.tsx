@@ -118,7 +118,7 @@ export default function PartnerForm() {
         <span className="pf-err">You must agree to the Terms and Privacy Policy to continue.</span>
       </div>
       {formError && <p className="pf-err" style={{ display: "block" }}>{formError}</p>}
-      <button type="submit" className="btn btn-secondary btn-lg" disabled={status === "sending"}>
+      <button type="submit" className="btn btn-action btn-lg" disabled={status === "sending"}>
         {status === "sending" ? "Sending…" : "Start a partner conversation"}
       </button>
     </form>

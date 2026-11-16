@@ -35,7 +35,7 @@ export default function PartnersPage() {
                   your desk, and stay the name your clients count on.
                 </p>
                 <div className="cta-row">
-                  <a className="btn btn-secondary btn-lg" href="#tracks">
+                  <a className="btn btn-action btn-lg" href="#tracks">
                     Explore partnership
                   </a>
                   <a className="btn btn-outline-light btn-lg" href="#refer">

@@ -80,7 +80,7 @@ export default function PricingPage() {
                     </td>
                     <td className="fee">
                       2.9% + $0.30
-                      <small style={{ display: "block", fontWeight: 400, color: "var(--fg-4)", fontFamily: "var(--font-body)", fontSize: 13 }}>
+                      <small>
                         per transaction
                       </small>
                     </td>
@@ -125,7 +125,7 @@ export default function PricingPage() {
                       Physical check delivery <span className="tag tbd">Pricing coming soon</span>
                       <small>We print and mail a check on your behalf</small>
                     </td>
-                    <td className="fee" style={{ color: "var(--fg-4)", fontWeight: 600 }}>
+                    <td className="fee fee-pending">
                       Not yet published
                     </td>
                     <td className="who">You&rsquo;ll see the exact fee before you confirm</td>
