@@ -39,7 +39,7 @@ export default function ContactPage() {
               <div>
                 <div className="cmethod">
                   <span className="ic">
-                    <svg viewBox="0 0 24 24" fill="none">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                       <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="1.8" />
                       <path d="M4 7l8 6 8-6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
@@ -57,7 +57,7 @@ export default function ContactPage() {
                 </div>
                 <div className="cmethod">
                   <span className="ic">
-                    <svg viewBox="0 0 24 24" fill="none">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                       <path
                         d="M4 6.5A2.5 2.5 0 016.5 4h1.7c.5 0 .9.3 1 .8l.7 2.4c.1.5-.1 1-.5 1.2l-1.2.8a11 11 0 004.6 4.6l.8-1.2c.3-.4.8-.6 1.2-.5l2.4.7c.5.1.8.5.8 1v1.7a2.5 2.5 0 01-2.5 2.5A13.5 13.5 0 014 6.5z"
                         stroke="currentColor"
@@ -79,7 +79,7 @@ export default function ContactPage() {
                 </div>
                 <div className="cmethod">
                   <span className="ic">
-                    <svg viewBox="0 0 24 24" fill="none">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                       <path d="M12 21s7-5.2 7-11a7 7 0 10-14 0c0 5.8 7 11 7 11z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
                       <circle cx="12" cy="10" r="2.5" stroke="currentColor" strokeWidth="1.8" />
                     </svg>

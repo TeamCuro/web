@@ -85,7 +85,7 @@ export default function Home() {
               <Link className="router-card featured" href="/caregivers">
                 <span className="r-tag">Most common</span>
                 <span className="r-icon">
-                  <svg viewBox="0 0 24 24" fill="none">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                     <path d="M12 13a4 4 0 100-8 4 4 0 000 8z" stroke="currentColor" strokeWidth="1.8" />
                     <path d="M4 20c0-3.3 3.6-5 8-5s8 1.7 8 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
                   </svg>
@@ -97,14 +97,14 @@ export default function Home() {
                 </p>
                 <span className="r-go">
                   Caregivers &amp; Fiduciaries
-                  <svg viewBox="0 0 16 16" fill="none">
+                  <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
                     <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </span>
               </Link>
               <Link className="router-card" href="/seniors">
                 <span className="r-icon">
-                  <svg viewBox="0 0 24 24" fill="none">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                     <rect x="3" y="6" width="18" height="12" rx="2" stroke="currentColor" strokeWidth="1.8" />
                     <path d="M3 10h18" stroke="currentColor" strokeWidth="1.8" />
                     <path d="M7 14h5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
@@ -117,7 +117,7 @@ export default function Home() {
                 </p>
                 <span className="r-go">
                   For Seniors
-                  <svg viewBox="0 0 16 16" fill="none">
+                  <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
                     <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </span>
@@ -125,7 +125,7 @@ export default function Home() {
             </div>
             <div className="also-note" style={{ maxWidth: 760, marginLeft: "auto", marginRight: "auto" }}>
               <span className="an-ic">
-                <svg viewBox="0 0 24 24" fill="none">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                   <path d="M4 12h5l2 5 3-10 2 5h4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </span>
@@ -183,7 +183,7 @@ export default function Home() {
             <div className="proof-grid">
               <div className="proof">
                 <span className="p-icon">
-                  <svg viewBox="0 0 24 24" fill="none">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                     <path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
                     <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
@@ -193,7 +193,7 @@ export default function Home() {
               </div>
               <div className="proof">
                 <span className="p-icon">
-                  <svg viewBox="0 0 24 24" fill="none">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                     <circle cx="12" cy="8" r="4" stroke="currentColor" strokeWidth="1.8" />
                     <path d="M4 20c0-3.3 3.6-5 8-5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
                     <path d="M16.5 18.5l1.8 1.8 3.2-3.4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
@@ -204,7 +204,7 @@ export default function Home() {
               </div>
               <div className="proof">
                 <span className="p-icon">
-                  <svg viewBox="0 0 24 24" fill="none">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                     <path d="M8 5h9a2 2 0 012 2v12a2 2 0 01-2 2H8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
                     <path d="M8 3v18l-3-2-3 2V3z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
                     <path d="M11 9h6M11 13h6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
@@ -218,7 +218,7 @@ export default function Home() {
               </div>
               <div className="proof">
                 <span className="p-icon">
-                  <svg viewBox="0 0 24 24" fill="none">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                     <rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" strokeWidth="1.8" />
                     <path d="M8 8h3v3H8zM8 13h3v3H8zM13 8h3v3h-3zM13 13h3v3h-3z" stroke="currentColor" strokeWidth="1.4" />
                   </svg>
@@ -228,7 +228,7 @@ export default function Home() {
               </div>
               <div className="proof">
                 <span className="p-icon">
-                  <svg viewBox="0 0 24 24" fill="none">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                     <path d="M4 12h5l2 5 3-10 2 5h4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </span>
@@ -237,7 +237,7 @@ export default function Home() {
               </div>
               <div className="proof">
                 <span className="p-icon">
-                  <svg viewBox="0 0 24 24" fill="none">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                     <path d="M12 2a10 10 0 100 20 10 10 0 000-20z" stroke="currentColor" strokeWidth="1.8" />
                     <path d="M12 7v5l3 2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
@@ -461,7 +461,7 @@ export default function Home() {
               </div>
               <div className="trust-row" style={{ justifyContent: "center" }}>
                 <span className="badge">
-                  <svg className="badge-check" viewBox="0 0 20 20" fill="none">
+                  <svg className="badge-check" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false">
                     <path d="M16.5 5.5L8 14L4 10" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                   No account or routing number exposed
@@ -478,7 +478,7 @@ export default function Home() {
 
 function CheckSvg() {
   return (
-    <svg viewBox="0 0 24 24" fill="none">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
       <path d="M5 12l4 4L19 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );

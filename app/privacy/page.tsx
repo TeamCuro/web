@@ -30,7 +30,7 @@ export default function PrivacyPolicy() {
       <main className="pt-32 pb-16">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <Link href="/" className="inline-flex items-center text-primary-600 hover:text-primary-700 mb-8 font-medium">
-            <svg className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+            <svg className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" aria-hidden="true" focusable="false">
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
             </svg>
             Back to Home

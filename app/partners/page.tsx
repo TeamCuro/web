@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 function CheckSvg() {
   return (
-    <svg viewBox="0 0 24 24" fill="none">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
       <path d="M5 12l4 4L19 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
@@ -69,7 +69,7 @@ export default function PartnersPage() {
                     </div>
                   </div>
                   <span className="scene-badge">
-                    <svg viewBox="0 0 24 24" fill="none">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                       <path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
                       <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
@@ -275,28 +275,28 @@ export default function PartnersPage() {
             </div>
             <ul className="cred-list">
               <li>
-                <svg viewBox="0 0 24 24" fill="none">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                   <path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
                   <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
                 No account or routing number is ever exposed
               </li>
               <li>
-                <svg viewBox="0 0 24 24" fill="none">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                   <circle cx="12" cy="8" r="4" stroke="currentColor" strokeWidth="1.8" />
                   <path d="M4 20c0-3.3 3.6-5 8-5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
                 </svg>
                 Identity verification on senders and recipients
               </li>
               <li>
-                <svg viewBox="0 0 24 24" fill="none">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                   <path d="M8 5h9a2 2 0 012 2v12a2 2 0 01-2 2H8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
                   <path d="M8 3v18l-3-2-3 2V3z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
                 </svg>
                 Audit-ready records on every transfer
               </li>
               <li>
-                <svg viewBox="0 0 24 24" fill="none">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                   <path d="M5 12l4 4 10-10" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
                 Role-based approvals and spending thresholds

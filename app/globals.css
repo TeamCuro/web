@@ -216,6 +216,8 @@ body {
   --border-default: #E0E0E0;
   --border-strong: #BDBDBD;
   --border-focus: #092C4C;
+  --focus-ring: #092C4C;
+  --nav-h: 76px; /* sticky header height, keep in sync with .nav-inner */
 
   --font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
 
@@ -273,7 +275,10 @@ h6, .h6 { font-family: var(--font-heading); font-size: var(--h6-size); line-heig
   font-weight: 700;
   line-height: var(--body-lh);
   cursor: pointer;
-  transition: all var(--dur-normal) var(--ease-default);
+  /* explicit list, not `all`: animating outline makes the focus ring fade in from the wrong color (FE-103) */
+  transition-property: background-color, color, border-color, box-shadow, transform, opacity;
+  transition-duration: var(--dur-normal);
+  transition-timing-function: var(--ease-default);
   border: none;
   white-space: nowrap;
 }
@@ -318,9 +323,7 @@ h6, .h6 { font-family: var(--font-heading); font-size: var(--h6-size); line-heig
 .input-field-full { width: 100%; }
 .input-field::placeholder, .input-field-full::placeholder { color: var(--fg-placeholder); }
 .input-field:focus, .input-field-full:focus {
-  outline: none;
   border-color: var(--border-focus);
-  box-shadow: 0 0 0 2px rgba(9, 44, 76, 0.1);
 }
 .input-field.error, .input-field-full.error { border-color: var(--color-error); }
 .input-field.success, .input-field-full.success { border-color: var(--color-success); }
@@ -350,7 +353,17 @@ h6, .h6 { font-family: var(--font-heading); font-size: var(--h6-size); line-heig
   --color-blue:        #2F80ED;
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + 16px); } /* anchor jumps + focused items land below the sticky header */
+
+/* ==========================================================================
+   Focus ring (FE-103): 3px ring, 2px gap. Navy on light, white on navy.
+   Never remove an outline without this replacement.
+   ========================================================================== */
+:where(a, button, [role="button"], summary, input, select, textarea, [tabindex]):focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+.bg-navy, .cta-band, .site-footer, .partner-hero, .partner-form, .modal-card, .hero-scene { --focus-ring: #fff; }
 
 .wrap { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 24px; }
 .wrap-narrow { max-width: 760px; }
@@ -359,7 +372,7 @@ html { scroll-behavior: smooth; }
    Navigation
    ========================================================================== */
 .site-nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,.92); backdrop-filter: saturate(180%) blur(12px); border-bottom: 1px solid var(--border-default); }
-.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 76px; }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; height: var(--nav-h); }
 .brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
 .brand:hover { color: inherit; }
 .brand-mark { width: 34px; height: 34px; flex: none; }
@@ -757,7 +770,7 @@ section { position: relative; }
 .pf-row > label { font-family:var(--font-heading); font-weight:700; font-size:13px; color:#dfe8f0; }
 .pf-row input[type=text], .pf-row input[type=email], .pf-row input[type=tel] { height:48px; border-radius:8px; border:1px solid var(--border-ui-on-navy); background:rgba(255,255,255,.06); color:#fff; padding:0 14px; font-family:var(--font-body); font-size:15px; }
 .pf-row input::placeholder { color:#7f95a9; }
-.pf-row input:focus { outline:none; border-color:#4ade80; box-shadow:0 0 0 2px rgba(39,174,96,.3); }
+.pf-row input:focus { border-color:#4ade80; }
 .pf-row input.invalid { border-color:#ff9a9a; background:rgba(235,87,87,.08); }
 .pf-err { display:none; color:#ffb3b3; font-size:12.5px; font-family:var(--font-body); }
 .pf-row.error .pf-err { display:block; }
@@ -802,7 +815,7 @@ section { position: relative; }
 .cf-row input, .cf-row select, .cf-row textarea { width:100%; border:1px solid var(--border-ui); border-radius:8px; padding:13px 14px; font-family:var(--font-body); font-size:15px; color:var(--fg-1); background:#fff; }
 .cf-row textarea { min-height:140px; resize:vertical; line-height:1.5; }
 .cf-row input::placeholder, .cf-row textarea::placeholder { color:var(--fg-placeholder); }
-.cf-row input:focus, .cf-row select:focus, .cf-row textarea:focus { outline:none; border-color:var(--color-action); box-shadow:0 0 0 2px rgba(23,112,61,.18); }
+.cf-row input:focus, .cf-row select:focus, .cf-row textarea:focus { border-color:var(--color-action); }
 .cf-row input.invalid, .cf-row select.invalid, .cf-row textarea.invalid { border-color:var(--color-error-text); background:#fff6f6; }
 .cf-err { display:none; color:var(--color-error-text); font-size:12.5px; font-family:var(--font-body); }
 .cf-row.error .cf-err { display:block; }

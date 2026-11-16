@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 function CheckSvg() {
   return (
-    <svg viewBox="0 0 24 24" fill="none">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
       <path d="M5 12l4 4L19 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
@@ -123,7 +123,7 @@ export default function SeniorsPage() {
             <div className="proof-grid">
               <div className="proof">
                 <span className="p-icon">
-                  <svg viewBox="0 0 24 24" fill="none">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                     <rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" strokeWidth="1.8" />
                     <path d="M8 8h3v3H8zM13 13h3v3h-3zM13 8h3M8 13v3" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
                   </svg>
@@ -133,7 +133,7 @@ export default function SeniorsPage() {
               </div>
               <div className="proof">
                 <span className="p-icon">
-                  <svg viewBox="0 0 24 24" fill="none">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                     <circle cx="12" cy="8" r="4" stroke="currentColor" strokeWidth="1.8" />
                     <path d="M4 20c0-3.3 3.6-5 8-5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
                     <path d="M16.5 18.5l1.8 1.8 3.2-3.4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
@@ -144,7 +144,7 @@ export default function SeniorsPage() {
               </div>
               <div className="proof">
                 <span className="p-icon">
-                  <svg viewBox="0 0 24 24" fill="none">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                     <path
                       d="M4 6.5A2.5 2.5 0 016.5 4h1.7c.5 0 .9.3 1 .8l.7 2.4c.1.5-.1 1-.5 1.2l-1.2.8a11 11 0 004.6 4.6l.8-1.2c.3-.4.8-.6 1.2-.5l2.4.7c.5.1.8.5.8 1v1.7a2.5 2.5 0 01-2.5 2.5A13.5 13.5 0 014 6.5z"
                       stroke="currentColor"
@@ -199,13 +199,13 @@ export default function SeniorsPage() {
               </div>
               <div className="trust-row">
                 <span className="badge">
-                  <svg className="badge-check" viewBox="0 0 20 20" fill="none">
+                  <svg className="badge-check" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false">
                     <path d="M16.5 5.5L8 14L4 10" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                   Verified identity
                 </span>
                 <span className="badge">
-                  <svg viewBox="0 0 20 20" fill="none">
+                  <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false">
                     <path
                       d="M4 6.5A2.5 2.5 0 016.5 4h1.7c.5 0 .9.3 1 .8l.7 2.4c.1.5-.1 1-.5 1.2l-1.2.8a11 11 0 004.6 4.6l.8-1.2c.3-.4.8-.6 1.2-.5l2.4.7c.5.1.8.5.8 1v1.7a2.5 2.5 0 01-2.5 2.5A13.5 13.5 0 014 6.5z"
                       stroke="currentColor"

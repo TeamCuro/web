@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 function NoSvg() {
   return (
-    <svg className="ic-no" viewBox="0 0 24 24" fill="none">
+    <svg className="ic-no" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
       <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.8" />
       <path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
     </svg>
@@ -19,7 +19,7 @@ function NoSvg() {
 
 function YesSvg() {
   return (
-    <svg className="ic-yes" viewBox="0 0 24 24" fill="none">
+    <svg className="ic-yes" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
       <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.8" />
       <path d="M8 12l2.5 2.5L16 9" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
@@ -29,7 +29,7 @@ function YesSvg() {
 function BrandTag() {
   return (
     <p className="c-tag">
-      <svg className="brand-mark" style={{ width: 22, height: 22 }} viewBox="0 0 34 34" fill="none">
+      <svg className="brand-mark" style={{ width: 22, height: 22 }} viewBox="0 0 34 34" fill="none" aria-hidden="true" focusable="false">
         <rect x="1" y="1" width="32" height="32" rx="9" fill="#092C4C" />
         <path d="M17 6.5l7 2.5v4.8c0 4.3-2.9 7.6-7 8.7-4.1-1.1-7-4.4-7-8.7V9L17 6.5z" fill="#27AE60" />
         <path d="M13.7 15.4l2.3 2.3 4-4.3" stroke="#fff" strokeWidth="2.1" strokeLinecap="round" strokeLinejoin="round" />
