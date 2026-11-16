@@ -205,6 +205,7 @@ body {
   --fg-on-navy-strong: #CDD9E4;     /* emphasized body text on navy · 9.92:1 */
   --color-error-text: #C53A3A;      /* error text, invalid-field borders · 5.20:1 on white, 4.89:1 on #FFF6F6 */
   --border-ui: #7A8A99;             /* edges of controls (fields, outline buttons, linked cards) · 3.55:1 on white */
+  --border-ui-on-navy: #8AA0B4;     /* control edges on navy (fields, outline-light buttons) · 5.26:1 on #092C4C, 4.41:1 on the field fill */
 
   /* Retired for text. Kept as an alias so stragglers inherit the accessible value. */
   --fg-4: var(--fg-muted);          /* was #828282 · 3.84:1 */
@@ -292,20 +293,20 @@ h6, .h6 { font-family: var(--font-heading); font-size: var(--h6-size); line-heig
 .btn-action:hover, .btn-secondary:hover { background: var(--color-action-hover); transform: translateY(-1px); box-shadow: var(--shadow-action-hover); }
 .btn-action:disabled, .btn-secondary:disabled { opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: none; }
 
-.btn-outline { background: transparent; color: var(--color-primary); border: 2px solid var(--border-strong); }
+.btn-outline { background: transparent; color: var(--color-primary); border: 2px solid var(--border-ui); }
 .btn-outline:hover { background: var(--bg-2); border-color: var(--color-primary); }
 
 .btn-ghost { background: transparent; color: var(--color-primary); }
 .btn-ghost:hover { background: var(--color-primary-50); }
 
 /* ==========================================================================
-   Form inputs (per Guidelines: padding L/R 2x, T/B 1x; 4px radius; 1px grey border)
+   Form inputs (per Guidelines: padding L/R 2x, T/B 1x; 4px radius; 1px --border-ui border (3:1))
    ========================================================================== */
 .input-field, .input-field-full {
   height: 55px;
   padding: 1rem 2rem;
   border-radius: var(--radius-xs);
-  border: 1px solid var(--border-strong);
+  border: 1px solid var(--border-ui);
   font-family: var(--font-body);
   font-size: var(--body-size);
   line-height: var(--body-lh);
@@ -366,7 +367,8 @@ html { scroll-behavior: smooth; }
 .nav-links { display: flex; align-items: center; gap: 4px; list-style: none; margin: 0; padding: 0; }
 .nav-links a { font-family: var(--font-heading); font-weight: 600; font-size: 15px; color: var(--fg-2); text-decoration: none; padding: 10px 16px; border-radius: var(--radius-sm); transition: background var(--dur-fast) var(--ease-default), color var(--dur-fast) var(--ease-default); }
 .nav-links a:hover { background: var(--color-primary-50); color: var(--color-primary); }
-.nav-links a[aria-current="page"] { color: var(--color-primary); background: var(--color-primary-50); }
+.nav-links a[aria-current="page"] { color: var(--color-primary); background: none; box-shadow: inset 0 -3px 0 var(--color-primary); border-radius: 0; }
+.nav-links a[aria-current="page"]:hover { background: none; }
 .nav-right { display: flex; align-items: center; gap: 10px; }
 .nav-signin { font-family: var(--font-heading); font-weight: 600; font-size: 15px; color: var(--color-primary); text-decoration: none; padding: 10px 12px; }
 .nav-signin:hover { text-decoration: underline; }
@@ -425,15 +427,16 @@ section { position: relative; }
 .btn svg { width: 18px; height: 18px; }
 .btn-white { background: #fff; color: var(--color-primary); }
 .btn-white:hover { background: var(--color-primary-50); transform: translateY(-1px); box-shadow: var(--shadow-lg); }
-.btn-outline-light { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.4); }
+.btn-outline-light { background: transparent; color: #fff; border: 2px solid var(--border-ui-on-navy); }
 .btn-outline-light:hover { background: rgba(255,255,255,.1); border-color: #fff; }
 
 /* ==========================================================================
    Segment router (Home)
    ========================================================================== */
 .router { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.router-card { display: flex; flex-direction: column; gap: 14px; background: #fff; border: 1px solid var(--border-default); border-radius: var(--radius-xl); padding: 32px 28px 28px; text-decoration: none; color: inherit; transition: transform var(--dur-normal) var(--ease-default), box-shadow var(--dur-normal) var(--ease-default), border-color var(--dur-normal) var(--ease-default); }
-.router-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--color-primary-200); color: inherit; }
+/* Linked cards use --border-ui (WCAG 1.4.11); static cards keep --border-default */
+.router-card { display: flex; flex-direction: column; gap: 14px; background: #fff; border: 1px solid var(--border-ui); border-radius: var(--radius-xl); padding: 32px 28px 28px; text-decoration: none; color: inherit; transition: transform var(--dur-normal) var(--ease-default), box-shadow var(--dur-normal) var(--ease-default), border-color var(--dur-normal) var(--ease-default); }
+.router-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--color-primary); color: inherit; }
 .router-card .r-icon { width: 52px; height: 52px; border-radius: var(--radius-md); background: var(--color-primary-50); display: flex; align-items: center; justify-content: center; color: var(--color-primary); }
 .router-card .r-icon svg { width: 26px; height: 26px; }
 .router-card h3 { font-size: 1.35rem; margin: 0; color: var(--color-primary); }
@@ -752,7 +755,7 @@ section { position: relative; }
 .pf-two { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
 .pf-row { display:grid; gap:6px; }
 .pf-row > label { font-family:var(--font-heading); font-weight:700; font-size:13px; color:#dfe8f0; }
-.pf-row input[type=text], .pf-row input[type=email], .pf-row input[type=tel] { height:48px; border-radius:8px; border:1px solid rgba(255,255,255,.2); background:rgba(255,255,255,.06); color:#fff; padding:0 14px; font-family:var(--font-body); font-size:15px; }
+.pf-row input[type=text], .pf-row input[type=email], .pf-row input[type=tel] { height:48px; border-radius:8px; border:1px solid var(--border-ui-on-navy); background:rgba(255,255,255,.06); color:#fff; padding:0 14px; font-family:var(--font-body); font-size:15px; }
 .pf-row input::placeholder { color:#7f95a9; }
 .pf-row input:focus { outline:none; border-color:#4ade80; box-shadow:0 0 0 2px rgba(39,174,96,.3); }
 .pf-row input.invalid { border-color:#ff9a9a; background:rgba(235,87,87,.08); }
@@ -796,7 +799,7 @@ section { position: relative; }
 .cf-row { display:grid; gap:7px; }
 .cf-row label { font-family:var(--font-heading); font-weight:700; font-size:13.5px; color:var(--color-primary); }
 .cf-row label .opt { color:var(--fg-muted); font-weight:600; }
-.cf-row input, .cf-row select, .cf-row textarea { width:100%; border:1px solid var(--border-strong); border-radius:8px; padding:13px 14px; font-family:var(--font-body); font-size:15px; color:var(--fg-1); background:#fff; }
+.cf-row input, .cf-row select, .cf-row textarea { width:100%; border:1px solid var(--border-ui); border-radius:8px; padding:13px 14px; font-family:var(--font-body); font-size:15px; color:var(--fg-1); background:#fff; }
 .cf-row textarea { min-height:140px; resize:vertical; line-height:1.5; }
 .cf-row input::placeholder, .cf-row textarea::placeholder { color:var(--fg-placeholder); }
 .cf-row input:focus, .cf-row select:focus, .cf-row textarea:focus { outline:none; border-color:var(--color-action); box-shadow:0 0 0 2px rgba(23,112,61,.18); }
