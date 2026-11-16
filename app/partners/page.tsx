@@ -49,26 +49,26 @@ export default function PartnersPage() {
                   role="img"
                   aria-label="A CuroPay certified digital check made out to Riverside Home Care for $1,250.00, marked identity-verified with a QR code."
                 >
-                  <div className="sc-top">
+                  <div className="sc-top" aria-hidden="true">
                     <span className="sc-brand">CuroPay</span>
                     <span className="sc-cert">CERTIFIED</span>
                   </div>
-                  <div className="sc-line">
+                  <div className="sc-line" aria-hidden="true">
                     <span className="sc-lbl">Pay to the order of</span>
                     <span className="sc-val">Riverside Home Care</span>
                   </div>
-                  <div className="sc-line">
+                  <div className="sc-line" aria-hidden="true">
                     <span className="sc-lbl">Amount</span>
                     <span className="sc-num">$1,250.00</span>
                   </div>
-                  <div className="sc-foot">
+                  <div className="sc-foot" aria-hidden="true">
                     <div className="sc-qr"></div>
                     <div className="sc-sign">
                       <CheckSvg />
                       Identity-verified
                     </div>
                   </div>
-                  <span className="scene-badge">
+                  <span className="scene-badge" aria-hidden="true">
                     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                       <path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
                       <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />

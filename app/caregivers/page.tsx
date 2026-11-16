@@ -46,13 +46,13 @@ export default function CaregiversPage() {
                   role="img"
                   aria-label="CuroPay Limits & Approvals screen: a rule requiring the owner's approval for any single payout over $1,000, a co-sign rule for shared splits, and a delegate limited to $500."
                 >
-                  <div className="awtop">
+                  <div className="awtop" aria-hidden="true">
                     <i></i>
                     <i></i>
                     <i></i>
                     <b>app.curopay.com — Limits &amp; Approvals</b>
                   </div>
-                  <div className="awbody">
+                  <div className="awbody" aria-hidden="true">
                     <div className="aw-tabs">
                       <span className="on">Limits</span>
                       <span>Approvals</span>
@@ -181,15 +181,15 @@ export default function CaregiversPage() {
                 <div
                   className="appwin"
                   role="img"
-                  aria-label="CuroPay dashboard showing sent $3,941.00, received $37.00, $3,795.00 pending payouts, and zero unclaimed checks — each with an audit-ready record."
+                  aria-label="CuroPay Dashboard screen: 30-day totals for checks sent, received, pending payout, and unclaimed — each with an audit-ready record."
                 >
-                  <div className="awtop">
+                  <div className="awtop" aria-hidden="true">
                     <i></i>
                     <i></i>
                     <i></i>
                     <b>app.curopay.com — Dashboard</b>
                   </div>
-                  <div className="awbody">
+                  <div className="awbody" aria-hidden="true">
                     <div className="aw-head">
                       <div>
                         <div className="aw-eyebrow">Dashboard</div>
@@ -272,13 +272,13 @@ export default function CaregiversPage() {
                   role="img"
                   aria-label="CuroPay Household group 'Elm Street House' with an owner and two co-payers who can pay and approve shared payments."
                 >
-                  <div className="awtop">
+                  <div className="awtop" aria-hidden="true">
                     <i></i>
                     <i></i>
                     <i></i>
                     <b>app.curopay.com — Household group</b>
                   </div>
-                  <div className="awbody">
+                  <div className="awbody" aria-hidden="true">
                     <div className="aw-head">
                       <div>
                         <div className="aw-eyebrow">Household group</div>

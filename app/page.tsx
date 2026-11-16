@@ -31,15 +31,15 @@ export default function Home() {
                 <div
                   className="appwin"
                   role="img"
-                  aria-label="CuroPay 'Send a Check' screen: entering a $250.00 amount with the memo 'Home care — March', ready to continue to delivery."
+                  aria-label="CuroPay 'Send a Check' screen, step 1 of 5: entering a $250.00 amount with a memo, ready to continue to delivery."
                 >
-                  <div className="awtop">
+                  <div className="awtop" aria-hidden="true">
                     <i></i>
                     <i></i>
                     <i></i>
                     <b>app.curopay.com — Send a Check</b>
                   </div>
-                  <div className="awbody">
+                  <div className="awbody" aria-hidden="true">
                     <div className="aw-steps">
                       <span className="on">Amount</span>
                       <span>Delivery</span>
@@ -67,7 +67,7 @@ export default function Home() {
                 </div>
                 <p className="appshot-cap">
                   <CheckSvg />
-                  Create a check in a few steps — amount, memo, and who it&rsquo;s for.
+                  Create a check in five steps — amount, delivery, payee, funding, and review.
                 </p>
               </div>
             </div>
@@ -265,13 +265,13 @@ export default function Home() {
                   role="img"
                   aria-label="CuroPay Payees screen listing verified recipients — Riverside Home Care, City Utilities, and Meadow Pharmacy — with trust and status labels."
                 >
-                  <div className="awtop">
+                  <div className="awtop" aria-hidden="true">
                     <i></i>
                     <i></i>
                     <i></i>
                     <b>app.curopay.com — Payees</b>
                   </div>
-                  <div className="awbody">
+                  <div className="awbody" aria-hidden="true">
                     <div className="aw-head">
                       <div>
                         <div className="aw-eyebrow">Payees</div>
@@ -336,15 +336,15 @@ export default function Home() {
                 <div
                   className="appwin"
                   role="img"
-                  aria-label="CuroPay dashboard showing sent $3,941.00, received $37.00, $3,795.00 pending payouts, and zero unclaimed checks."
+                  aria-label="CuroPay Dashboard screen: 30-day totals for checks sent, received, pending payout, and unclaimed."
                 >
-                  <div className="awtop">
+                  <div className="awtop" aria-hidden="true">
                     <i></i>
                     <i></i>
                     <i></i>
                     <b>app.curopay.com — Dashboard</b>
                   </div>
-                  <div className="awbody">
+                  <div className="awbody" aria-hidden="true">
                     <div className="aw-head">
                       <div>
                         <div className="aw-eyebrow">Dashboard</div>

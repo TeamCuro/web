@@ -44,13 +44,13 @@ export default function SeniorsPage() {
                   role="img"
                   aria-label="CuroPay 'Send a Check' screen: entering a $250.00 amount with a memo, ready to continue — the account number never appears on the check."
                 >
-                  <div className="awtop">
+                  <div className="awtop" aria-hidden="true">
                     <i></i>
                     <i></i>
                     <i></i>
                     <b>app.curopay.com — Send a Check</b>
                   </div>
-                  <div className="awbody">
+                  <div className="awbody" aria-hidden="true">
                     <div className="aw-steps">
                       <span className="on">Amount</span>
                       <span>Delivery</span>
@@ -78,7 +78,7 @@ export default function SeniorsPage() {
                 </div>
                 <p className="appshot-cap">
                   <CheckSvg />
-                  Write your check — who it&rsquo;s for and the amount. Your account number stays private.
+                  Write your check in five steps — amount, delivery, payee, funding, and review. Your account number stays private.
                 </p>
               </div>
             </div>
