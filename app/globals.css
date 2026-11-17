@@ -171,7 +171,7 @@ body {
 }
 
 /* ==========================================================================
-   CuroPay marketing design-system tokens
+   Fidura marketing design-system tokens
    Additive to the Tailwind @theme above — only bare/semantic names not
    already produced by Tailwind's scaled tokens. --color-accent-* is
    intentionally scoped to .curopay-site (below) rather than :root, since
@@ -255,6 +255,8 @@ body {
 
 h1, .h1 { font-family: var(--font-heading); font-size: var(--h1-size); line-height: var(--h1-lh); font-weight: 700; letter-spacing: -0.01em; }
 h2, .h2 { font-family: var(--font-heading); font-size: var(--h2-size); line-height: var(--h2-lh); font-weight: 700; letter-spacing: -0.01em; }
+h1, h2, h3 { overflow-wrap: break-word; }
+@media (max-width: 600px) { h2, .h2 { font-size: 2rem; } }
 h3, .h3 { font-family: var(--font-heading); font-size: var(--h3-size); line-height: var(--h3-lh); font-weight: 700; }
 h4, .h4 { font-family: var(--font-heading); font-size: var(--h4-size); line-height: var(--h4-lh); font-weight: 600; }
 h5, .h5 { font-family: var(--font-heading); font-size: var(--h5-size); line-height: var(--h5-lh); font-weight: 600; }
@@ -333,7 +335,7 @@ h6, .h6 { font-family: var(--font-heading); font-size: var(--h6-size); line-heig
 
 
 /* ==========================================================================
-   Curo Marketing Site — shared layout & components
+   Fidura Marketing Site — shared layout & components
    Builds on colors_and_type.css (navy / orange / green, Montserrat + Roboto)
    ========================================================================== */
 
@@ -413,6 +415,15 @@ section { position: relative; }
 .hero .promise { font-size: clamp(2.4rem, 4.4vw, 3.75rem); line-height: 1.06; letter-spacing: -.02em; font-weight: 800; font-family: var(--font-heading); color: var(--color-primary); margin: 0 0 22px; text-wrap: balance; }
 .hero .tagline { display: inline-block; font-family: var(--font-heading); font-weight: 700; font-size: 15px; letter-spacing: .04em; color: var(--color-action); background: var(--color-action-50); border: 1px solid var(--color-accent-200); padding: 8px 16px; border-radius: var(--radius-pill); margin: 0 0 28px; }
 .hero .lede { max-width: 560px; margin: 0 0 32px; }
+.hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; }
+.hero-grid-even { grid-template-columns: 1fr 1fr; }
+.hero-grid > * { min-width: 0; }
+.grid-rev { grid-template-columns: .95fr 1.05fr; }
+.grid-9-11 { grid-template-columns: .9fr 1.1fr; }
+.hero-trust { list-style: none; margin: 28px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 14px 28px; }
+.hero-trust li { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 600; color: var(--color-primary); min-width: 0; overflow-wrap: anywhere; }
+.hero-trust svg { width: 22px; height: 22px; flex: none; color: var(--color-accent-600, #27AE60); }
+.hero-trust a { color: inherit; text-decoration: underline; text-underline-offset: 3px; display: inline-flex; align-items: center; min-height: 44px; margin: -10px 0; }
 
 .cta-row { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
 .cta-note { font-size: 14px; color: var(--fg-muted); margin: 16px 0 0; }
@@ -429,6 +440,7 @@ section { position: relative; }
    Buttons — extend colors_and_type.css .btn
    ========================================================================== */
 .btn { text-decoration: none; min-height: 52px; }
+@media (max-width: 600px) { .btn { white-space: normal; max-width: 100%; text-align: center; padding-left: 1.5rem; padding-right: 1.5rem; } }
 .btn:hover { text-decoration: none; }
 /* keep label legible on hover — override generic a:hover color */
 .btn-primary, .btn-primary:hover, .btn-action, .btn-action:hover, .btn-secondary, .btn-secondary:hover, .btn-white:hover, .btn-outline-light, .btn-outline-light:hover { color: inherit; }
@@ -460,6 +472,7 @@ section { position: relative; }
 .router-card.featured { border-color: var(--color-primary); box-shadow: var(--shadow-md); }
 .router-card .r-tag { position: absolute; top: 18px; right: 18px; font-family: var(--font-heading); font-weight: 700; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--color-action); background: var(--color-action-50); border: 1px solid var(--color-accent-200); padding: 4px 10px; border-radius: var(--radius-pill); }
 .router-card { position: relative; }
+.router-2 { grid-template-columns: repeat(2, 1fr); max-width: 760px; margin: 0 auto; }
 
 /* ==========================================================================
    How It Works — 3 steps
@@ -555,15 +568,17 @@ section { position: relative; }
 .footer-brand .brand-word { color: #fff; }
 .footer-brand p { color: #7f95a9; font-size: 14.5px; line-height: 1.6; margin: 18px 0 0; max-width: 280px; }
 .footer-sec h4 { font-family: var(--font-heading); font-weight: 700; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: #cdd9e4; margin: 0 0 18px; }
-.footer-sec ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
-.footer-sec a { color: #93a7ba; text-decoration: none; font-size: 14.5px; }
-.footer-sec a:hover { color: #fff; }
+.footer-sec ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0; }
+.footer-sec a, .footer-legal a, .footer-brand .brand { display: inline-flex; align-items: center; min-height: 44px; }
+.footer-sec a { color: #93a7ba; text-decoration: underline; text-underline-offset: 3px; font-size: 14.5px; }
+.footer-sec a:hover { color: #fff; text-decoration: underline; }
 .footer-security { display: flex; align-items: center; gap: 10px; margin-top: 48px; padding-top: 28px; border-top: 1px solid rgba(255,255,255,.1); color: #cdd9e4; font-size: 14px; }
 .footer-security svg { width: 18px; height: 18px; color: #4ade80; flex: none; }
 .footer-legal { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; margin-top: 24px; color: #6d8296; font-size: 13px; }
-.footer-legal a { color: #93a7ba; text-decoration: none; }
-.footer-legal a:hover { color: #fff; }
-.footer-legal .legal-links { display: flex; flex-wrap: wrap; gap: 18px; }
+.footer-legal a { color: #93a7ba; text-decoration: underline; text-underline-offset: 3px; }
+.footer-legal a:hover { color: #fff; text-decoration: underline; }
+.footer-legal { align-items: center; }
+.footer-legal .legal-links { display: flex; flex-wrap: wrap; gap: 0 18px; }
 
 /* ==========================================================================
    Utility
@@ -577,7 +592,7 @@ section { position: relative; }
    Responsive
    ========================================================================== */
 @media (max-width: 900px) {
-  .router, .steps, .proof-grid, .proof-grid.cols-2, .tstack, .anchor-row, .footer-grid { grid-template-columns: 1fr; }
+  .router, .router-2, .steps, .proof-grid, .proof-grid.cols-2, .tstack, .anchor-row, .footer-grid { grid-template-columns: 1fr; }
   .objection, .cmp-grid { grid-template-columns: 1fr; }
   .objection .a { border-left: 0; border-top: 1px solid var(--border-default); }
   .cmp-col.them { border-right: 0; border-bottom: 1px solid var(--border-default); }
@@ -585,6 +600,13 @@ section { position: relative; }
   .cta-band { padding: 44px 28px; }
   .sec { padding: 64px 0; }
   .footer-grid { gap: 32px; }
+  .hero-grid, .hero-grid-even, .grid-rev, .grid-9-11 { grid-template-columns: 1fr; gap: 40px; }
+  .hero-trust { flex-direction: column; flex-wrap: nowrap; gap: 14px; }
+  .router-card.featured { padding-top: 56px; }
+  .hero .promise, .hero .lede { overflow-wrap: break-word; }
+  .hero .tagline, .hero .eyebrow { max-width: 100%; }
+  .appwin .awtop b { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .aw-btns { flex-wrap: wrap; }
 }
 
 /* ==========================================================================
@@ -677,6 +699,7 @@ section { position: relative; }
 .showcase + .showcase { margin-top:72px; }
 @media (max-width:900px) {
   .showcase { grid-template-columns:1fr; gap:32px; }
+  .showcase > * { min-width:0; }
   .aw-cards { grid-template-columns:1fr 1fr; }
 }
 
@@ -904,4 +927,21 @@ section { position: relative; }
   .mobile-nav.open { display: block; }
   .mobile-nav .nav-links,
   .mobile-nav .nav-right { display: flex; }
+}
+
+/* FE-106 Task 2: phone tables and compare padding */
+@media (max-width:600px){
+  .table-wrap { overflow:visible; border:0; box-shadow:none; background:transparent; }
+  .fees { min-width:0; }
+  .fees thead { position:absolute; width:1px; height:1px; margin:-1px; padding:0; border:0; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+  .fees, .fees tbody, .fees tr, .fees td { display:block; width:100%; }
+  .fees tr { border:1px solid var(--border-default); border-radius:var(--radius-lg); background:#fff; box-shadow:var(--shadow-sm); margin-bottom:14px; padding:6px 0; }
+  .fees th, .fees td { padding:10px 18px; }
+  .fees thead th { margin:-1px; padding:0; border:0; }
+  .fees td, .fees tbody tr:last-child td { border-bottom:0; }
+  .fees td::before { content:attr(data-label) / ""; display:block; font-family:var(--font-heading); font-weight:700; font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--fg-3); margin-bottom:3px; }
+  .fees td.method::before { display:none; }
+  .fees .fee { white-space:normal; }
+  .cmp-head { padding:24px 20px; }
+  .cmp-col { padding:28px 20px; }
 }

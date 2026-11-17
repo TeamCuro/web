@@ -5,9 +5,9 @@ import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact | CuroPay",
+  title: "Contact | Fidura",
   description:
-    "Questions that aren't about a specific payment or a partnership? Send them our way — or use the shortcuts to sign in, become a partner, or see how CuroPay works.",
+    "Questions that aren't about a specific payment or a partnership? Send them our way — or use the shortcuts to sign in, become a partner, or see how Fidura works.",
 };
 
 export default function ContactPage() {
@@ -26,7 +26,7 @@ export default function ContactPage() {
             </h1>
             <p className="lede" style={{ margin: "0 auto" }}>
               Questions that aren&rsquo;t about a specific payment or a partnership? Send them our way. If you
-              already use CuroPay or you&rsquo;re exploring a partnership, the shortcuts below will get you an
+              already use Fidura or you&rsquo;re exploring a partnership, the shortcuts below will get you an
               answer faster.
             </p>
           </div>
@@ -87,7 +87,7 @@ export default function ContactPage() {
                   <div>
                     <h3>Mailing address</h3>
                     <p>
-                      CuroPay, Inc.
+                      Curo Co LLC
                       <br />
                       600 Boulevard South, Ste 104
                       <br />
@@ -98,7 +98,7 @@ export default function ContactPage() {
                 <div className="route-card">
                   <h4>Looking for something specific?</h4>
                   <div className="rline">
-                    <span>Already a CuroPay user</span>
+                    <span>Already a Fidura user</span>
                     <a href="https://app.getcuro.com/login">Sign in ›</a>
                   </div>
                   <div className="rline">
@@ -106,7 +106,7 @@ export default function ContactPage() {
                     <Link href="/partners">Become a partner ›</Link>
                   </div>
                   <div className="rline">
-                    <span>New to CuroPay</span>
+                    <span>New to Fidura</span>
                     <Link href="/#how">See how it works ›</Link>
                   </div>
                 </div>

@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "For Seniors | CuroPay",
+  title: "For Seniors | Fidura",
   description:
     "Keep sending checks exactly the way you always have — now with a verified identity behind every one, and a real person to call if anything is unclear.",
 };
@@ -24,7 +24,7 @@ export default function SeniorsPage() {
         {/* HERO */}
         <section className="hero">
           <div className="wrap">
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 56, alignItems: "center" }}>
+            <div className="hero-grid hero-grid-even">
               <div>
                 <span className="eyebrow">For Seniors</span>
                 <h1 className="promise">The same check you trust — just safer.</h1>
@@ -37,18 +37,28 @@ export default function SeniorsPage() {
                     Create your account
                   </a>
                 </div>
+                <ul className="hero-trust" role="list" aria-label="Why you can trust Fidura">
+                  <li>
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M12 3l7 3v5c0 4.5-3 8.2-7 10-4-1.8-7-5.5-7-10V6l7-3z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" /><path d="M8.8 12l2.3 2.3 4.2-4.6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                    <span>Verified identity</span>
+                  </li>
+                  <li>
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M12 3l7 3v5c0 4.5-3 8.2-7 10-4-1.8-7-5.5-7-10V6l7-3z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" /><path d="M8.8 12l2.3 2.3 4.2-4.6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                    <span>A real person to call</span>
+                  </li>
+                </ul>
               </div>
               <div className="appshot">
                 <div
                   className="appwin"
                   role="img"
-                  aria-label="CuroPay 'Send a Check' screen: entering a $250.00 amount with a memo, ready to continue — the account number never appears on the check."
+                  aria-label="Fidura 'Send a Check' screen: entering a $250.00 amount with a memo, ready to continue — the account number never appears on the check."
                 >
                   <div className="awtop" aria-hidden="true">
                     <i></i>
                     <i></i>
                     <i></i>
-                    <b>app.curopay.com — Send a Check</b>
+                    <b>app.getcuro.com — Send a Check</b>
                   </div>
                   <div className="awbody" aria-hidden="true">
                     <div className="aw-steps">
@@ -118,7 +128,7 @@ export default function SeniorsPage() {
               <span className="eyebrow" style={{ justifyContent: "center" }}>
                 Why it&rsquo;s safer
               </span>
-              <h2>What every CuroPay check gives you.</h2>
+              <h2>What every Fidura check gives you.</h2>
             </div>
             <div className="proof-grid">
               <div className="proof">

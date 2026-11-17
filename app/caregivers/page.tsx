@@ -4,9 +4,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "For Caregivers & Fiduciaries | CuroPay",
+  title: "For Caregivers & Fiduciaries | Fidura",
   description:
-    "CuroPay is built for trustees, POAs, and caregivers who move money on someone else's behalf — with role-based approvals, audit-ready receipts, and verified identity on every transfer.",
+    "Fidura is built for trustees, POAs, and caregivers who move money on someone else's behalf — with role-based approvals, audit-ready receipts, and verified identity on every transfer.",
 };
 
 function CheckSvg() {
@@ -25,12 +25,12 @@ export default function CaregiversPage() {
         {/* HERO — written for someone arriving via a trusted referral */}
         <section className="hero">
           <div className="wrap">
-            <div style={{ display: "grid", gridTemplateColumns: "1.05fr .95fr", gap: 56, alignItems: "center" }}>
+            <div className="hero-grid">
               <div>
                 <span className="eyebrow">For Caregivers &amp; Fiduciaries</span>
                 <h1 className="promise">Move money for someone else, with proof and control.</h1>
                 <p className="lede">
-                  If your attorney, CPA, or bank pointed you here — you&rsquo;re in the right place. CuroPay is built
+                  If your attorney, CPA, or bank pointed you here — you&rsquo;re in the right place. Fidura is built
                   for trustees, POAs, and caregivers who move money on someone else&rsquo;s behalf and have to
                   account for every dollar.
                 </p>
@@ -44,13 +44,13 @@ export default function CaregiversPage() {
                 <div
                   className="appwin"
                   role="img"
-                  aria-label="CuroPay Limits & Approvals screen: a rule requiring the owner's approval for any single payout over $1,000, a co-sign rule for shared splits, and a delegate limited to $500."
+                  aria-label="Fidura Limits & Approvals screen: a rule requiring the owner's approval for any single payout over $1,000, a co-sign rule for shared splits, and a delegate limited to $500."
                 >
                   <div className="awtop" aria-hidden="true">
                     <i></i>
                     <i></i>
                     <i></i>
-                    <b>app.curopay.com — Limits &amp; Approvals</b>
+                    <b>app.getcuro.com — Limits &amp; Approvals</b>
                   </div>
                   <div className="awbody" aria-hidden="true">
                     <div className="aw-tabs">
@@ -176,18 +176,18 @@ export default function CaregiversPage() {
         {/* HOW IT FITS THE REAL WORKFLOW */}
         <section className="sec">
           <div className="wrap">
-            <div style={{ display: "grid", gridTemplateColumns: ".95fr 1.05fr", gap: 56, alignItems: "center" }}>
+            <div className="hero-grid grid-rev">
               <div className="appshot">
                 <div
                   className="appwin"
                   role="img"
-                  aria-label="CuroPay Dashboard screen: 30-day totals for checks sent, received, pending payout, and unclaimed — each with an audit-ready record."
+                  aria-label="Fidura Dashboard screen: 30-day totals for checks sent, received, pending payout, and unclaimed — each with an audit-ready record."
                 >
                   <div className="awtop" aria-hidden="true">
                     <i></i>
                     <i></i>
                     <i></i>
-                    <b>app.curopay.com — Dashboard</b>
+                    <b>app.getcuro.com — Dashboard</b>
                   </div>
                   <div className="awbody" aria-hidden="true">
                     <div className="aw-head">
@@ -270,13 +270,13 @@ export default function CaregiversPage() {
                 <div
                   className="appwin"
                   role="img"
-                  aria-label="CuroPay Household group 'Elm Street House' with an owner and two co-payers who can pay and approve shared payments."
+                  aria-label="Fidura Household group 'Elm Street House' with an owner and two co-payers who can pay and approve shared payments."
                 >
                   <div className="awtop" aria-hidden="true">
                     <i></i>
                     <i></i>
                     <i></i>
-                    <b>app.curopay.com — Household group</b>
+                    <b>app.getcuro.com — Household group</b>
                   </div>
                   <div className="awbody" aria-hidden="true">
                     <div className="aw-head">
@@ -356,7 +356,7 @@ export default function CaregiversPage() {
               </figure>
               <figure className="tcard" style={{ borderStyle: "solid", borderColor: "var(--border-default)", background: "var(--color-white)" }}>
                 <blockquote className="t-quote" style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "var(--fg-2)", lineHeight: 1.62, margin: 0 }}>
-                  &ldquo;Before CuroPay, every payment for my mom meant a text to my brother and a folder of
+                  &ldquo;Before Fidura, every payment for my mom meant a text to my brother and a folder of
                   receipts. Now the approval happens before the money moves, and my sister sees exactly what cleared
                   — the arguments stopped.&rdquo;
                 </blockquote>

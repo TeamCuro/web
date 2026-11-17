@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Fees | CuroPay",
+  title: "Fees | Fidura",
   description:
     "Simple, transparent fees. Send by bank for free. Pay only when using card-based or faster payment options.",
 };
@@ -51,84 +51,84 @@ export default function PricingPage() {
             </div>
 
             <div className="table-wrap">
-              <table className="fees">
-                <thead>
-                  <tr>
-                    <th style={{ width: "44%" }}>Method</th>
-                    <th style={{ width: "28%" }}>Fee</th>
-                    <th style={{ width: "28%" }}>Who pays</th>
+              <table className="fees" role="table">
+                <thead role="rowgroup">
+                  <tr role="row">
+                    <th role="columnheader" style={{ width: "44%" }}>Method</th>
+                    <th role="columnheader" style={{ width: "28%" }}>Fee</th>
+                    <th role="columnheader" style={{ width: "28%" }}>Who pays</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <td className="method">
+                <tbody role="rowgroup">
+                  <tr role="row">
+                    <td role="cell" className="method" data-label="Method">
                       Bank-funded check
                       <small>Fund a check from a linked bank account (ACH)</small>
                     </td>
-                    <td className="fee">
+                    <td role="cell" className="fee" data-label="Fee">
                       <span className="fee-free">
                         <CheckSvg />
                         Free
                       </span>
                     </td>
-                    <td className="who">—</td>
+                    <td role="cell" className="who" data-label="Who pays">—</td>
                   </tr>
-                  <tr>
-                    <td className="method">
+                  <tr role="row">
+                    <td role="cell" className="method" data-label="Method">
                       Card-funded check
                       <small>Fund a check with a debit or prepaid card</small>
                     </td>
-                    <td className="fee">
+                    <td role="cell" className="fee" data-label="Fee">
                       2.9% + $0.30
                       <small>
                         per transaction
                       </small>
                     </td>
-                    <td className="who">Sender, when funding by card</td>
+                    <td role="cell" className="who" data-label="Who pays">Sender, when funding by card</td>
                   </tr>
-                  <tr>
-                    <td className="method">
+                  <tr role="row">
+                    <td role="cell" className="method" data-label="Method">
                       Standard payout
                       <small>Recipient receives funds by ACH</small>
                     </td>
-                    <td className="fee">
+                    <td role="cell" className="fee" data-label="Fee">
                       <span className="fee-free">
                         <CheckSvg />
                         Free
                       </span>
                     </td>
-                    <td className="who">—</td>
+                    <td role="cell" className="who" data-label="Who pays">—</td>
                   </tr>
-                  <tr>
-                    <td className="method">
+                  <tr role="row">
+                    <td role="cell" className="method" data-label="Method">
                       Instant payout
                       <small>Recipient chooses instant delivery to a debit card</small>
                     </td>
-                    <td className="fee">1.5%</td>
-                    <td className="who">Recipient — deducted from their payment</td>
+                    <td role="cell" className="fee" data-label="Fee">1.5%</td>
+                    <td role="cell" className="who" data-label="Who pays">Recipient — deducted from their payment</td>
                   </tr>
-                  <tr>
-                    <td className="method">
-                      CuroPay Wallet payout <span className="tag soon">Coming soon</span>
-                      <small>Recipient keeps funds in a CuroPay Wallet</small>
+                  <tr role="row">
+                    <td role="cell" className="method" data-label="Method">
+                      Fidura Wallet payout <span className="tag soon">Coming soon</span>
+                      <small>Recipient keeps funds in a Fidura Wallet</small>
                     </td>
-                    <td className="fee">
+                    <td role="cell" className="fee" data-label="Fee">
                       <span className="fee-free">
                         <CheckSvg />
                         Free
                       </span>
                     </td>
-                    <td className="who">Recipient</td>
+                    <td role="cell" className="who" data-label="Who pays">Recipient</td>
                   </tr>
-                  <tr>
-                    <td className="method">
+                  <tr role="row">
+                    <td role="cell" className="method" data-label="Method">
                       Physical check delivery <span className="tag tbd">Pricing coming soon</span>
                       <small>We print and mail a check on your behalf</small>
                     </td>
-                    <td className="fee fee-pending">
+                    <td role="cell" className="fee fee-pending" data-label="Fee">
                       Not yet published
                     </td>
-                    <td className="who">You&rsquo;ll see the exact fee before you confirm</td>
+                    <td role="cell" className="who" data-label="Who pays">You&rsquo;ll see the exact fee before you confirm</td>
                   </tr>
                 </tbody>
               </table>

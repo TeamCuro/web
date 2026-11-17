@@ -41,13 +41,13 @@ export default function Header({
   return (
     <header className="site-nav">
       <div className="wrap nav-inner">
-        <Link className="brand" href="/" aria-label="CuroPay home">
+        <Link className="brand" href="/" aria-label="Fidura home">
           <svg className="brand-mark" viewBox="0 0 34 34" fill="none" aria-hidden="true" focusable="false">
             <rect x="1" y="1" width="32" height="32" rx="9" fill="#092C4C" />
             <path d="M17 6.5l7 2.5v4.8c0 4.3-2.9 7.6-7 8.7-4.1-1.1-7-4.4-7-8.7V9L17 6.5z" fill="#27AE60" />
             <path d="M13.7 15.4l2.3 2.3 4-4.3" stroke="#fff" strokeWidth="2.1" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
-          <span className="brand-word">CuroPay</span>
+          <span className="brand-word">Fidura</span>
         </Link>
         <nav aria-label="Primary">
           <ul className="nav-links">

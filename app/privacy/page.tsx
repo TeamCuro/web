@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Privacy Policy | Curo",
-  description: "Privacy Policy for Curo's early-access payment platform",
+  title: "Privacy Policy | Fidura",
+  description: "Privacy Policy for Fidura's early-access payment platform",
 };
 
 const sectionClass = "mb-12";
@@ -21,7 +21,7 @@ export default function PrivacyPolicy() {
               <div className="h-10 w-10 bg-primary-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-xl">C</span>
               </div>
-              <span className="text-2xl font-bold text-secondary-900">Curo</span>
+              <span className="text-2xl font-bold text-secondary-900">Fidura</span>
             </Link>
           </div>
         </nav>
@@ -43,10 +43,10 @@ export default function PrivacyPolicy() {
             <section className={sectionClass}>
               <h2 className={headingClass}>Overview</h2>
               <p className={paragraphClass}>
-                This Privacy Policy describes how Curo Co LLC (“Curo,” “we,” “us,” or “our”) collects, uses, and discloses personal information when you use our website and early-access services at GetCuro.com (the “Platform”), or otherwise communicate with us (collectively, the “Services”).
+                This Privacy Policy describes how Curo Co LLC (“Fidura,” “we,” “us,” or “our”) collects, uses, and discloses personal information when you use our website and early-access services at GetCuro.com (the “Platform”), or otherwise communicate with us (collectively, the “Services”).
               </p>
               <p className={paragraphClass}>
-                Curo is developing a payment platform that will enable users to send and receive digital checks (e-checks) and physical checks with QR codes. This Policy applies to our current early-access offering and will be updated as additional features become available. For purposes of this Policy, “you” and “your” means you as a user of the Services, whether you are a waitlist registrant, sender, recipient, trustee, caregiver, or other individual whose information we have collected.
+                Fidura is developing a payment platform that will enable users to send and receive digital checks (e-checks) and physical checks with QR codes. This Policy applies to our current early-access offering and will be updated as additional features become available. For purposes of this Policy, “you” and “your” means you as a user of the Services, whether you are a waitlist registrant, sender, recipient, trustee, caregiver, or other individual whose information we have collected.
               </p>
               <p className="text-secondary-700 leading-relaxed">
                 By using or accessing the Services, you agree to the collection, use, and disclosure of your information as described in this Privacy Policy. If you do not agree, please do not use or access the Services.
@@ -63,7 +63,7 @@ export default function PrivacyPolicy() {
             <section className={sectionClass}>
               <h2 className={headingClass}>What Personal Information We Collect</h2>
               <p className={paragraphClass}>
-                The information below reflects what our waitlist and account-registration flow is designed to collect as the Platform&apos;s features roll out. At this time, Curo is in early access and does not yet collect the identity verification (KYC) or payment information described below; this information will be collected once payment features requiring identity verification and payment processing become available to you.
+                The information below reflects what our waitlist and account-registration flow is designed to collect as the Platform&apos;s features roll out. At this time, Fidura is in early access and does not yet collect the identity verification (KYC) or payment information described below; this information will be collected once payment features requiring identity verification and payment processing become available to you.
               </p>
               <h3 className={subheadingClass}>Information We Collect Directly From You</h3>
               <p className={paragraphClass}><strong>Account Information:</strong></p>
@@ -166,7 +166,7 @@ export default function PrivacyPolicy() {
               <h3 className={subheadingClass}>Legal and Safety</h3>
               <ul className={listClass}>
                 <li>To comply with law, regulation, legal process, or governmental request</li>
-                <li>To protect the rights, property, or safety of Curo, our users, or others</li>
+                <li>To protect the rights, property, or safety of Fidura, our users, or others</li>
               </ul>
               <div className="bg-accent-50 border-l-4 border-accent-600 p-6">
                 <p className="text-sm text-accent-800">We do not sell your personal information to third parties.</p>
@@ -222,7 +222,7 @@ export default function PrivacyPolicy() {
               <h3 className={subheadingClass}>California Residents</h3>
               <p className={paragraphClass}>Under the California Consumer Privacy Act, as amended by the California Privacy Rights Act (CCPA/CPRA), California residents have the rights described above, including the right to know, delete, correct, and limit use of sensitive personal information, and the right to opt out of the “sale” or “sharing” of personal information. We do not sell personal information, and we do not currently share personal information for cross-context behavioral advertising. You may designate an authorized agent to make a request on your behalf, subject to identity verification.</p>
               <h3 className={subheadingClass}>Colorado, Connecticut, and Virginia Residents</h3>
-              <p className={paragraphClass}>Residents of Colorado, Connecticut, and Virginia have similar rights under the Colorado Privacy Act, Connecticut Data Privacy Act, and Virginia Consumer Data Protection Act, including rights to access, correct, delete, and obtain a portable copy of personal information, and to opt out of targeted advertising, the sale of personal information, or certain profiling. Curo recognizes and will honor universal opt-out preference signals, including Global Privacy Control, as a valid request to opt out of applicable processing.</p>
+              <p className={paragraphClass}>Residents of Colorado, Connecticut, and Virginia have similar rights under the Colorado Privacy Act, Connecticut Data Privacy Act, and Virginia Consumer Data Protection Act, including rights to access, correct, delete, and obtain a portable copy of personal information, and to opt out of targeted advertising, the sale of personal information, or certain profiling. Fidura recognizes and will honor universal opt-out preference signals, including Global Privacy Control, as a valid request to opt out of applicable processing.</p>
               <h3 className={subheadingClass}>Other States</h3>
               <p className="text-secondary-700 leading-relaxed">Residents of other states with comprehensive consumer privacy laws now or in the future may have similar rights. Contact us at privacy@getcuro.com to exercise your rights, and we will honor applicable requirements based on your state of residence.</p>
             </section>
@@ -261,8 +261,8 @@ export default function PrivacyPolicy() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
           <p className="text-sm text-secondary-200">&copy; 2026 Curo Co LLC. All rights reserved.</p>
           <div className="mt-4 flex justify-center space-x-6">
-            <Link href="/privacy" className="text-sm text-secondary-200 hover:text-white">Privacy Policy</Link>
-            <Link href="/terms" className="text-sm text-secondary-200 hover:text-white">Terms of Service</Link>
+            <Link href="/privacy" className="inline-flex min-h-11 items-center text-sm text-secondary-200 underline underline-offset-2 hover:text-white">Privacy Policy</Link>
+            <Link href="/terms" className="inline-flex min-h-11 items-center text-sm text-secondary-200 underline underline-offset-2 hover:text-white">Terms of Service</Link>
           </div>
         </div>
       </footer>

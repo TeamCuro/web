@@ -43,7 +43,7 @@ export default function PartnerForm() {
 
     setStatus("sending");
     setFormError("");
-    const result = await submitLead({ name, company, email, phone, _subject: "New CuroPay Partner Inquiry" });
+    const result = await submitLead({ name, company, email, phone, _subject: "New Fidura Partner Inquiry" });
     if (result.ok) {
       setStatus("sent");
       form.reset();

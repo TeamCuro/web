@@ -53,7 +53,7 @@ export default function ContactForm() {
 
     setStatus("sending");
     setFormError("");
-    const result = await submitLead({ name, email, phone, topic, message, _subject: "New CuroPay Contact Inquiry" });
+    const result = await submitLead({ name, email, phone, topic, message, _subject: "New Fidura Contact Inquiry" });
     if (result.ok) {
       setStatus("sent");
       form.reset();

@@ -10,12 +10,12 @@ export default function Home() {
         {/* HERO */}
         <section className="hero">
           <div className="wrap">
-            <div style={{ display: "grid", gridTemplateColumns: "1.05fr .95fr", gap: 56, alignItems: "center" }}>
+            <div className="hero-grid">
               <div>
                 <span className="tagline">Certified money, familiar as a check</span>
                 <h1 className="promise">The trust of a certified check, brought to digital money.</h1>
                 <p className="lede">
-                  CuroPay replaces the paper check with an identity-verified, funds-certified digital equivalent —
+                  Fidura replaces the paper check with an identity-verified, funds-certified digital equivalent —
                   printable, mailable, or sent instantly — without ever exposing an account or routing number.
                 </p>
                 <div className="cta-row" id="signup">
@@ -26,18 +26,32 @@ export default function Home() {
                     See how it works
                   </a>
                 </div>
+                <ul className="hero-trust" role="list" aria-label="Why you can trust Fidura">
+                  <li>
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M12 3l7 3v5c0 4.5-3 8.2-7 10-4-1.8-7-5.5-7-10V6l7-3z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" /><path d="M8.8 12l2.3 2.3 4.2-4.6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                    <span>Payments processed by Stripe</span>
+                  </li>
+                  <li>
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M12 3l7 3v5c0 4.5-3 8.2-7 10-4-1.8-7-5.5-7-10V6l7-3z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" /><path d="M8.8 12l2.3 2.3 4.2-4.6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                    <span>Every sender&rsquo;s ID verified</span>
+                  </li>
+                  <li>
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" /></svg>
+                    <span>Real people: <a href="tel:+12562131733">(256) 213-1733</a></span>
+                  </li>
+                </ul>
               </div>
               <div className="appshot">
                 <div
                   className="appwin"
                   role="img"
-                  aria-label="CuroPay 'Send a Check' screen, step 1 of 5: entering a $250.00 amount with a memo, ready to continue to delivery."
+                  aria-label="Fidura 'Send a Check' screen, step 1 of 5: entering a $250.00 amount with a memo, ready to continue to delivery."
                 >
                   <div className="awtop" aria-hidden="true">
                     <i></i>
                     <i></i>
                     <i></i>
-                    <b>app.curopay.com — Send a Check</b>
+                    <b>app.getcuro.com — Send a Check</b>
                   </div>
                   <div className="awbody" aria-hidden="true">
                     <div className="aw-steps">
@@ -79,9 +93,9 @@ export default function Home() {
           <div className="wrap">
             <div className="sec-head center" style={{ marginBottom: 44 }}>
               <h2>Which one sounds like you?</h2>
-              <p>CuroPay works a little differently depending on why you&rsquo;re moving money. Start where you fit.</p>
+              <p>Fidura works a little differently depending on why you&rsquo;re moving money. Start where you fit.</p>
             </div>
-            <div className="router" style={{ gridTemplateColumns: "repeat(2,1fr)", maxWidth: 760, margin: "0 auto" }}>
+            <div className="router router-2">
               <Link className="router-card featured" href="/caregivers">
                 <span className="r-tag">Most common</span>
                 <span className="r-icon">
@@ -149,7 +163,7 @@ export default function Home() {
                 <span className="step-n"></span>
                 <h3>Create</h3>
                 <p>
-                  Enter the amount and who it&rsquo;s for. CuroPay verifies your identity and certifies the funds
+                  Enter the amount and who it&rsquo;s for. Fidura verifies your identity and certifies the funds
                   before anything moves — no account or routing number is ever exposed.
                 </p>
               </div>
@@ -173,11 +187,11 @@ export default function Home() {
           </div>
         </section>
 
-        {/* WHY CURO */}
+        {/* WHY FIDURA */}
         <section className="sec bg-tint">
           <div className="wrap">
             <div className="sec-head" style={{ marginBottom: 48 }}>
-              <span className="eyebrow">Why CuroPay</span>
+              <span className="eyebrow">Why Fidura</span>
               <h2>Proof and control, built into the money itself.</h2>
             </div>
             <div className="proof-grid">
@@ -263,13 +277,13 @@ export default function Home() {
                 <div
                   className="appwin"
                   role="img"
-                  aria-label="CuroPay Payees screen listing verified recipients — Riverside Home Care, City Utilities, and Meadow Pharmacy — with trust and status labels."
+                  aria-label="Fidura Payees screen listing verified recipients — Riverside Home Care, City Utilities, and Meadow Pharmacy — with trust and status labels."
                 >
                   <div className="awtop" aria-hidden="true">
                     <i></i>
                     <i></i>
                     <i></i>
-                    <b>app.curopay.com — Payees</b>
+                    <b>app.getcuro.com — Payees</b>
                   </div>
                   <div className="awbody" aria-hidden="true">
                     <div className="aw-head">
@@ -336,13 +350,13 @@ export default function Home() {
                 <div
                   className="appwin"
                   role="img"
-                  aria-label="CuroPay Dashboard screen: 30-day totals for checks sent, received, pending payout, and unclaimed."
+                  aria-label="Fidura Dashboard screen: 30-day totals for checks sent, received, pending payout, and unclaimed."
                 >
                   <div className="awtop" aria-hidden="true">
                     <i></i>
                     <i></i>
                     <i></i>
-                    <b>app.curopay.com — Dashboard</b>
+                    <b>app.getcuro.com — Dashboard</b>
                   </div>
                   <div className="awbody" aria-hidden="true">
                     <div className="aw-head">
@@ -406,7 +420,7 @@ export default function Home() {
             <div className="tstack">
               <figure className="tcard" style={{ borderStyle: "solid", borderColor: "var(--border-default)", background: "var(--color-white)" }}>
                 <blockquote className="t-quote" style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "var(--fg-2)", lineHeight: 1.62, margin: 0 }}>
-                  &ldquo;Before CuroPay, every payment for my mom meant a text to my brother and a folder of
+                  &ldquo;Before Fidura, every payment for my mom meant a text to my brother and a folder of
                   receipts. Now the approval happens before the money moves, and my sister sees exactly what cleared
                   — the arguments stopped.&rdquo;
                 </blockquote>
@@ -451,7 +465,7 @@ export default function Home() {
             <div className="cta-band">
               <h2>Ready to move money with proof attached?</h2>
               <p>
-                Managing money — for yourself or for someone else — is a real responsibility. CuroPay is built to
+                Managing money — for yourself or for someone else — is a real responsibility. Fidura is built to
                 make it easier.
               </p>
               <div className="cta-row" style={{ justifyContent: "center" }}>

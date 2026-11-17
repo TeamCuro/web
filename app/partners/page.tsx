@@ -4,9 +4,9 @@ import PartnerForm from "@/components/PartnerForm";
 import PartnerNav from "@/components/PartnerNav";
 
 export const metadata: Metadata = {
-  title: "Partners | CuroPay",
+  title: "Partners | Fidura",
   description:
-    "CuroPay partners with elder-law attorneys, CPAs, fiduciaries, community banks, and credit unions to protect the clients and members they already serve.",
+    "Fidura partners with elder-law attorneys, CPAs, fiduciaries, community banks, and credit unions to protect the clients and members they already serve.",
 };
 
 function CheckSvg() {
@@ -27,10 +27,10 @@ export default function PartnersPage() {
           <div className="wrap">
             <div className="partner-hero-grid">
               <div>
-                <span className="eyebrow">Partner with CuroPay</span>
+                <span className="eyebrow">Partner with Fidura</span>
                 <h1>Protect the clients who trust you — and grow the relationship while you do it.</h1>
                 <p>
-                  CuroPay is a certified digital-check platform for the caregivers, fiduciaries, and older clients
+                  Fidura is a certified digital-check platform for the caregivers, fiduciaries, and older clients
                   you already serve. Recommend it with confidence, cut the fraud and paperwork that lands back on
                   your desk, and stay the name your clients count on.
                 </p>
@@ -47,10 +47,10 @@ export default function PartnersPage() {
                 <div
                   className="scene-check"
                   role="img"
-                  aria-label="A CuroPay certified digital check made out to Riverside Home Care for $1,250.00, marked identity-verified with a QR code."
+                  aria-label="A Fidura certified digital check made out to Riverside Home Care for $1,250.00, marked identity-verified with a QR code."
                 >
                   <div className="sc-top" aria-hidden="true">
-                    <span className="sc-brand">CuroPay</span>
+                    <span className="sc-brand">Fidura</span>
                     <span className="sc-cert">CERTIFIED</span>
                   </div>
                   <div className="sc-line" aria-hidden="true">
@@ -101,7 +101,7 @@ export default function PartnersPage() {
                   <span className="lbl">Today</span>
                   <p>Client money-movement turns into chased paper, reconstructed accountings, and elder-fraud exposure you can&rsquo;t see.</p>
                 </div>
-                <p className="with-label">With CuroPay</p>
+                <p className="with-label">With Fidura</p>
                 <ul className="tlist">
                   <li>
                     <CheckSvg />
@@ -135,7 +135,7 @@ export default function PartnersPage() {
                   <span className="lbl">Today</span>
                   <p>Check fraud and elder exploitation drive losses and compliance work, while caregivers and adult children drift to other institutions.</p>
                 </div>
-                <p className="with-label">With CuroPay</p>
+                <p className="with-label">With Fidura</p>
                 <ul className="tlist">
                   <li>
                     <CheckSvg />
@@ -224,7 +224,7 @@ export default function PartnersPage() {
                 <span className="f-n"></span>
                 <h3>We onboard your client</h3>
                 <p>
-                  CuroPay&rsquo;s guided setup and concierge phone support walk your client through their first
+                  Fidura&rsquo;s guided setup and concierge phone support walk your client through their first
                   transfer, so the work doesn&rsquo;t come back to your office.
                 </p>
               </div>
@@ -243,12 +243,12 @@ export default function PartnersPage() {
         {/* WHAT TO TELL A CLIENT */}
         <section className="sec bg-tint">
           <div className="wrap">
-            <div style={{ display: "grid", gridTemplateColumns: ".9fr 1.1fr", gap: 56, alignItems: "center" }}>
+            <div className="hero-grid grid-9-11">
               <div>
                 <span className="eyebrow">What to tell a client</span>
                 <h2 style={{ marginBottom: 18 }}>A recommendation you can make with confidence.</h2>
                 <p className="lede" style={{ color: "var(--fg-3)" }}>
-                  When a client is weighing how to handle a parent&rsquo;s bills or a trust&rsquo;s outflows, CuroPay
+                  When a client is weighing how to handle a parent&rsquo;s bills or a trust&rsquo;s outflows, Fidura
                   gives them proof and control built into the transfer — the same accountability you&rsquo;d want
                   documented for the annual accounting.
                 </p>
@@ -256,7 +256,7 @@ export default function PartnersPage() {
               <div className="script-card">
                 <p className="s-label">Suggested language</p>
                 <blockquote>
-                  &ldquo;CuroPay lets you move money on someone else&rsquo;s behalf with approvals, verified
+                  &ldquo;Fidura lets you move money on someone else&rsquo;s behalf with approvals, verified
                   identity, and an audit-ready record on every transfer — so there&rsquo;s a clean trail for me and
                   for the CPA when we review it.&rdquo;
                 </blockquote>

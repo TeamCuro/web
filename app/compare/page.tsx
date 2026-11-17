@@ -3,9 +3,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Compare | CuroPay",
+  title: "Compare | Fidura",
   description:
-    "How CuroPay compares to cashier's checks and money orders, Venmo & Zelle, and True Link — the same familiar check, identity-verified and funds-certified.",
+    "How Fidura compares to cashier's checks and money orders, Venmo & Zelle, and True Link — the same familiar check, identity-verified and funds-certified.",
 };
 
 function NoSvg() {
@@ -34,7 +34,7 @@ function BrandTag() {
         <path d="M17 6.5l7 2.5v4.8c0 4.3-2.9 7.6-7 8.7-4.1-1.1-7-4.4-7-8.7V9L17 6.5z" fill="#27AE60" />
         <path d="M13.7 15.4l2.3 2.3 4-4.3" stroke="#fff" strokeWidth="2.1" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
-      CuroPay
+      Fidura
     </p>
   );
 }
@@ -48,10 +48,10 @@ export default function ComparePage() {
         <section className="hero" style={{ paddingBottom: 48 }}>
           <div className="wrap wrap-narrow center" style={{ margin: "0 auto" }}>
             <span className="eyebrow" style={{ justifyContent: "center" }}>
-              CuroPay vs. the alternatives
+              Fidura vs. the alternatives
             </span>
             <h1 className="promise" style={{ maxWidth: "none" }}>
-              How CuroPay compares to what you use today.
+              How Fidura compares to what you use today.
             </h1>
             <p className="lede" style={{ margin: "0 auto" }}>
               The same familiar check — but identity-verified, funds-certified, and built with the proof and control
@@ -65,7 +65,7 @@ export default function ComparePage() {
             {/* BLOCK 1 */}
             <div className="cmp">
               <div className="cmp-head">
-                <h3>CuroPay vs. cashier&rsquo;s checks &amp; money orders</h3>
+                <h3>Fidura vs. cashier&rsquo;s checks &amp; money orders</h3>
                 <p>The same familiar artifact — without the trip, the exposed account details, or the fraud risk.</p>
               </div>
               <div className="cmp-grid">
@@ -113,7 +113,7 @@ export default function ComparePage() {
             {/* BLOCK 2 */}
             <div className="cmp">
               <div className="cmp-head">
-                <h3>CuroPay vs. Venmo &amp; Zelle</h3>
+                <h3>Fidura vs. Venmo &amp; Zelle</h3>
                 <p>Instant P2P is fine between friends. It was never built to move money for someone else, with proof.</p>
               </div>
               <div className="cmp-grid">
@@ -160,8 +160,8 @@ export default function ComparePage() {
             {/* BLOCK 3 */}
             <div className="cmp">
               <div className="cmp-head">
-                <h3>CuroPay vs. True Link</h3>
-                <p>The closest option built for this job — but a different tool. True Link is a prepaid card; CuroPay is a certified payment rail.</p>
+                <h3>Fidura vs. True Link</h3>
+                <p>The closest option built for this job — but a different tool. True Link is a prepaid card; Fidura is a certified payment rail.</p>
               </div>
               <div className="cmp-grid">
                 <div className="cmp-col them">
@@ -208,7 +208,7 @@ export default function ComparePage() {
           <div className="wrap wrap-narrow center" style={{ margin: "0 auto" }}>
             <p className="lede" style={{ color: "var(--fg-on-navy-strong)", margin: 0 }}>
               Paper checks and money orders mean fraud, delays, and exposed account numbers. P2P apps offer no
-              verification and no recourse. CuroPay is the only one built to move the money itself —{" "}
+              verification and no recourse. Fidura is the only one built to move the money itself —{" "}
               <strong style={{ color: "var(--color-white)" }}>certified, verified, and controlled.</strong>
             </p>
           </div>

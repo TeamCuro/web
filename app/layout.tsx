@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "CuroPay | The Trust of a Certified Check, Brought to Digital Money",
+  title: "Fidura | The Trust of a Certified Check, Brought to Digital Money",
   description:
-    "CuroPay replaces the paper check with an identity-verified, funds-certified digital equivalent — printable, mailable, or sent instantly — without ever exposing an account or routing number.",
+    "Fidura replaces the paper check with an identity-verified, funds-certified digital equivalent — printable, mailable, or sent instantly — without ever exposing an account or routing number.",
   keywords: ["digital checks", "e-checks", "secure payments", "trustee payments", "caregiver payments", "QR check"],
   icons: {
     icon: [

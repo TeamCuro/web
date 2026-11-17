@@ -1,6 +1,6 @@
-# Curo Web
+# Fidura Web
 
-Marketing website for CuroPay - a modern digital payment platform for sending and receiving secure checks via QR codes.
+Marketing website for Fidura - a modern digital payment platform for sending and receiving secure checks via QR codes.
 
 ## Tech Stack
 
@@ -48,7 +48,7 @@ Open [http://localhost:3000](http://localhost:3000) to view the site.
 ├── app/
 │   ├── layout.tsx          # Root layout with metadata
 │   ├── page.tsx            # Home page (landing)
-│   ├── globals.css         # Global styles + CuroPay marketing design system
+│   ├── globals.css         # Global styles + Fidura marketing design system
 │   ├── caregivers/         # For Caregivers & Fiduciaries
 │   ├── seniors/            # For Seniors
 │   ├── compare/            # Compare vs. alternatives
@@ -88,7 +88,7 @@ Every lead form on the site (waitlist, contact, partner) shares the same [FormSu
 
 ## Features
 
-- Seven-page marketing site (Home, Caregivers, Seniors, Compare, Partners, Contact, Fees) built around the CuroPay design system
+- Seven-page marketing site (Home, Caregivers, Seniors, Compare, Partners, Contact, Fees) built around the Fidura design system
 - Contact and partner referral forms with client-side validation and shared FormSubmit.co integration
 - Privacy Policy and Terms of Service pages
 - Tailwind CSS custom color theme
