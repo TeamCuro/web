@@ -22,7 +22,7 @@ export default function Footer() {
             </p>
           </div>
           <div className="footer-sec">
-            <h4>Product</h4>
+            <p className="flab">Product</p>
             <ul>
               <li>
                 <Link href="/#how">How it works</Link>
@@ -31,12 +31,12 @@ export default function Footer() {
                 <Link href="/compare">Compare</Link>
               </li>
               <li>
-                <Link href="/pricing">Fees</Link>
+                <Link href="/pricing">Pricing</Link>
               </li>
             </ul>
           </div>
           <div className="footer-sec">
-            <h4>Who it&rsquo;s for</h4>
+            <p className="flab">Who it&rsquo;s for</p>
             <ul>
               <li>
                 <Link href="/caregivers">Caregivers &amp; Fiduciaries</Link>
@@ -47,7 +47,7 @@ export default function Footer() {
             </ul>
           </div>
           <div className="footer-sec">
-            <h4>Partners</h4>
+            <p className="flab">Partners</p>
             <ul>
               <li>
                 <Link href="/partners">Become a Partner</Link>

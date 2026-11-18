@@ -17,7 +17,7 @@ export default function PrivacyPolicy() {
       <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-secondary-200">
         <nav className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex h-20 items-center justify-center">
-            <Link href="/" className="flex items-center space-x-3">
+            <Link href="/" className="flex items-center space-x-3 min-h-11">
               <div className="h-10 w-10 bg-primary-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-xl">C</span>
               </div>
@@ -29,7 +29,7 @@ export default function PrivacyPolicy() {
 
       <main className="pt-32 pb-16">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
-          <Link href="/" className="inline-flex items-center text-primary-600 hover:text-primary-700 mb-8 font-medium">
+          <Link href="/" className="inline-flex items-center min-h-11 text-primary-600 hover:text-primary-700 mb-8 font-medium">
             <svg className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" aria-hidden="true" focusable="false">
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
             </svg>
