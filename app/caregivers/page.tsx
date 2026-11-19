@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PhoneLink from "@/components/PhoneLink";
 
 export const metadata: Metadata = {
   title: "For Caregivers & Fiduciaries | Fidura",
@@ -392,6 +393,7 @@ export default function CaregiversPage() {
                   Create your account
                 </a>
               </div>
+              <div className="cta-phone"><PhoneLink placement="cta_band" tone="navy" /></div>
             </div>
           </div>
         </section>

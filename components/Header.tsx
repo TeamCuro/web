@@ -3,11 +3,13 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { MenuIcon, CloseIcon } from "./icons";
+import PhoneLink from "./PhoneLink";
 
-const navLinks = [
+// `short` is the tablet label (901-1180px); the full label stays the accessible name.
+const navLinks: { label: string; short?: string; href: string }[] = [
   { label: "Home", href: "/" },
-  { label: "For Caregivers", href: "/caregivers" },
-  { label: "For Seniors", href: "/seniors" },
+  { label: "For Caregivers", short: "Caregivers", href: "/caregivers" },
+  { label: "For Seniors", short: "Seniors", href: "/seniors" },
   { label: "Compare", href: "/compare" },
 ];
 
@@ -66,14 +68,26 @@ export default function Header({
           <ul className="nav-links">
             {navLinks.map((link) => (
               <li key={link.href}>
-                <Link href={link.href} aria-current={active === link.href ? "page" : undefined}>
-                  {link.label}
+                <Link
+                  href={link.href}
+                  aria-current={active === link.href ? "page" : undefined}
+                  aria-label={link.short ? link.label : undefined}
+                >
+                  {link.short ? (
+                    <>
+                      <span className="nl-full">{link.label}</span>
+                      <span className="nl-short">{link.short}</span>
+                    </>
+                  ) : (
+                    link.label
+                  )}
                 </Link>
               </li>
             ))}
           </ul>
         </nav>
         <div className="nav-right">
+          <PhoneLink placement="header" size="compact" />
           {showSignIn && (
             <a className="nav-signin" href="https://app.getcuro.com/login">
               Sign in
@@ -105,6 +119,7 @@ export default function Header({
             ))}
           </ul>
           <div className="nav-right">
+            <PhoneLink placement="mobile_menu" block />
             {showSignIn && (
               <a className="nav-signin" href="https://app.getcuro.com/login">
                 Sign in

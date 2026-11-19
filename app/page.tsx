@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PhoneLink from "@/components/PhoneLink";
+import { SUPPORT_PHONE } from "@/lib/contact";
 
 export default function Home() {
   return (
@@ -37,7 +39,7 @@ export default function Home() {
                   </li>
                   <li>
                     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" /></svg>
-                    <span>Real people: <a href="tel:+12562131733">(256) 213-1733</a></span>
+                    <span>Real people: <a href={SUPPORT_PHONE.href}>{SUPPORT_PHONE.display}</a></span>
                   </li>
                 </ul>
               </div>
@@ -473,6 +475,7 @@ export default function Home() {
                   Create your account
                 </a>
               </div>
+              <div className="cta-phone"><PhoneLink placement="cta_band" tone="navy" /></div>
               <div className="trust-row" style={{ justifyContent: "center" }}>
                 <span className="badge">
                   <svg className="badge-check" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false">

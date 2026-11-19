@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SUPPORT_PHONE } from "@/lib/contact";
 
 export const metadata = {
   title: "Terms of Service | Fidura",
@@ -214,7 +215,7 @@ export default function TermsOfService() {
                 <p className="text-secondary-900 mb-2"><strong>Email:</strong> legal@getcuro.com</p>
                 <p className="text-secondary-900 mb-2"><strong>Support:</strong> support@getcuro.com</p>
                 <p className="text-secondary-900 mb-2"><strong>Mail:</strong> Curo Co LLC, 600 Boulevard South, Ste 104, Huntsville, AL 35802</p>
-                <p className="text-secondary-900"><strong>Phone:</strong> 256-213-1733</p>
+                <p className="text-secondary-900"><strong>Phone:</strong> {SUPPORT_PHONE.display}</p>
               </div>
             </section>
           </div>

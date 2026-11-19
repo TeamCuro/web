@@ -3,6 +3,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
+import { SUPPORT_PHONE } from "@/lib/contact";
 
 export const metadata: Metadata = {
   title: "Contact | Fidura",
@@ -69,11 +70,11 @@ export default function ContactPage() {
                   <div>
                     <h2>Call us</h2>
                     <p>
-                      <a href="tel:+12562131733" style={{ textDecoration: "underline" }}>
-                        (256) 213-1733
+                      <a href={SUPPORT_PHONE.href} style={{ textDecoration: "underline" }}>
+                        {SUPPORT_PHONE.display}
                       </a>
                       <br />
-                      A real person answers, Mon–Fri, 8am–8pm ET.
+                      A real person answers, {SUPPORT_PHONE.hours}.
                     </p>
                   </div>
                 </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PhoneLink from "@/components/PhoneLink";
 import ResponsiveTable, { Verdict } from "@/components/ResponsiveTable";
 
 export const metadata: Metadata = {
@@ -151,6 +152,7 @@ export default function ComparePage() {
                   Create your account
                 </a>
               </div>
+              <div className="cta-phone"><PhoneLink placement="cta_band" tone="navy" /></div>
             </div>
           </div>
         </section>

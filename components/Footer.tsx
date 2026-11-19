@@ -1,4 +1,5 @@
 import Link from "next/link";
+import PhoneLink from "./PhoneLink";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -56,6 +57,10 @@ export default function Footer() {
                 <Link href="/contact">Contact</Link>
               </li>
             </ul>
+          </div>
+          <div className="footer-sec footer-contact">
+            <p className="flab">Contact</p>
+            <PhoneLink placement="footer" tone="navy" />
           </div>
         </div>
         <div className="footer-security">

@@ -3,6 +3,7 @@
 import { useId, useState, type FormEvent } from "react";
 import Link from "next/link";
 import { submitLead } from "@/lib/formsubmit";
+import { SUPPORT_PHONE } from "@/lib/contact";
 import { emailOk, phoneOk, FieldError, FormNote, Opt, Req, ErrorSummary, useFormErrors, type FormErrors } from "./formA11y";
 
 const TOPICS = ["General question", "Billing & payments", "Accessibility help", "Media & press", "Something else"];
@@ -67,7 +68,7 @@ export default function ContactForm() {
     return (
       <div className="cf-success" role="status" style={{ display: "block" }}>
         <strong>Thanks — your message is on its way.</strong>
-        <p>We&rsquo;ll get back to you within one business day. For anything urgent, call (256) 213-1733.</p>
+        <p>We&rsquo;ll get back to you within one business day. For anything urgent, call {SUPPORT_PHONE.display}.</p>
       </div>
     );
   }

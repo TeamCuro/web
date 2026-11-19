@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SUPPORT_PHONE } from "@/lib/contact";
 
 export const metadata = {
   title: "Privacy Policy | Fidura",
@@ -250,7 +251,7 @@ export default function PrivacyPolicy() {
               <div className="bg-secondary-50 rounded-lg p-6">
                 <p className="text-secondary-900 mb-2"><strong>Email:</strong> privacy@getcuro.com</p>
                 <p className="text-secondary-900 mb-2"><strong>Mail:</strong> Curo Co LLC, 600 Boulevard South, Ste 104, Huntsville, AL 35802</p>
-                <p className="text-secondary-900"><strong>Phone:</strong> 256-213-1733</p>
+                <p className="text-secondary-900"><strong>Phone:</strong> {SUPPORT_PHONE.display}</p>
               </div>
             </section>
           </div>

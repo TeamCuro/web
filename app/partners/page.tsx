@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Footer from "@/components/Footer";
+import PhoneLink from "@/components/PhoneLink";
 import PartnerForm from "@/components/PartnerForm";
 import PartnerNav from "@/components/PartnerNav";
 
@@ -314,6 +315,7 @@ export default function PartnersPage() {
                 Elder-law / POA attorneys, CPAs, and community banks &amp; credit unions are our primary partner
                 channel. Tell us about your clients and we&rsquo;ll take it from there.
               </p>
+              <div className="cta-phone"><PhoneLink placement="cta_band" tone="navy" /></div>
               <PartnerForm />
             </div>
           </div>

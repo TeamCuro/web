@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PhoneLink from "@/components/PhoneLink";
 
 export const metadata: Metadata = {
   title: "For Seniors | Fidura",
@@ -37,6 +38,7 @@ export default function SeniorsPage() {
                     Create your account
                   </a>
                 </div>
+                <div className="hero-phone"><PhoneLink placement="seniors_hero" size="lg" /></div>
                 <ul className="hero-trust" role="list" aria-label="Why you can trust Fidura">
                   <li>
                     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M12 3l7 3v5c0 4.5-3 8.2-7 10-4-1.8-7-5.5-7-10V6l7-3z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" /><path d="M8.8 12l2.3 2.3 4.2-4.6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
@@ -207,6 +209,7 @@ export default function SeniorsPage() {
                   Get started
                 </a>
               </div>
+              <div className="cta-phone"><PhoneLink placement="cta_band" tone="navy" /></div>
               <div className="trust-row">
                 <span className="badge">
                   <svg className="badge-check" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false">

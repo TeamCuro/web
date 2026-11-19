@@ -385,7 +385,7 @@ main:focus { outline: none; } /* main is only focused programmatically as the sk
 .brand-mark { width: 34px; height: 34px; flex: none; }
 .brand-word { font-family: var(--font-heading); font-weight: 800; font-size: 26px; letter-spacing: -.02em; color: var(--color-primary); line-height: 1; }
 .nav-links { display: flex; align-items: center; gap: 4px; list-style: none; margin: 0; padding: 0; }
-.nav-links a { font-family: var(--font-heading); font-weight: 600; font-size: 16px; color: var(--fg-2); text-decoration: none; padding: 10px 16px; border-radius: var(--radius-sm); transition: background var(--dur-fast) var(--ease-default), color var(--dur-fast) var(--ease-default); }
+.nav-links a { font-family: var(--font-heading); font-weight: 600; font-size: 15px; color: var(--fg-2); text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; padding: 10px 12px; border-radius: var(--radius-sm); transition: background var(--dur-fast) var(--ease-default), color var(--dur-fast) var(--ease-default); }
 .nav-links a:hover { background: var(--color-primary-50); color: var(--color-primary); }
 .nav-links a[aria-current="page"] { color: var(--color-primary); background: none; box-shadow: inset 0 -3px 0 var(--color-primary); border-radius: 0; }
 .nav-links a[aria-current="page"]:hover { background: none; }
@@ -560,7 +560,7 @@ p a:not(.btn), label a:not(.btn) { text-decoration-line: underline; text-underli
    Footer
    ========================================================================== */
 .site-footer { background: var(--color-primary-900); color: #93a7ba; padding: 72px 0 40px; }
-.footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; }
+.footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr 1.2fr; gap: 40px; }
 .footer-brand .brand-word { color: #fff; }
 .footer-brand p { color: #7f95a9; font-size: 16px; line-height: 1.6; margin: 18px 0 0; max-width: 280px; }
 .flab { font-family: var(--font-heading); font-weight: 700; font-size: 16px; line-height: 1.3; color: #cdd9e4; margin: 0 0 8px; }
@@ -613,6 +613,41 @@ p a:not(.btn), label a:not(.btn) { text-decoration-line: underline; text-underli
 .cta-band .concierge { color: #b8c6d4; justify-content: center; }
 .cta-band .concierge b { color: #fff; }
 .cta-band .concierge svg { color: #4ade80; }
+
+/* FE-111: tap-to-call PhoneLink */
+.phone-link { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; min-width: 44px; color: var(--color-primary); text-decoration: none; text-align: left; }
+.phone-link svg { width: 22px; height: 22px; flex: none; }
+.phone-link b { display: block; font: 700 18px/1.2 var(--font-heading); text-decoration: none; white-space: nowrap; }
+.phone-link-hours { display: block; font: 500 14px/1.3 var(--font-body); color: var(--fg-muted); white-space: nowrap; }
+.phone-link-compact b { font-size: 16px; }
+.phone-link-lg svg { width: 28px; height: 28px; }
+.phone-link-lg b { font-size: 1.5rem; }
+.phone-link-lg .phone-link-hours { font-size: 16px; }
+.phone-link-navy { color: #fff; }
+.phone-link-navy .phone-link-hours { color: var(--fg-on-navy); }
+.phone-link-block { display: flex; width: 100%; min-height: 56px; padding: 8px 16px; gap: 12px; border: 1px solid var(--border-ui); border-radius: 8px; }
+/* .footer-sec a (color, underline, 18px) outranks .phone-link */
+.footer-sec .phone-link { color: #fff; text-decoration: none; font-size: inherit; }
+.footer-sec .phone-link:hover { color: #fff; }
+/* Tablet header (901-1180px): number only, short nav labels, tighter links so the phone fits */
+.nl-short { display: none; }
+@media (max-width: 1180px) {
+  .nav-inner > .nav-right .phone-link-hours { display: none; }
+  .nav-inner .nl-full { display: none; }
+  .nav-inner .nl-short { display: inline; }
+  .nav-inner .nav-links a { padding: 10px 9px; font-size: 15px; }
+}
+@media (max-width: 1000px) {
+  .nav-inner > .nav-right { gap: 6px; }
+  .nav-inner > .nav-right .phone-link svg { display: none; }
+  .nav-inner > .nav-right .btn { padding-left: 1.25rem; padding-right: 1.25rem; }
+}
+.cta-phone { display: flex; justify-content: center; margin-top: 20px; }
+.hero-phone { margin-top: 20px; }
+/* Phones: shorter top padding keeps the /seniors hero phone link on the first screen at 390px */
+@media (max-width: 600px) {
+  .senior .hero { padding-top: 40px; }
+}
 
 /* "Also works for" note (folds rent-splitting / no-bank into a brief mention) */
 .also-note { margin-top: 26px; display: flex; gap: 14px; align-items: flex-start; background: #fff; border: 1px solid var(--border-default); border-radius: var(--radius-lg); padding: 20px 24px; }
@@ -712,7 +747,7 @@ p a:not(.btn), label a:not(.btn) { text-decoration-line: underline; text-underli
 .senior .step .step-n { width: 56px; height: 56px; font-size: 24px; }
 .senior .proof h3, .senior .anchor h3 { font-size: 1.55rem; }
 .senior .proof { padding: 40px; }
-.senior .btn { font-size: 1.35rem; min-height: 64px; padding: 1.25rem 3rem; }
+.senior main .btn { font-size: 1.35rem; min-height: 64px; padding: 1.25rem 3rem; } /* main only: header keeps its standard size */
 .senior .steps { gap: 32px; }
 .senior .reassure { font-size: 1.6rem; line-height: 1.7; color: var(--fg-2); }
 .senior .objection .q p:not(.q-label) { font-size: 1.9rem; }
