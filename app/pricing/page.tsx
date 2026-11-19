@@ -1,20 +1,13 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ResponsiveTable from "@/components/ResponsiveTable";
 
 export const metadata: Metadata = {
   title: "Fees | Fidura",
   description:
     "Simple, transparent fees. Send by bank for free. Pay only when using card-based or faster payment options.",
 };
-
-function CheckSvg() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
-      <path d="M5 12l4 4L19 6" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
 
 export default function PricingPage() {
   return (
@@ -50,89 +43,77 @@ export default function PricingPage() {
               </div>
             </div>
 
-            <div className="table-wrap">
-              <table className="fees" role="table">
-                <thead role="rowgroup">
-                  <tr role="row">
-                    <th role="columnheader" style={{ width: "44%" }}>Method</th>
-                    <th role="columnheader" style={{ width: "28%" }}>Fee</th>
-                    <th role="columnheader" style={{ width: "28%" }}>Who pays</th>
-                  </tr>
-                </thead>
-                <tbody role="rowgroup">
-                  <tr role="row">
-                    <td role="cell" className="method" data-label="Method">
-                      Bank-funded check
-                      <small>Fund a check from a linked bank account (ACH)</small>
-                    </td>
-                    <td role="cell" className="fee" data-label="Fee">
-                      <span className="fee-free">
-                        <CheckSvg />
-                        Free
-                      </span>
-                    </td>
-                    <td role="cell" className="who" data-label="Who pays">—</td>
-                  </tr>
-                  <tr role="row">
-                    <td role="cell" className="method" data-label="Method">
-                      Card-funded check
-                      <small>Fund a check with a debit or prepaid card</small>
-                    </td>
-                    <td role="cell" className="fee" data-label="Fee">
-                      2.9% + $0.30
-                      <small>
-                        per transaction
-                      </small>
-                    </td>
-                    <td role="cell" className="who" data-label="Who pays">Sender, when funding by card</td>
-                  </tr>
-                  <tr role="row">
-                    <td role="cell" className="method" data-label="Method">
-                      Standard payout
-                      <small>Recipient receives funds by ACH</small>
-                    </td>
-                    <td role="cell" className="fee" data-label="Fee">
-                      <span className="fee-free">
-                        <CheckSvg />
-                        Free
-                      </span>
-                    </td>
-                    <td role="cell" className="who" data-label="Who pays">—</td>
-                  </tr>
-                  <tr role="row">
-                    <td role="cell" className="method" data-label="Method">
-                      Instant payout
-                      <small>Recipient chooses instant delivery to a debit card</small>
-                    </td>
-                    <td role="cell" className="fee" data-label="Fee">1.5%</td>
-                    <td role="cell" className="who" data-label="Who pays">Recipient — deducted from their payment</td>
-                  </tr>
-                  <tr role="row">
-                    <td role="cell" className="method" data-label="Method">
-                      Fidura Wallet payout <span className="tag soon">Coming soon</span>
-                      <small>Recipient keeps funds in a Fidura Wallet</small>
-                    </td>
-                    <td role="cell" className="fee" data-label="Fee">
-                      <span className="fee-free">
-                        <CheckSvg />
-                        Free
-                      </span>
-                    </td>
-                    <td role="cell" className="who" data-label="Who pays">Recipient</td>
-                  </tr>
-                  <tr role="row">
-                    <td role="cell" className="method" data-label="Method">
-                      Physical check delivery <span className="tag tbd">Pricing coming soon</span>
-                      <small>We print and mail a check on your behalf</small>
-                    </td>
-                    <td role="cell" className="fee fee-pending" data-label="Fee">
-                      Not yet published
-                    </td>
-                    <td role="cell" className="who" data-label="Who pays">You&rsquo;ll see the exact fee before you confirm</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+            <ResponsiveTable
+              caption="What each way of paying costs"
+              rowHeader="How you pay or get paid"
+              columns={[
+                { key: "fee", label: "Fee" },
+                { key: "who", label: "Who pays" },
+              ]}
+              groups={[
+                {
+                  rows: [
+                    {
+                      key: "bank-check",
+                      title: "Bank-funded check",
+                      sub: "Fund a check from a linked bank account (ACH)",
+                      cells: { fee: <span className="rt-strong rt-free">$0</span>, who: "Free for both" },
+                    },
+                    {
+                      key: "card-check",
+                      title: "Card-funded check",
+                      sub: "Fund a check with a debit or prepaid card",
+                      cells: {
+                        fee: (
+                          <>
+                            <span className="rt-strong">2.9% + $0.30</span>
+                            <small>per transaction</small>
+                          </>
+                        ),
+                        who: "Sender, when funding by card",
+                      },
+                    },
+                    {
+                      key: "standard-payout",
+                      title: "Standard payout",
+                      sub: "Recipient receives funds by ACH",
+                      cells: { fee: <span className="rt-strong rt-free">$0</span>, who: "Free for both" },
+                    },
+                    {
+                      key: "instant-payout",
+                      title: "Instant payout",
+                      sub: "Recipient chooses instant delivery to a debit card",
+                      cells: {
+                        fee: <span className="rt-strong">1.5%</span>,
+                        who: "Recipient \u2014 deducted from their payment",
+                      },
+                    },
+                  ],
+                },
+                {
+                  label: "Coming later",
+                  rows: [
+                    {
+                      key: "wallet-payout",
+                      title: "Fidura Wallet payout",
+                      badge: "Coming later",
+                      sub: "Recipient keeps funds in a Fidura Wallet",
+                      cells: { fee: <span className="rt-strong rt-free">$0</span>, who: "Free for both" },
+                    },
+                    {
+                      key: "physical-check",
+                      title: "Physical check delivery",
+                      badge: "Coming later",
+                      sub: "We print and mail a check on your behalf",
+                      cells: {
+                        fee: "Not yet published",
+                        who: "You\u2019ll see the exact fee before you confirm",
+                      },
+                    },
+                  ],
+                },
+              ]}
+            />
             <p className="fees-note">Fees are shown before confirmation and may change.</p>
           </div>
         </section>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ResponsiveTable, { Verdict } from "@/components/ResponsiveTable";
 
 export const metadata: Metadata = {
   title: "Compare | Fidura",
@@ -8,36 +9,8 @@ export const metadata: Metadata = {
     "How Fidura compares to cashier's checks and money orders, Venmo & Zelle, and True Link — the same familiar check, identity-verified and funds-certified.",
 };
 
-function NoSvg() {
-  return (
-    <svg className="ic-no" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
-      <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.8" />
-      <path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-    </svg>
-  );
-}
-
-function YesSvg() {
-  return (
-    <svg className="ic-yes" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
-      <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.8" />
-      <path d="M8 12l2.5 2.5L16 9" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
-function BrandTag() {
-  return (
-    <p className="c-tag">
-      <svg className="brand-mark" style={{ width: 22, height: 22 }} viewBox="0 0 34 34" fill="none" aria-hidden="true" focusable="false">
-        <rect x="1" y="1" width="32" height="32" rx="9" fill="#092C4C" />
-        <path d="M17 6.5l7 2.5v4.8c0 4.3-2.9 7.6-7 8.7-4.1-1.1-7-4.4-7-8.7V9L17 6.5z" fill="#27AE60" />
-        <path d="M13.7 15.4l2.3 2.3 4-4.3" stroke="#fff" strokeWidth="2.1" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-      Fidura
-    </p>
-  );
-}
+const Y = (n: string) => <Verdict value="yes">{n}</Verdict>;
+const N = (n: string) => <Verdict value="no">{n}</Verdict>;
 
 export default function ComparePage() {
   return (
@@ -68,45 +41,28 @@ export default function ComparePage() {
                 <h3>Fidura vs. cashier&rsquo;s checks &amp; money orders</h3>
                 <p>The same familiar artifact — without the trip, the exposed account details, or the fraud risk.</p>
               </div>
-              <div className="cmp-grid">
-                <div className="cmp-col them">
-                  <p className="c-tag">Cashier&rsquo;s checks &amp; money orders</p>
-                  <ul className="clist">
-                    <li>
-                      <NoSvg />A trip to the bank or store, and a fee, every time
-                    </li>
-                    <li>
-                      <NoSvg />Account and routing numbers printed in the open
-                    </li>
-                    <li>
-                      <NoSvg />No way to verify who&rsquo;s really sending or receiving
-                    </li>
-                    <li>
-                      <NoSvg />Vulnerable to mail theft and loss
-                    </li>
-                  </ul>
-                </div>
-                <div className="cmp-col us">
-                  <BrandTag />
-                  <ul className="clist">
-                    <li>
-                      <YesSvg />
-                      Print at home, mail, or send instantly — no trip
-                    </li>
-                    <li>
-                      <YesSvg />
-                      Account and routing numbers are never exposed
-                    </li>
-                    <li>
-                      <YesSvg />
-                      Identity-verified and funds-certified on every check
-                    </li>
-                    <li>
-                      <YesSvg />
-                      QR-backed, so a stolen check can&rsquo;t simply be cashed
-                    </li>
-                  </ul>
-                </div>
+              <div className="rt-cmp-body">
+                <ResponsiveTable
+                  flush
+                  captionHidden
+                  cardHeading="h4"
+                  caption="Fidura vs. cashier’s checks &amp; money orders"
+                  rowHeader="What you get"
+                  columns={[
+                    { key: "alt", label: "Cashier’s checks & money orders" },
+                    { key: "us", label: "Fidura" },
+                  ]}
+                  groups={[
+                    {
+                      rows: [
+                          { key: "r0", title: "No trip to the bank or store", cells: { alt: N("A trip and a fee every time"), us: Y("Print at home, mail, or send instantly") } },
+                          { key: "r1", title: "Account numbers kept private", cells: { alt: N("Account and routing numbers printed in the open"), us: Y("Never exposed") } },
+                          { key: "r2", title: "Sender and receiver verified", cells: { alt: N("No way to verify who\u2019s really sending or receiving"), us: Y("Identity-verified and funds-certified on every check") } },
+                          { key: "r3", title: "Protected if stolen in the mail", cells: { alt: N("Vulnerable to mail theft and loss"), us: Y("QR-backed, so a stolen check can\u2019t simply be cashed") } },
+                      ],
+                    },
+                  ]}
+                />
               </div>
             </div>
 
@@ -116,44 +72,28 @@ export default function ComparePage() {
                 <h3>Fidura vs. Venmo &amp; Zelle</h3>
                 <p>Instant P2P is fine between friends. It was never built to move money for someone else, with proof.</p>
               </div>
-              <div className="cmp-grid">
-                <div className="cmp-col them">
-                  <p className="c-tag">Venmo / Zelle</p>
-                  <ul className="clist">
-                    <li>
-                      <NoSvg />No co-signing and no role-based approvals
-                    </li>
-                    <li>
-                      <NoSvg />No identity verification of the other party
-                    </li>
-                    <li>
-                      <NoSvg />They tell you to only send to people you already trust
-                    </li>
-                    <li>
-                      <NoSvg />Little recourse if something goes wrong
-                    </li>
-                  </ul>
-                </div>
-                <div className="cmp-col us">
-                  <BrandTag />
-                  <ul className="clist">
-                    <li>
-                      <YesSvg />
-                      Co-signing and role-based approvals built in
-                    </li>
-                    <li>
-                      <YesSvg />
-                      Identity verified on both sides of the transfer
-                    </li>
-                    <li>
-                      <YesSvg />
-                      Certified funds — proof, not just a promise
-                    </li>
-                    <li>
-                      <YesSvg />A real receipt and audit trail on every payment
-                    </li>
-                  </ul>
-                </div>
+              <div className="rt-cmp-body">
+                <ResponsiveTable
+                  flush
+                  captionHidden
+                  cardHeading="h4"
+                  caption="Fidura vs. Venmo &amp; Zelle"
+                  rowHeader="What you get"
+                  columns={[
+                    { key: "alt", label: "Venmo / Zelle" },
+                    { key: "us", label: "Fidura" },
+                  ]}
+                  groups={[
+                    {
+                      rows: [
+                          { key: "r0", title: "Co-signing and approvals", cells: { alt: N("No co-signing or role-based approvals"), us: Y("Role-based approvals built in") } },
+                          { key: "r1", title: "Other person\u2019s identity verified", cells: { alt: N("No identity check of the other party"), us: Y("Verified on both sides of the transfer") } },
+                          { key: "r2", title: "Safe to pay someone new", cells: { alt: N("They tell you to only send to people you already trust"), us: Y("Certified funds: proof, not just a promise") } },
+                          { key: "r3", title: "Help if something goes wrong", cells: { alt: N("Little recourse"), us: Y("A real receipt and audit trail on every payment") } },
+                      ],
+                    },
+                  ]}
+                />
               </div>
             </div>
 
@@ -163,41 +103,27 @@ export default function ComparePage() {
                 <h3>Fidura vs. True Link</h3>
                 <p>The closest option built for this job — but a different tool. True Link is a prepaid card; Fidura is a certified payment rail.</p>
               </div>
-              <div className="cmp-grid">
-                <div className="cmp-col them">
-                  <p className="c-tag">True Link (prepaid card)</p>
-                  <ul className="clist">
-                    <li>
-                      <NoSvg />A prepaid-card model, built around card spending
-                    </li>
-                    <li>
-                      <NoSvg />Not designed for recurring bill-pay, rent, or reimbursement
-                    </li>
-                    <li>
-                      <NoSvg />No printable, mailable check for those who still need one
-                    </li>
-                  </ul>
-                </div>
-                <div className="cmp-col us">
-                  <BrandTag />
-                  <ul className="clist">
-                    <li>
-                      <YesSvg />A certified check / payment rail, not a card
-                    </li>
-                    <li>
-                      <YesSvg />
-                      Built for recurring bill-pay, rent, and reimbursement
-                    </li>
-                    <li>
-                      <YesSvg />
-                      Keeps the printable, QR-backed check people still rely on
-                    </li>
-                    <li>
-                      <YesSvg />
-                      Approvals and an audit trail for fiduciary use
-                    </li>
-                  </ul>
-                </div>
+              <div className="rt-cmp-body">
+                <ResponsiveTable
+                  flush
+                  captionHidden
+                  cardHeading="h4"
+                  caption="Fidura vs. True Link"
+                  rowHeader="What you get"
+                  columns={[
+                    { key: "alt", label: "True Link (prepaid card)" },
+                    { key: "us", label: "Fidura" },
+                  ]}
+                  groups={[
+                    {
+                      rows: [
+                          { key: "r0", title: "What it is", cells: { alt: "A prepaid card, built around card spending", us: "A certified check and payment rail, with approvals and an audit trail for fiduciary use" } },
+                          { key: "r1", title: "Recurring bill-pay, rent, and reimbursement", cells: { alt: N("Not designed for it"), us: Y("Built for it") } },
+                          { key: "r2", title: "Printable, mailable check", cells: { alt: N("Not offered"), us: Y("QR-backed, for people who still rely on one") } },
+                      ],
+                    },
+                  ]}
+                />
               </div>
             </div>
           </div>
