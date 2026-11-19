@@ -20,7 +20,7 @@ export default function SeniorsPage() {
   return (
     <div className="curopay-site senior">
       <Header active="/seniors" ctaLabel="Get started" />
-      <main>
+      <main id="main" tabIndex={-1}>
         {/* HERO */}
         <section className="hero">
           <div className="wrap">

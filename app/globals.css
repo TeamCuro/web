@@ -367,6 +367,11 @@ html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + 16px); }
 }
 .bg-navy, .cta-band, .site-footer, .partner-hero, .partner-form, .modal-card, .hero-scene { --focus-ring: #fff; }
 
+/* Skip link (FE-110, WCAG 2.4.1). Literal colors: legal pages sit outside .curopay-site. */
+.skip-link { position: absolute; left: 16px; top: -100px; z-index: 1000; background: #092C4C; color: #fff; padding: 12px 18px; border-radius: 8px; font-family: var(--font-heading); font-weight: 700; font-size: 16px; text-decoration: underline; }
+.skip-link:focus, .skip-link:focus-visible { top: 12px; outline: 3px solid #fff; outline-offset: 2px; box-shadow: 0 0 0 6px #092C4C; }
+main:focus { outline: none; } /* main is only focused programmatically as the skip target (tabIndex -1) */
+
 .wrap { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 24px; }
 .wrap-narrow { max-width: 760px; }
 
@@ -502,6 +507,7 @@ p a:not(.btn), label a:not(.btn) { text-decoration-line: underline; text-underli
 .objection { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--border-default); border-radius: var(--radius-xl); overflow: hidden; background: #fff; }
 .objection .q { padding: 44px; background: var(--bg-2); }
 .objection .a { padding: 44px; border-left: 1px solid var(--border-default); }
+.objection .q, .objection .a { min-width: 0; overflow-wrap: anywhere; }
 .objection .q-label, .objection .a-label { font-family: var(--font-heading); font-weight: 700; font-size: 16px; line-height: 1.5; margin: 0 0 14px; }
 .objection .q-label { color: var(--fg-muted); }
 .objection .a-label { color: var(--color-action); }
@@ -538,7 +544,7 @@ p a:not(.btn), label a:not(.btn) { text-decoration-line: underline; text-underli
 .cmp { border: 1px solid var(--border-default); border-radius: var(--radius-xl); overflow: hidden; background: #fff; }
 .cmp + .cmp { margin-top: 40px; }
 .cmp-head { padding: 32px 40px; border-bottom: 1px solid var(--border-default); background: var(--bg-2); }
-.cmp-head h3 { margin: 0 0 8px; color: var(--color-primary); font-size: 1.6rem; }
+.cmp-head h2 { margin: 0 0 8px; color: var(--color-primary); font-size: 1.6rem; line-height: var(--h3-lh); letter-spacing: normal; }
 .cmp-head p { margin: 0; color: var(--fg-3); font-size: 18px; line-height: 1.5; }
 
 /* ==========================================================================
@@ -712,6 +718,7 @@ p a:not(.btn), label a:not(.btn) { text-decoration-line: underline; text-underli
 .senior .objection .q p:not(.q-label) { font-size: 1.9rem; }
 .senior .objection .a p:not(.a-label) { font-size: 1.3rem; line-height: 1.7; }
 .senior .objection .q, .senior .objection .a { padding: 52px; }
+@media (max-width: 600px) { .objection .q, .objection .a, .senior .objection .q, .senior .objection .a { padding: 28px 24px; } }
 .senior .call-line { display:inline-flex; align-items:center; gap:12px; font-family: var(--font-heading); font-weight:700; font-size:1.5rem; color: var(--color-primary); }
 .senior .call-line svg { width: 30px; height: 30px; color: var(--color-action); }
 
@@ -825,15 +832,17 @@ p a:not(.btn), label a:not(.btn) { text-decoration-line: underline; text-underli
 .modal-close:hover { background:rgba(255,255,255,.16); }
 
 .contact-grid { display:grid; grid-template-columns:.85fr 1.15fr; gap:48px; align-items:start; }
+.contact-grid > * { min-width:0; }
 .cmethod { display:flex; gap:14px; margin-bottom:26px; }
+.cmethod > div { min-width:0; overflow-wrap:anywhere; }
 .cmethod .ic { width:44px; height:44px; flex:none; border-radius:var(--radius-sm); background:var(--color-primary-50); color:var(--color-primary); display:flex; align-items:center; justify-content:center; }
 .cmethod .ic svg { width:22px; height:22px; }
-.cmethod h3 { font-size:1.05rem; margin:0 0 4px; color:var(--color-primary); }
+.cmethod h2 { font-size:1.05rem; line-height:var(--h3-lh); letter-spacing:normal; margin:0 0 4px; color:var(--color-primary); }
 .cmethod p { font-size:18px; line-height:1.5; color:var(--fg-3); margin:0; }
 .cmethod a { color:var(--color-primary); font-weight:600; }
 .route-card { background:#fff; border:1px solid var(--border-default); border-radius:var(--radius-lg); padding:22px 24px; margin-top:8px; }
-.route-card h4 { font-family:var(--font-heading); font-weight:700; font-size:16px; line-height:1.5; color:var(--fg-muted); margin:0 0 12px; }
-.route-card .rline { display:flex; justify-content:space-between; align-items:center; gap:12px; font-size:16px; color:var(--fg-2); padding:8px 0; }
+.route-card h2 { font-family:var(--font-heading); font-weight:700; font-size:16px; line-height:1.5; letter-spacing:normal; color:var(--fg-muted); margin:0 0 12px; }
+.route-card .rline { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:4px 12px; font-size:16px; color:var(--fg-2); padding:8px 0; }
 .route-card .rline + .rline { border-top:1px solid var(--border-default); }
 .route-card .rline a { display:inline-flex; align-items:center; min-height:44px; font-family:var(--font-heading); font-weight:700; font-size:16px; color:var(--color-action); text-decoration:underline; text-underline-offset:3px; white-space:nowrap; }
 .route-card .rline a:hover { color:var(--color-action-hover); }
@@ -861,9 +870,10 @@ p a:not(.btn), label a:not(.btn) { text-decoration-line: underline; text-underli
 @media (max-width:600px){ .cf-two { grid-template-columns:1fr; } .cform .btn { justify-self:stretch; white-space:normal; } }
 
 .hl-row { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:36px; }
-.hl { background:var(--color-primary-50); border:1px solid var(--color-primary-100); border-radius:var(--radius-lg); padding:26px 30px; }
+.hl { background:var(--color-primary-50); border:1px solid var(--color-primary-100); border-radius:var(--radius-lg); padding:26px 30px; min-width:0; }
 .hl .big { font-family:var(--font-heading); font-weight:800; font-size:1.9rem; color:var(--color-primary); line-height:1.1; }
 .hl p { margin:8px 0 0; color:var(--fg-3); font-size:18px; line-height:1.5; }
+.hl .big, .hl p { overflow-wrap:anywhere; }
 .faq { display:grid; gap:16px; max-width:840px; margin:0 auto; }
 .faq-item { background:#fff; border:1px solid var(--border-default); border-radius:var(--radius-lg); padding:24px 28px; }
 .faq-item h3 { font-size:1.15rem; margin:0 0 8px; color:var(--color-primary); }

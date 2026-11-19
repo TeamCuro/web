@@ -21,7 +21,7 @@ export default function CaregiversPage() {
   return (
     <div className="curopay-site">
       <Header active="/caregivers" />
-      <main>
+      <main id="main" tabIndex={-1}>
         {/* HERO — written for someone arriving via a trusted referral */}
         <section className="hero">
           <div className="wrap">

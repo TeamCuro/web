@@ -13,7 +13,7 @@ export default function PricingPage() {
   return (
     <div className="curopay-site">
       <Header />
-      <main>
+      <main id="main" tabIndex={-1}>
         {/* HERO */}
         <section className="hero" style={{ paddingBottom: 40 }}>
           <div className="wrap wrap-narrow center" style={{ margin: "0 auto" }}>
@@ -32,6 +32,7 @@ export default function PricingPage() {
         {/* HIGHLIGHTS + TABLE */}
         <section className="sec-sm" style={{ paddingTop: 8 }}>
           <div className="wrap">
+            <h2 className="rt-sr">Fees at a glance</h2>
             <div className="hl-row">
               <div className="hl">
                 <div className="big">$0 to send by bank</div>

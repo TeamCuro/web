@@ -18,7 +18,7 @@ export default function PrivacyPolicy() {
         <nav className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex h-20 items-center justify-center">
             <Link href="/" className="flex items-center space-x-3 min-h-11">
-              <div className="h-10 w-10 bg-primary-600 rounded-lg flex items-center justify-center">
+              <div className="h-10 w-10 bg-primary-600 rounded-lg flex items-center justify-center" aria-hidden="true">
                 <span className="text-white font-bold text-xl">C</span>
               </div>
               <span className="text-2xl font-bold text-secondary-900">Fidura</span>
@@ -27,7 +27,7 @@ export default function PrivacyPolicy() {
         </nav>
       </header>
 
-      <main className="pt-32 pb-16">
+      <main id="main" tabIndex={-1} className="pt-32 pb-16">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <Link href="/" className="inline-flex items-center min-h-11 text-primary-600 hover:text-primary-700 mb-8 font-medium">
             <svg className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" aria-hidden="true" focusable="false">

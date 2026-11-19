@@ -21,7 +21,7 @@ export default function PartnersPage() {
   return (
     <div className="curopay-site">
       <PartnerNav />
-      <main>
+      <main id="main" tabIndex={-1}>
         {/* HERO */}
         <section className="partner-hero">
           <div className="wrap">

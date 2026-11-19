@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { MenuIcon, CloseIcon } from "./icons";
 
@@ -27,6 +27,19 @@ export default function Header({
   showSignIn = true,
 }: HeaderProps) {
   const [open, setOpen] = useState(false);
+  const toggleRef = useRef<HTMLButtonElement>(null);
+
+  // Escape closes the open mobile menu and returns focus to the toggle.
+  useEffect(() => {
+    if (!open) return;
+    function onKeyDown(event: KeyboardEvent) {
+      if (event.key !== "Escape") return;
+      setOpen(false);
+      toggleRef.current?.focus();
+    }
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [open]);
 
   const cta = onCtaClick ? (
     <button type="button" className="btn btn-primary btn-sm" onClick={onCtaClick}>
@@ -70,6 +83,7 @@ export default function Header({
         </div>
         <button
           type="button"
+          ref={toggleRef}
           className="nav-toggle"
           aria-expanded={open}
           aria-controls="mobile-nav"

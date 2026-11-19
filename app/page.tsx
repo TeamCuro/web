@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="curopay-site">
       <Header active="/" />
-      <main>
+      <main id="main" tabIndex={-1}>
         {/* HERO */}
         <section className="hero">
           <div className="wrap">

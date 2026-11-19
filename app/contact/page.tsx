@@ -14,7 +14,7 @@ export default function ContactPage() {
   return (
     <div className="curopay-site">
       <Header />
-      <main>
+      <main id="main" tabIndex={-1}>
         {/* HERO */}
         <section className="hero" style={{ paddingBottom: 40 }}>
           <div className="wrap wrap-narrow center" style={{ margin: "0 auto" }}>
@@ -45,7 +45,7 @@ export default function ContactPage() {
                     </svg>
                   </span>
                   <div>
-                    <h3>Email us</h3>
+                    <h2>Email us</h2>
                     <p>
                       <a href="mailto:support@getcuro.com" style={{ textDecoration: "underline" }}>
                         support@getcuro.com
@@ -67,7 +67,7 @@ export default function ContactPage() {
                     </svg>
                   </span>
                   <div>
-                    <h3>Call us</h3>
+                    <h2>Call us</h2>
                     <p>
                       <a href="tel:+12562131733" style={{ textDecoration: "underline" }}>
                         (256) 213-1733
@@ -85,7 +85,7 @@ export default function ContactPage() {
                     </svg>
                   </span>
                   <div>
-                    <h3>Mailing address</h3>
+                    <h2>Mailing address</h2>
                     <p>
                       Curo Co LLC
                       <br />
@@ -96,7 +96,7 @@ export default function ContactPage() {
                   </div>
                 </div>
                 <div className="route-card">
-                  <h4>Looking for something specific?</h4>
+                  <h2>Looking for something specific?</h2>
                   <div className="rline">
                     <span>Already a Fidura user</span>
                     <a href="https://app.getcuro.com/login">Sign in ›</a>

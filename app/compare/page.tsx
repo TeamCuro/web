@@ -16,7 +16,7 @@ export default function ComparePage() {
   return (
     <div className="curopay-site">
       <Header active="/compare" />
-      <main>
+      <main id="main" tabIndex={-1}>
         {/* HERO */}
         <section className="hero" style={{ paddingBottom: 48 }}>
           <div className="wrap wrap-narrow center" style={{ margin: "0 auto" }}>
@@ -38,14 +38,14 @@ export default function ComparePage() {
             {/* BLOCK 1 */}
             <div className="cmp">
               <div className="cmp-head">
-                <h3>Fidura vs. cashier&rsquo;s checks &amp; money orders</h3>
+                <h2>Fidura vs. cashier&rsquo;s checks &amp; money orders</h2>
                 <p>The same familiar artifact — without the trip, the exposed account details, or the fraud risk.</p>
               </div>
               <div className="rt-cmp-body">
                 <ResponsiveTable
                   flush
                   captionHidden
-                  cardHeading="h4"
+                  cardHeading="h3"
                   caption="Fidura vs. cashier’s checks &amp; money orders"
                   rowHeader="What you get"
                   columns={[
@@ -69,14 +69,14 @@ export default function ComparePage() {
             {/* BLOCK 2 */}
             <div className="cmp">
               <div className="cmp-head">
-                <h3>Fidura vs. Venmo &amp; Zelle</h3>
+                <h2>Fidura vs. Venmo &amp; Zelle</h2>
                 <p>Instant P2P is fine between friends. It was never built to move money for someone else, with proof.</p>
               </div>
               <div className="rt-cmp-body">
                 <ResponsiveTable
                   flush
                   captionHidden
-                  cardHeading="h4"
+                  cardHeading="h3"
                   caption="Fidura vs. Venmo &amp; Zelle"
                   rowHeader="What you get"
                   columns={[
@@ -100,14 +100,14 @@ export default function ComparePage() {
             {/* BLOCK 3 */}
             <div className="cmp">
               <div className="cmp-head">
-                <h3>Fidura vs. True Link</h3>
+                <h2>Fidura vs. True Link</h2>
                 <p>The closest option built for this job — but a different tool. True Link is a prepaid card; Fidura is a certified payment rail.</p>
               </div>
               <div className="rt-cmp-body">
                 <ResponsiveTable
                   flush
                   captionHidden
-                  cardHeading="h4"
+                  cardHeading="h3"
                   caption="Fidura vs. True Link"
                   rowHeader="What you get"
                   columns={[
