@@ -9,7 +9,7 @@ export default function PartnerNav() {
 
   return (
     <>
-      <Header showSignIn={false} ctaLabel="Become a partner" onCtaClick={() => setOpen(true)} />
+      <Header ctaLabel="Become a partner" onCtaClick={() => setOpen(true)} />
       <PartnerModal open={open} onClose={() => setOpen(false)} />
     </>
   );

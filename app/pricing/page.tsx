@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function PricingPage() {
   return (
     <div className="curopay-site">
-      <Header />
+      <Header active="/pricing" />
       <main id="main" tabIndex={-1}>
         {/* HERO */}
         <section className="hero" style={{ paddingBottom: 40 }}>

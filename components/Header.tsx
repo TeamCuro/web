@@ -7,10 +7,10 @@ import PhoneLink from "./PhoneLink";
 
 // `short` is the tablet label (901-1180px); the full label stays the accessible name.
 const navLinks: { label: string; short?: string; href: string }[] = [
-  { label: "Home", href: "/" },
   { label: "For Caregivers", short: "Caregivers", href: "/caregivers" },
   { label: "For Seniors", short: "Seniors", href: "/seniors" },
   { label: "Compare", href: "/compare" },
+  { label: "Pricing", href: "/pricing" },
 ];
 
 interface HeaderProps {
@@ -18,7 +18,6 @@ interface HeaderProps {
   ctaLabel?: string;
   ctaHref?: string;
   onCtaClick?: () => void;
-  showSignIn?: boolean;
 }
 
 export default function Header({
@@ -26,7 +25,6 @@ export default function Header({
   ctaLabel = "Create account",
   ctaHref = "https://app.getcuro.com/register",
   onCtaClick,
-  showSignIn = true,
 }: HeaderProps) {
   const [open, setOpen] = useState(false);
   const toggleRef = useRef<HTMLButtonElement>(null);
@@ -88,11 +86,9 @@ export default function Header({
         </nav>
         <div className="nav-right">
           <PhoneLink placement="header" size="compact" />
-          {showSignIn && (
-            <a className="nav-signin" href="https://app.getcuro.com/login">
-              Sign in
-            </a>
-          )}
+          <a className="nav-signin" href="https://app.getcuro.com/login">
+            Sign in
+          </a>
           {cta}
         </div>
         <button
@@ -120,11 +116,9 @@ export default function Header({
           </ul>
           <div className="nav-right">
             <PhoneLink placement="mobile_menu" block />
-            {showSignIn && (
-              <a className="nav-signin" href="https://app.getcuro.com/login">
-                Sign in
-              </a>
-            )}
+            <a className="nav-signin" href="https://app.getcuro.com/login">
+              Sign in
+            </a>
             {onCtaClick ? (
               <button
                 type="button"

@@ -385,12 +385,12 @@ main:focus { outline: none; } /* main is only focused programmatically as the sk
 .brand-mark { width: 34px; height: 34px; flex: none; }
 .brand-word { font-family: var(--font-heading); font-weight: 800; font-size: 26px; letter-spacing: -.02em; color: var(--color-primary); line-height: 1; }
 .nav-links { display: flex; align-items: center; gap: 4px; list-style: none; margin: 0; padding: 0; }
-.nav-links a { font-family: var(--font-heading); font-weight: 600; font-size: 15px; color: var(--fg-2); text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; padding: 10px 12px; border-radius: var(--radius-sm); transition: background var(--dur-fast) var(--ease-default), color var(--dur-fast) var(--ease-default); }
+.nav-links a { font-family: var(--font-heading); font-weight: 600; font-size: 15px; color: var(--fg-2); text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; padding: 10px 12px; border-radius: var(--radius-sm); transition: background var(--dur-fast) var(--ease-default), color var(--dur-fast) var(--ease-default); white-space: nowrap; }
 .nav-links a:hover { background: var(--color-primary-50); color: var(--color-primary); }
 .nav-links a[aria-current="page"] { color: var(--color-primary); background: none; box-shadow: inset 0 -3px 0 var(--color-primary); border-radius: 0; }
 .nav-links a[aria-current="page"]:hover { background: none; }
 .nav-right { display: flex; align-items: center; gap: 10px; }
-.nav-signin { font-family: var(--font-heading); font-weight: 600; font-size: 16px; color: var(--color-primary); text-decoration: none; padding: 10px 12px; }
+.nav-signin { font-family: var(--font-heading); font-weight: 600; font-size: 16px; color: var(--color-primary); text-decoration: none; padding: 10px 8px; white-space: nowrap; min-height: 44px; display: inline-flex; align-items: center; }
 .nav-signin:hover { text-decoration: underline; }
 
 /* ==========================================================================
@@ -638,6 +638,7 @@ p a:not(.btn), label a:not(.btn) { text-decoration-line: underline; text-underli
   .nav-inner .nav-links a { padding: 10px 9px; font-size: 15px; }
 }
 @media (max-width: 1000px) {
+  .nav-inner .nav-links { gap: 2px; }
   .nav-inner > .nav-right { gap: 6px; }
   .nav-inner > .nav-right .phone-link svg { display: none; }
   .nav-inner > .nav-right .btn { padding-left: 1.25rem; padding-right: 1.25rem; }
