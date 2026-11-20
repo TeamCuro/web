@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <div className="curopay-site">
-      <Header />
+      <Header active="/contact" />
       <main id="main" tabIndex={-1}>
         {/* HERO */}
         <section className="hero" style={{ paddingBottom: 40 }}>
