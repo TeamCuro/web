@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
 import { SUPPORT_PHONE } from "@/lib/contact";
+import { SIGN_IN_URL } from "@/lib/register";
 
 export const metadata: Metadata = {
   title: "Contact | Fidura",
@@ -48,8 +49,8 @@ export default function ContactPage() {
                   <div>
                     <h2>Email us</h2>
                     <p>
-                      <a href="mailto:support@getcuro.com" style={{ textDecoration: "underline" }}>
-                        support@getcuro.com
+                      <a href="mailto:support@fidurapay.com" style={{ textDecoration: "underline" }}>
+                        support@fidurapay.com
                       </a>
                       <br />
                       We reply within one business day.
@@ -100,7 +101,7 @@ export default function ContactPage() {
                   <h2>Looking for something specific?</h2>
                   <div className="rline">
                     <span>Already a Fidura user</span>
-                    <a href="https://app.getcuro.com/login">Sign in ›</a>
+                    <a href={SIGN_IN_URL}>Sign in ›</a>
                   </div>
                   <div className="rline">
                     <span>Attorney, bank, or CU</span>

@@ -215,7 +215,7 @@ export default function PrivacyPolicy() {
                 <li><strong>Right to Withdraw Consent:</strong> Where we rely on consent, you may withdraw it at any time</li>
                 <li><strong>Right to Appeal:</strong> Appeal our decision if we decline your request</li>
               </ul>
-              <p className="text-secondary-700 leading-relaxed">To exercise these rights, contact us at privacy@getcuro.com. We will verify your identity before processing requests to protect your information. We will not discriminate against you for exercising your privacy rights.</p>
+              <p className="text-secondary-700 leading-relaxed">To exercise these rights, contact us at privacy@fidurapay.com. We will verify your identity before processing requests to protect your information. We will not discriminate against you for exercising your privacy rights.</p>
             </section>
 
             <section className={sectionClass}>
@@ -225,12 +225,12 @@ export default function PrivacyPolicy() {
               <h3 className={subheadingClass}>Colorado, Connecticut, and Virginia Residents</h3>
               <p className={paragraphClass}>Residents of Colorado, Connecticut, and Virginia have similar rights under the Colorado Privacy Act, Connecticut Data Privacy Act, and Virginia Consumer Data Protection Act, including rights to access, correct, delete, and obtain a portable copy of personal information, and to opt out of targeted advertising, the sale of personal information, or certain profiling. Fidura recognizes and will honor universal opt-out preference signals, including Global Privacy Control, as a valid request to opt out of applicable processing.</p>
               <h3 className={subheadingClass}>Other States</h3>
-              <p className="text-secondary-700 leading-relaxed">Residents of other states with comprehensive consumer privacy laws now or in the future may have similar rights. Contact us at privacy@getcuro.com to exercise your rights, and we will honor applicable requirements based on your state of residence.</p>
+              <p className="text-secondary-700 leading-relaxed">Residents of other states with comprehensive consumer privacy laws now or in the future may have similar rights. Contact us at privacy@fidurapay.com to exercise your rights, and we will honor applicable requirements based on your state of residence.</p>
             </section>
 
             <section className={sectionClass}>
               <h2 className={headingClass}>Children&apos;s Privacy</h2>
-              <p className="text-secondary-700 leading-relaxed">The Services are not intended for individuals under 18 years of age. We do not knowingly collect personal information from children. If you are a parent or guardian and believe your child has provided us with personal information, please contact us immediately at privacy@getcuro.com.</p>
+              <p className="text-secondary-700 leading-relaxed">The Services are not intended for individuals under 18 years of age. We do not knowingly collect personal information from children. If you are a parent or guardian and believe your child has provided us with personal information, please contact us immediately at privacy@fidurapay.com.</p>
             </section>
 
             <section className={sectionClass}>
@@ -249,7 +249,7 @@ export default function PrivacyPolicy() {
               <h2 className={headingClass}>Contact Us</h2>
               <p className={paragraphClass}>If you have questions about this Privacy Policy or our privacy practices, please contact us:</p>
               <div className="bg-secondary-50 rounded-lg p-6">
-                <p className="text-secondary-900 mb-2"><strong>Email:</strong> privacy@getcuro.com</p>
+                <p className="text-secondary-900 mb-2"><strong>Email:</strong> privacy@fidurapay.com</p>
                 <p className="text-secondary-900 mb-2"><strong>Mail:</strong> Curo Co LLC, 600 Boulevard South, Ste 104, Huntsville, AL 35802</p>
                 <p className="text-secondary-900"><strong>Phone:</strong> {SUPPORT_PHONE.display}</p>
               </div>

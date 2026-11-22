@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
+import { REGISTER_CTA_LABEL, registerHref } from "@/lib/register";
 import Footer from "@/components/Footer";
 import PhoneLink from "@/components/PhoneLink";
 
@@ -21,7 +22,7 @@ function CheckSvg() {
 export default function CaregiversPage() {
   return (
     <div className="curopay-site">
-      <Header active="/caregivers" />
+      <Header active="/caregivers" persona="caregiver" />
       <main id="main" tabIndex={-1}>
         {/* HERO — written for someone arriving via a trusted referral */}
         <section className="hero">
@@ -36,8 +37,8 @@ export default function CaregiversPage() {
                   account for every dollar.
                 </p>
                 <div className="cta-row" id="signup">
-                  <a className="btn btn-primary btn-lg" href="https://app.getcuro.com/register">
-                    Create your account
+                  <a className="btn btn-primary btn-lg" href={registerHref("caregiver")}>
+                    {REGISTER_CTA_LABEL}
                   </a>
                 </div>
               </div>
@@ -51,7 +52,7 @@ export default function CaregiversPage() {
                     <i></i>
                     <i></i>
                     <i></i>
-                    <b>app.getcuro.com — Limits &amp; Approvals</b>
+                    <b>app.fidurapay.com — Limits &amp; Approvals</b>
                   </div>
                   <div className="awbody" aria-hidden="true">
                     <div className="aw-tabs">
@@ -188,7 +189,7 @@ export default function CaregiversPage() {
                     <i></i>
                     <i></i>
                     <i></i>
-                    <b>app.getcuro.com — Dashboard</b>
+                    <b>app.fidurapay.com — Dashboard</b>
                   </div>
                   <div className="awbody" aria-hidden="true">
                     <div className="aw-head">
@@ -245,8 +246,8 @@ export default function CaregiversPage() {
                   don&rsquo;t happen after the money&rsquo;s gone, because approval happens before it moves.
                 </p>
                 <div className="cta-row">
-                  <a className="btn btn-primary btn-lg" href="https://app.getcuro.com/register">
-                    Create your account
+                  <a className="btn btn-primary btn-lg" href={registerHref("caregiver")}>
+                    {REGISTER_CTA_LABEL}
                   </a>
                 </div>
               </div>
@@ -277,7 +278,7 @@ export default function CaregiversPage() {
                     <i></i>
                     <i></i>
                     <i></i>
-                    <b>app.getcuro.com — Household group</b>
+                    <b>app.fidurapay.com — Household group</b>
                   </div>
                   <div className="awbody" aria-hidden="true">
                     <div className="aw-head">
@@ -389,8 +390,8 @@ export default function CaregiversPage() {
               <h2>Set up approvals for your family&rsquo;s money.</h2>
               <p>Get the controls, the certification, and the record — in one account you can share with the people who need to see it.</p>
               <div className="cta-row">
-                <a className="btn btn-white btn-lg" href="https://app.getcuro.com/register">
-                  Create your account
+                <a className="btn btn-white btn-lg" href={registerHref("caregiver")}>
+                  {REGISTER_CTA_LABEL}
                 </a>
               </div>
               <div className="cta-phone"><PhoneLink placement="cta_band" tone="navy" /></div>

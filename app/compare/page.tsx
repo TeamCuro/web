@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
+import { REGISTER_CTA_LABEL, registerHref } from "@/lib/register";
 import Footer from "@/components/Footer";
 import PhoneLink from "@/components/PhoneLink";
 import ResponsiveTable, { Verdict } from "@/components/ResponsiveTable";
@@ -148,8 +149,8 @@ export default function ComparePage() {
               <h2>See the difference on your next payment.</h2>
               <p>Move money the way you already do — with proof and control the alternatives don&rsquo;t offer.</p>
               <div className="cta-row" style={{ justifyContent: "center" }}>
-                <a className="btn btn-white btn-lg" href="https://app.getcuro.com/register">
-                  Create your account
+                <a className="btn btn-white btn-lg" href={registerHref()}>
+                  {REGISTER_CTA_LABEL}
                 </a>
               </div>
               <div className="cta-phone"><PhoneLink placement="cta_band" tone="navy" /></div>

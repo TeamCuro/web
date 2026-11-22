@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Header from "@/components/Header";
+import { REGISTER_CTA_LABEL, registerHref } from "@/lib/register";
 import Footer from "@/components/Footer";
 import PhoneLink from "@/components/PhoneLink";
 import { SUPPORT_PHONE } from "@/lib/contact";
@@ -21,8 +22,8 @@ export default function Home() {
                   printable, mailable, or sent instantly — without ever exposing an account or routing number.
                 </p>
                 <div className="cta-row" id="signup">
-                  <a className="btn btn-primary btn-lg" href="https://app.getcuro.com/register">
-                    Create your account
+                  <a className="btn btn-primary btn-lg" href={registerHref()}>
+                    {REGISTER_CTA_LABEL}
                   </a>
                   <a className="btn btn-outline" href="#how">
                     See how it works
@@ -53,7 +54,7 @@ export default function Home() {
                     <i></i>
                     <i></i>
                     <i></i>
-                    <b>app.getcuro.com — Send a Check</b>
+                    <b>app.fidurapay.com — Send a Check</b>
                   </div>
                   <div className="awbody" aria-hidden="true">
                     <div className="aw-steps">
@@ -285,7 +286,7 @@ export default function Home() {
                     <i></i>
                     <i></i>
                     <i></i>
-                    <b>app.getcuro.com — Payees</b>
+                    <b>app.fidurapay.com — Payees</b>
                   </div>
                   <div className="awbody" aria-hidden="true">
                     <div className="aw-head">
@@ -358,7 +359,7 @@ export default function Home() {
                     <i></i>
                     <i></i>
                     <i></i>
-                    <b>app.getcuro.com — Dashboard</b>
+                    <b>app.fidurapay.com — Dashboard</b>
                   </div>
                   <div className="awbody" aria-hidden="true">
                     <div className="aw-head">
@@ -471,8 +472,8 @@ export default function Home() {
                 make it easier.
               </p>
               <div className="cta-row" style={{ justifyContent: "center" }}>
-                <a className="btn btn-white btn-lg" href="https://app.getcuro.com/register">
-                  Create your account
+                <a className="btn btn-white btn-lg" href={registerHref()}>
+                  {REGISTER_CTA_LABEL}
                 </a>
               </div>
               <div className="cta-phone"><PhoneLink placement="cta_band" tone="navy" /></div>

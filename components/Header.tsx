@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { MenuIcon, CloseIcon } from "./icons";
 import PhoneLink from "./PhoneLink";
+import { REGISTER_CTA_LABEL, SIGN_IN_URL, registerHref, type Persona } from "@/lib/register";
 
 // `short` is the tablet label (901-1180px); the full label stays the accessible name.
 const navLinks: { label: string; short?: string; href: string }[] = [
@@ -26,6 +27,7 @@ interface HeaderProps {
   ctaLabel?: string;
   ctaHref?: string;
   onCtaClick?: () => void;
+  persona?: Persona;
 }
 
 function ChevronRightIcon() {
@@ -50,10 +52,12 @@ function ChevronRightIcon() {
 
 export default function Header({
   active,
-  ctaLabel = "Create account",
-  ctaHref = "https://app.getcuro.com/register",
+  ctaLabel = REGISTER_CTA_LABEL,
+  ctaHref: ctaHrefProp,
   onCtaClick,
+  persona,
 }: HeaderProps) {
+  const ctaHref = ctaHrefProp ?? registerHref(persona);
   const [open, setOpen] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
@@ -164,7 +168,7 @@ export default function Header({
         </nav>
         <div className="nav-right">
           <PhoneLink placement="header" size="compact" />
-          <a className="nav-signin" href="https://app.getcuro.com/login">
+          <a className="nav-signin" href={SIGN_IN_URL}>
             Sign in
           </a>
           {cta}
@@ -211,7 +215,7 @@ export default function Header({
                 {ctaLabel}
               </a>
             )}
-            <a className="btn btn-outline" href="https://app.getcuro.com/login" onClick={() => setOpen(false)}>
+            <a className="btn btn-outline" href={SIGN_IN_URL} onClick={() => setOpen(false)}>
               Sign in
             </a>
           </div>

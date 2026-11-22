@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const baseUrl = "https://getcuro.com";
+const baseUrl = "https://fidurapay.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = ["", "/caregivers", "/seniors", "/compare", "/partners", "/pricing", "/contact", "/terms", "/privacy"];

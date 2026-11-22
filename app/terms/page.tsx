@@ -114,7 +114,7 @@ export default function TermsOfService() {
               <p className={paragraphClass}>Once payment features are enabled for your account, when you create a check you must specify the amount, recipient information, delivery method (email, SMS, or mail), funding source, and any required memo or notes.</p>
               <p className={paragraphClass}>By submitting a payment, you authorize us and our payment processor(s) to debit your selected funding source, process the payment, send payment notifications to the recipient, and facilitate the recipient&apos;s claim and payout process.</p>
               <h3 className={subheadingClass}>4.1 ACH Authorization</h3>
-              <p className={paragraphClass}>By selecting ACH bank transfer as a funding source or payout method, you authorize Fidura and its payment processor(s) (currently Stripe, Inc.) to initiate debit and/or credit entries to the bank account you designate, in accordance with the NACHA Operating Rules. This authorization remains in effect until you revoke it through your account settings or by contacting support@getcuro.com, subject to any transactions already in progress at the time of revocation.</p>
+              <p className={paragraphClass}>By selecting ACH bank transfer as a funding source or payout method, you authorize Fidura and its payment processor(s) (currently Stripe, Inc.) to initiate debit and/or credit entries to the bank account you designate, in accordance with the NACHA Operating Rules. This authorization remains in effect until you revoke it through your account settings or by contacting support@fidurapay.com, subject to any transactions already in progress at the time of revocation.</p>
               <p className="text-secondary-700 leading-relaxed">You may cancel a payment before the recipient claims it, subject to timing restrictions and payment status. Once a payment is claimed and processed, it cannot be cancelled.</p>
             </section>
 
@@ -146,7 +146,7 @@ export default function TermsOfService() {
 
             <section className={sectionClass}>
               <h2 className={headingClass}>9. Disputes and Chargebacks</h2>
-              <p className={paragraphClass}>If you dispute a payment, contact us immediately at support@getcuro.com with all relevant information. We will investigate disputes and may request additional information, temporarily hold funds, or reverse payments if warranted.</p>
+              <p className={paragraphClass}>If you dispute a payment, contact us immediately at support@fidurapay.com with all relevant information. We will investigate disputes and may request additional information, temporarily hold funds, or reverse payments if warranted.</p>
               <p className={paragraphClass}>For payouts made via debit card, if you believe an error occurred or a transaction was unauthorized, contact us within 60 days of the date the relevant transaction notification was made available to you. We will investigate and, where required by Regulation E, determine whether an error occurred within the applicable statutory timeframe and provisionally credit your account pending investigation as required by law.</p>
               <p className="text-secondary-700 leading-relaxed"><strong>Important:</strong> If you initiate a chargeback with your bank instead of contacting us first, your Fidura account may be suspended or terminated, and you may be liable for related fees and damages.</p>
             </section>
@@ -212,8 +212,8 @@ export default function TermsOfService() {
               <h2 className={headingClass}>18. Contact Information</h2>
               <p className={paragraphClass}>For questions about these Terms, contact us:</p>
               <div className="bg-secondary-50 rounded-lg p-6">
-                <p className="text-secondary-900 mb-2"><strong>Email:</strong> legal@getcuro.com</p>
-                <p className="text-secondary-900 mb-2"><strong>Support:</strong> support@getcuro.com</p>
+                <p className="text-secondary-900 mb-2"><strong>Email:</strong> legal@fidurapay.com</p>
+                <p className="text-secondary-900 mb-2"><strong>Support:</strong> support@fidurapay.com</p>
                 <p className="text-secondary-900 mb-2"><strong>Mail:</strong> Curo Co LLC, 600 Boulevard South, Ste 104, Huntsville, AL 35802</p>
                 <p className="text-secondary-900"><strong>Phone:</strong> {SUPPORT_PHONE.display}</p>
               </div>
