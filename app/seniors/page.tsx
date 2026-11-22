@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
-import { REGISTER_CTA_LABEL, registerHref } from "@/lib/register";
+import RegisterLink from "@/components/RegisterLink";
 import Footer from "@/components/Footer";
 import PhoneLink from "@/components/PhoneLink";
 
@@ -35,9 +35,7 @@ export default function SeniorsPage() {
                   a verified identity behind every one, and a real person to call if anything is unclear.
                 </p>
                 <div className="cta-row" id="signup">
-                  <a className="btn btn-primary btn-lg" href={registerHref("senior")}>
-                    {REGISTER_CTA_LABEL}
-                  </a>
+                  <RegisterLink className="btn btn-primary btn-lg" persona="senior" />
                 </div>
                 <div className="hero-phone"><PhoneLink placement="seniors_hero" size="lg" /></div>
                 <ul className="hero-trust" role="list" aria-label="Why you can trust Fidura">
@@ -206,9 +204,7 @@ export default function SeniorsPage() {
               <h2>Print your first verified check.</h2>
               <p>Keep the check you trust. Add the protection it never had.</p>
               <div className="cta-row">
-                <a className="btn btn-white btn-lg" href={registerHref("senior")}>
-                  {REGISTER_CTA_LABEL}
-                </a>
+                <RegisterLink className="btn btn-white btn-lg" persona="senior" />
               </div>
               <div className="cta-phone"><PhoneLink placement="cta_band" tone="navy" /></div>
               <div className="trust-row">

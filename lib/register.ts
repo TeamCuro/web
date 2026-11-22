@@ -5,9 +5,14 @@ export const APP_URL = "https://app.fidurapay.com";
 export const REGISTER_URL = `${APP_URL}/register`;
 export const SIGN_IN_URL = `${APP_URL}/login`;
 
-export type Persona = "caregiver" | "senior";
+export type Persona = "caregiver" | "senior" | "partner" | "general";
 
-// Persona-aware register link: ?persona= lets the app preselect the signup path.
-export function registerHref(persona?: Persona): string {
-  return persona ? `${REGISTER_URL}?persona=${persona}` : REGISTER_URL;
+// Register link: ?persona= lets the app preselect the signup path; utm_* params from the landing URL pass through.
+export function registerHref(persona: Persona = "general", utm?: URLSearchParams | null): string {
+  const url = new URL(REGISTER_URL);
+  url.searchParams.set("persona", persona);
+  utm?.forEach((value, key) => {
+    if (key.startsWith("utm_")) url.searchParams.set(key, value);
+  });
+  return url.toString();
 }

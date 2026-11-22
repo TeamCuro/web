@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Header from "@/components/Header";
-import { REGISTER_CTA_LABEL, registerHref } from "@/lib/register";
+import RegisterLink from "@/components/RegisterLink";
 import Footer from "@/components/Footer";
 import PhoneLink from "@/components/PhoneLink";
 import { SUPPORT_PHONE } from "@/lib/contact";
@@ -22,9 +22,7 @@ export default function Home() {
                   printable, mailable, or sent instantly — without ever exposing an account or routing number.
                 </p>
                 <div className="cta-row" id="signup">
-                  <a className="btn btn-primary btn-lg" href={registerHref()}>
-                    {REGISTER_CTA_LABEL}
-                  </a>
+                  <RegisterLink className="btn btn-primary btn-lg" />
                   <a className="btn btn-outline" href="#how">
                     See how it works
                   </a>
@@ -472,9 +470,7 @@ export default function Home() {
                 make it easier.
               </p>
               <div className="cta-row" style={{ justifyContent: "center" }}>
-                <a className="btn btn-white btn-lg" href={registerHref()}>
-                  {REGISTER_CTA_LABEL}
-                </a>
+                <RegisterLink className="btn btn-white btn-lg" />
               </div>
               <div className="cta-phone"><PhoneLink placement="cta_band" tone="navy" /></div>
               <div className="trust-row" style={{ justifyContent: "center" }}>

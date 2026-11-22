@@ -4,7 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { MenuIcon, CloseIcon } from "./icons";
 import PhoneLink from "./PhoneLink";
-import { REGISTER_CTA_LABEL, SIGN_IN_URL, registerHref, type Persona } from "@/lib/register";
+import { REGISTER_CTA_LABEL, SIGN_IN_URL, type Persona } from "@/lib/register";
+import { useRegisterHref } from "@/lib/utm";
 
 // `short` is the tablet label (901-1180px); the full label stays the accessible name.
 const navLinks: { label: string; short?: string; href: string }[] = [
@@ -57,7 +58,8 @@ export default function Header({
   onCtaClick,
   persona,
 }: HeaderProps) {
-  const ctaHref = ctaHrefProp ?? registerHref(persona);
+  const registerLinkHref = useRegisterHref(persona);
+  const ctaHref = ctaHrefProp ?? registerLinkHref;
   const [open, setOpen] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
