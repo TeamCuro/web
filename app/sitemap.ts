@@ -1,12 +1,11 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/register";
+import { LIVE_ROUTES } from "@/lib/routes";
 
 const baseUrl = SITE_URL;
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = ["", "/caregivers", "/seniors", "/compare", "/partners", "/pricing", "/contact", "/terms", "/privacy"];
-
-  return routes.map((route) => ({
+  return LIVE_ROUTES.map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
   }));

@@ -569,12 +569,15 @@ p a:not(.btn), label a:not(.btn) { text-decoration-line: underline; text-underli
 .site-footer { background: var(--color-primary-900); color: #93a7ba; padding: 72px 0 40px; }
 .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr 1.2fr; gap: 40px; }
 .footer-brand .brand-word { color: #fff; }
-.footer-brand p { color: #7f95a9; font-size: 16px; line-height: 1.6; margin: 18px 0 0; max-width: 280px; }
+.footer-grid-4 { grid-template-columns: 1.5fr 1fr 1fr 1.2fr; } /* Help & trust column hidden until its pages ship */
+.footer-tag { color: #cdd9e4; font-size: 17px; line-height: 1.55; margin: 18px 0 0; max-width: 280px; }
+.footer-fact { margin: 14px 0 0; font-size: 15px; line-height: 22px; color: #93a7ba; max-width: 280px; }
 .flab { font-family: var(--font-heading); font-weight: 700; font-size: 16px; line-height: 1.3; color: #cdd9e4; margin: 0 0 8px; }
 .footer-sec ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
 .footer-sec a, .footer-legal a, .footer-brand .brand { display: inline-flex; align-items: center; min-width: 44px; min-height: 44px; }
 .footer-sec a { color: #93a7ba; text-decoration: underline; text-underline-offset: 3px; font-size: 18px; }
 .footer-sec a:hover { color: #fff; text-decoration: underline; }
+.footer-note { margin: 6px 0 0; font-size: 16px; line-height: 24px; color: #93a7ba; }
 .footer-security { display: flex; align-items: center; gap: 10px; margin-top: 48px; padding-top: 28px; border-top: 1px solid rgba(255,255,255,.1); color: #cdd9e4; font-size: 16px; }
 .footer-security svg { width: 18px; height: 18px; color: #4ade80; flex: none; }
 .footer-legal { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; margin-top: 24px; color: #6d8296; font-size: 14px; }

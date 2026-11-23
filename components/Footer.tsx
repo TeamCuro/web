@@ -1,14 +1,27 @@
 import Link from "next/link";
 import PhoneLink from "./PhoneLink";
 import { SECURITY_LINE } from "@/lib/trust";
+import { SUPPORT_EMAIL } from "@/lib/contact";
+import { FACT_BLOCK } from "@/lib/factBlock";
+import { isLive } from "@/lib/routes";
+
+// Epic 08 pages; each appears once its route is added to LIVE_ROUTES.
+const HELP_TRUST_LINKS = [
+  { href: "/help", label: "Help" },
+  { href: "/security", label: "Security" },
+  { href: "/receive", label: "Got a Fidura check?" },
+  { href: "/accessibility", label: "Accessibility" },
+  { href: "/about", label: "About" },
+];
 
 export default function Footer() {
   const year = new Date().getFullYear();
+  const helpTrust = HELP_TRUST_LINKS.filter((l) => isLive(l.href));
 
   return (
     <footer className="site-footer">
       <div className="wrap">
-        <div className="footer-grid">
+        <div className={helpTrust.length ? "footer-grid" : "footer-grid footer-grid-4"}>
           <div className="footer-brand">
             <Link className="brand" href="/" aria-label="Fidura home">
               <svg className="brand-mark" viewBox="0 0 34 34" fill="none" aria-hidden="true" focusable="false">
@@ -18,10 +31,8 @@ export default function Footer() {
               </svg>
               <span className="brand-word">Fidura</span>
             </Link>
-            <p>
-              Certified money, familiar as a check. An identity-verified, funds-certified digital check for the
-              people who still rely on the trust of a check.
-            </p>
+            <p className="footer-tag">Fidura: write a check online. Print, mail, or send it instantly.</p>
+            {FACT_BLOCK && <p className="footer-fact">{FACT_BLOCK}</p>}
           </div>
           <div className="footer-sec">
             <p className="flab">Product</p>
@@ -41,27 +52,42 @@ export default function Footer() {
             <p className="flab">Who it&rsquo;s for</p>
             <ul>
               <li>
-                <Link href="/caregivers">Caregivers &amp; Fiduciaries</Link>
+                <Link href="/caregivers">Caregivers &amp; fiduciaries</Link>
               </li>
               <li>
                 <Link href="/seniors">Seniors</Link>
               </li>
-            </ul>
-          </div>
-          <div className="footer-sec">
-            <p className="flab">Partners</p>
-            <ul>
               <li>
-                <Link href="/partners">Become a Partner</Link>
-              </li>
-              <li>
-                <Link href="/contact">Contact</Link>
+                <Link href="/partners">Partners</Link>
               </li>
             </ul>
           </div>
+          {helpTrust.length > 0 && (
+            <div className="footer-sec">
+              <p className="flab">Help &amp; trust</p>
+              <ul>
+                {helpTrust.map((l) => (
+                  <li key={l.href}>
+                    <Link href={l.href}>{l.label}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
           <div className="footer-sec footer-contact">
             <p className="flab">Contact</p>
             <PhoneLink placement="footer" tone="navy" />
+            <ul>
+              <li>
+                <a href={SUPPORT_EMAIL.href}>{SUPPORT_EMAIL.address}</a>
+              </li>
+            </ul>
+            <p className="footer-note">A real person answers. We reply within one business day.</p>
+            <ul>
+              <li>
+                <Link href="/contact">Contact page</Link>
+              </li>
+            </ul>
           </div>
         </div>
         <div className="footer-security">
@@ -73,10 +99,10 @@ export default function Footer() {
         </div>
         <div className="footer-legal">
           <span>© {year} Fidura. All rights reserved.</span>
-          <span className="legal-links">
+          <nav aria-label="Legal" className="legal-links">
             <Link href="/terms">Terms of Service</Link>
             <Link href="/privacy">Privacy Policy</Link>
-          </span>
+          </nav>
         </div>
       </div>
     </footer>

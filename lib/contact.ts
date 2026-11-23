@@ -8,3 +8,8 @@ export const SUPPORT_PHONE = {
   hours: "Mon–Fri 8am–8pm ET", // en dashes, matches design
   schemaHours: "Mo-Fr 08:00-20:00", // schema.org openingHours, for the Organization schema ticket
 } as const;
+
+export const SUPPORT_EMAIL = {
+  address: "support@fidurapay.com",
+  href: "mailto:support@fidurapay.com",
+} as const;
