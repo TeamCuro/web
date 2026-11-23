@@ -13,3 +13,13 @@ export const SUPPORT_EMAIL = {
   address: "support@fidurapay.com",
   href: "mailto:support@fidurapay.com",
 } as const;
+
+export const LEGAL_EMAIL = {
+  address: "legal@fidurapay.com",
+  href: "mailto:legal@fidurapay.com",
+} as const;
+
+export const PRIVACY_EMAIL = {
+  address: "privacy@fidurapay.com",
+  href: "mailto:privacy@fidurapay.com",
+} as const;
