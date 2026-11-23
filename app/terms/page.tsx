@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SUPPORT_PHONE } from "@/lib/contact";
+import { SECURITY_LINE } from "@/lib/trust";
 
 export const metadata = {
   title: "Terms of Service | Fidura",
@@ -106,7 +107,7 @@ export default function TermsOfService() {
                 <li>All activity that occurs under your account</li>
                 <li>Notifying us immediately of any unauthorized access</li>
               </ul>
-              <p className="text-secondary-700 leading-relaxed">Fidura will never ask you for your password. We recommend using a strong, unique password, enabling two-factor authentication where available, and not sharing your account access with others.</p>
+              <p className="text-secondary-700 leading-relaxed">{SECURITY_LINE} We recommend using a strong, unique password, enabling two-factor authentication where available, and not sharing your account access with others.</p>
             </section>
 
             <section className={sectionClass}>

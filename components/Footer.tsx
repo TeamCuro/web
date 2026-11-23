@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PhoneLink from "./PhoneLink";
+import { SECURITY_LINE } from "@/lib/trust";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -68,7 +69,7 @@ export default function Footer() {
             <path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
             <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
-          Fidura will never ask you for your password or verification code.
+          {SECURITY_LINE}
         </div>
         <div className="footer-legal">
           <span>© {year} Fidura. All rights reserved.</span>
