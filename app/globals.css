@@ -1054,6 +1054,16 @@ p a:not(.btn), label a:not(.btn) { text-decoration-line: underline; text-underli
 .legal-backtop { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; font-size: 16px; font-weight: 500; color: var(--fg-link); text-decoration: underline; text-underline-offset: 3px; }
 .legal-backtop svg { width: 18px; height: 18px; flex: none; }
 
+/* Plain-language summary box above the first section (FE-120). Anchor offset comes from html scroll-padding-top. */
+.legal-summary { background: #fff; border: 2px solid var(--color-primary); border-radius: var(--radius-lg); padding: 24px 28px; margin: 0 0 40px; }
+.legal-body .legal-summary h2 { font-size: 24px; line-height: 30px; margin: 0 0 6px; }
+.legal-body .legal-summary-lead { font-size: 16px; line-height: 24px; color: var(--fg-muted); margin: 0 0 16px; }
+.legal-summary > :last-child { margin-bottom: 0; }
+.legal-summary .rt { margin: 0 0 16px; }
+/* ResponsiveTable inside legal body: undo .legal-body ul/li/h3 defaults on its phone cards */
+.legal-body .legal-summary .rt-cards { list-style: none; margin: 0; padding: 0; display: block; }
+.legal-body .legal-summary .rt-card h3 { font-size: 18px; line-height: 1.3; margin: 0 0 4px; }
+
 @media (max-width: 900px) {
   .legal { padding: 24px 0 40px; }
   .legal-grid { display: block; }
@@ -1067,4 +1077,5 @@ p a:not(.btn), label a:not(.btn) { text-decoration-line: underline; text-underli
   .legal-toc ol.is-closed { display: none; }
   .legal-toc a { display: flex; align-items: center; min-height: 44px; padding: 0 8px; font-size: 16px; }
   .legal-body h2 { font-size: 24px; line-height: 30px; }
+  .legal-summary { padding: 20px; }
 }

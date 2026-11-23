@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import LegalPage, { type LegalSection } from "@/components/LegalPage";
+import LegalSummary from "@/components/LegalSummary";
+import ResponsiveTable from "@/components/ResponsiveTable";
 import { PRIVACY_EMAIL, SUPPORT_PHONE } from "@/lib/contact";
+import { IDENTITY_CHECKS_LIVE, PRIVACY_UPDATED } from "@/lib/legal";
 import { SITE_URL } from "@/lib/register";
 
 export const metadata: Metadata = {
@@ -17,7 +20,7 @@ const sections: LegalSection[] = [
     body: (
       <>
         <p>
-          This Privacy Policy describes how Curo Co LLC (“Fidura,” “we,” “us,” or “our”) collects, uses, and discloses personal information when you use our website and early-access services at GetCuro.com (the “Platform”), or otherwise communicate with us (collectively, the “Services”).
+          This Privacy Policy describes how Curo Co LLC (“Fidura,” “we,” “us,” or “our”) collects, uses, and discloses personal information when you use our website and early-access services at FiduraPay.com (the “Platform”), or otherwise communicate with us (collectively, the “Services”).
         </p>
         <p>
           Fidura is developing a payment platform that will enable users to send and receive digital checks (e-checks) and physical checks with QR codes. This Policy applies to our current early-access offering and will be updated as additional features become available. For purposes of this Policy, “you” and “your” means you as a user of the Services, whether you are a waitlist registrant, sender, recipient, trustee, caregiver, or other individual whose information we have collected.
@@ -45,7 +48,13 @@ const sections: LegalSection[] = [
     body: (
       <>
         <p>
-          The information below reflects what our waitlist and account-registration flow is designed to collect as the Platform&apos;s features roll out. At this time, Fidura is in early access and does not yet collect the identity verification (KYC) or payment information described below; this information will be collected once payment features requiring identity verification and payment processing become available to you.
+          The information below reflects what our waitlist and account-registration flow is designed to collect as the Platform&apos;s features roll out.
+          {!IDENTITY_CHECKS_LIVE && (
+            <>
+              {" "}
+              At this time, Fidura is in early access and does not yet collect the identity verification (KYC) or payment information described below; this information will be collected once payment features requiring identity verification and payment processing become available to you.
+            </>
+          )}
         </p>
         <h3>Information We Collect Directly From You</h3>
         <p><strong>Account Information:</strong></p>
@@ -279,6 +288,35 @@ const sections: LegalSection[] = [
   },
 ];
 
+// Summary table rows for the "What we collect and why" box (FE-120). /register links to /privacy#collect.
+const collectRows = [
+  { key: "contact", title: "Name, email, phone", cells: { why: "To create your account and reach you about a payment." } },
+  { key: "id", title: "Photo ID and Social Security number or TIN", cells: { why: "The law requires us to verify every sender." } },
+  { key: "bank", title: "Bank account or debit card details", cells: { why: "To fund your checks and pay the people you send to. Our payment processors handle these." } },
+  { key: "usage", title: "How you use the site and app", cells: { why: "To keep accounts safe and improve the product." } },
+];
+
 export default function PrivacyPolicy() {
-  return <LegalPage title="Privacy Policy" updated="September 3, 2026" sections={sections} />;
+  return (
+    <LegalPage
+      title="Privacy Policy"
+      updated={PRIVACY_UPDATED}
+      sections={sections}
+      summary={
+        <LegalSummary id="collect" title="What we collect and why" docName="policy">
+          <ResponsiveTable
+            caption="What we collect and why"
+            captionHidden
+            rowHeader="What we collect"
+            columns={[{ key: "why", label: "Why" }]}
+            groups={[{ rows: collectRows }]}
+          />
+          <p>
+            We don&apos;t sell your personal information. Questions? Email{" "}
+            <a href={PRIVACY_EMAIL.href}>{PRIVACY_EMAIL.address}</a>.
+          </p>
+        </LegalSummary>
+      }
+    />
+  );
 }

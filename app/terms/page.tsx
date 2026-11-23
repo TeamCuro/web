@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import LegalPage, { type LegalSection } from "@/components/LegalPage";
+import LegalSummary from "@/components/LegalSummary";
 import { LEGAL_EMAIL, SUPPORT_EMAIL, SUPPORT_PHONE } from "@/lib/contact";
+import { IDENTITY_CHECKS_LIVE, TERMS_UPDATED } from "@/lib/legal";
 import { SITE_URL } from "@/lib/register";
 import { SECURITY_LINE } from "@/lib/trust";
 
@@ -15,7 +17,7 @@ const sections: LegalSection[] = [
   { id: "t-overview", title: "Overview",
     body: (
       <>
-        <p>These Terms of Service (“Terms”) govern access to and use of the website, waitlist, and early-access services offered by Curo Co LLC (“Fidura,” “we,” “us,” or “our”) at GetCuro.com (the “Platform”). Fidura is currently making the Platform available on an early-access basis. Certain features described in these Terms — including check creation, payment processing, and payout functionality — are not yet available to all users and will be enabled in phases as described in Section 1. Throughout these Terms, “you” and “your” refer to you as a user of the Platform.</p>
+        <p>These Terms of Service (“Terms”) govern access to and use of the website, waitlist, and early-access services offered by Curo Co LLC (“Fidura,” “we,” “us,” or “our”) at FiduraPay.com (the “Platform”). Fidura is currently making the Platform available on an early-access basis. Certain features described in these Terms — including check creation, payment processing, and payout functionality — are not yet available to all users and will be enabled in phases as described in Section 1. Throughout these Terms, “you” and “your” refer to you as a user of the Platform.</p>
         <p>By accessing or using the Platform — including by submitting your information through our waitlist or account form — you agree to be bound by these Terms. If you do not agree to these Terms, do not use the Platform.</p>
       </>
     ),
@@ -231,5 +233,25 @@ const sections: LegalSection[] = [
 ];
 
 export default function TermsOfService() {
-  return <LegalPage title="Terms of Service" updated="September 3, 2026" sections={sections} />;
+  return (
+    <LegalPage
+      title="Terms of Service"
+      updated={TERMS_UPDATED}
+      sections={sections}
+      summary={
+        <LegalSummary id="short-version" title="The short version" docName="Terms">
+          <ul>
+            {!IDENTITY_CHECKS_LIVE && <li>Fidura is in early access. Some features are still being turned on.</li>}
+            <li>Fidura is not a bank. Payments are handled by our payment processors.</li>
+            <li>Before you send or receive money, the law requires us to verify your identity with a photo ID and your Social Security number or TIN.</li>
+            <li>You&apos;ll see every fee before you confirm a payment.</li>
+          </ul>
+          <p>
+            Questions? Call <a href={SUPPORT_PHONE.href}>{SUPPORT_PHONE.display}</a> or email{" "}
+            <a href={LEGAL_EMAIL.href}>{LEGAL_EMAIL.address}</a>.
+          </p>
+        </LegalSummary>
+      }
+    />
+  );
 }

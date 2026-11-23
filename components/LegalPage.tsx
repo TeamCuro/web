@@ -14,13 +14,15 @@ interface LegalPageProps {
   title: string;
   updated: string;
   sections: LegalSection[];
+  /** Optional plain-language summary (e.g. <LegalSummary>) shown above the first section; not in the TOC. */
+  summary?: ReactNode;
 }
 
 /**
  * Standard template for /terms and /privacy (FE-119 · Design 2 §5): shared Header and Footer,
  * a table of contents built from `sections`, stable heading ids, and "Back to top" after each section.
  */
-export default function LegalPage({ title, updated, sections }: LegalPageProps) {
+export default function LegalPage({ title, updated, sections, summary }: LegalPageProps) {
   // TOC button count: numbered sections when the document is numbered (Terms: 18, Overview excluded),
   // otherwise every section (Privacy: 13).
   const numbered = sections.filter((s) => /^\d+\./.test(s.title)).length;
@@ -37,6 +39,7 @@ export default function LegalPage({ title, updated, sections }: LegalPageProps) 
           </div>
           <LegalToc items={sections.map(({ id, title }) => ({ id, title }))} count={count} />
           <div className="legal-body">
+            {summary}
             {sections.map(({ id, title, body }) => (
               <section key={id} aria-labelledby={id}>
                 <h2 id={id}>{title}</h2>
