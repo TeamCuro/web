@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import RegisterLink from "@/components/RegisterLink";
 import Footer from "@/components/Footer";
 import PhoneLink from "@/components/PhoneLink";
-import { SUPPORT_PHONE } from "@/lib/contact";
+import TrustRow from "@/components/TrustRow";
 
 export default function Home() {
   return (
@@ -11,7 +11,7 @@ export default function Home() {
       <Header active="/" />
       <main id="main" tabIndex={-1}>
         {/* HERO */}
-        <section className="hero">
+        <section className="hero hero-home">
           <div className="wrap">
             <div className="hero-grid">
               <div>
@@ -27,20 +27,7 @@ export default function Home() {
                     See how it works
                   </a>
                 </div>
-                <ul className="hero-trust" role="list" aria-label="Why you can trust Fidura">
-                  <li>
-                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M12 3l7 3v5c0 4.5-3 8.2-7 10-4-1.8-7-5.5-7-10V6l7-3z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" /><path d="M8.8 12l2.3 2.3 4.2-4.6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                    <span>Payments processed by Stripe</span>
-                  </li>
-                  <li>
-                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M12 3l7 3v5c0 4.5-3 8.2-7 10-4-1.8-7-5.5-7-10V6l7-3z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" /><path d="M8.8 12l2.3 2.3 4.2-4.6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                    <span>Every sender&rsquo;s ID verified</span>
-                  </li>
-                  <li>
-                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" /></svg>
-                    <span>Real people: <a href={SUPPORT_PHONE.href}>{SUPPORT_PHONE.display}</a></span>
-                  </li>
-                </ul>
+                <TrustRow placement="home_hero" />
               </div>
               <div className="appshot">
                 <div
@@ -473,14 +460,7 @@ export default function Home() {
                 <RegisterLink className="btn btn-white btn-lg" />
               </div>
               <div className="cta-phone"><PhoneLink placement="cta_band" tone="navy" /></div>
-              <div className="trust-row" style={{ justifyContent: "center" }}>
-                <span className="badge">
-                  <svg className="badge-check" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false">
-                    <path d="M16.5 5.5L8 14L4 10" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                  No account or routing number exposed
-                </span>
-              </div>
+              <TrustRow tone="navy" placement="cta_band" />
             </div>
           </div>
         </section>

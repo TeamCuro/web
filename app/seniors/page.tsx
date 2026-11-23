@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import RegisterLink from "@/components/RegisterLink";
 import Footer from "@/components/Footer";
 import PhoneLink from "@/components/PhoneLink";
+import TrustRow from "@/components/TrustRow";
 
 export const metadata: Metadata = {
   title: "For Seniors | Fidura",
@@ -207,25 +208,7 @@ export default function SeniorsPage() {
                 <RegisterLink className="btn btn-white btn-lg" persona="senior" />
               </div>
               <div className="cta-phone"><PhoneLink placement="cta_band" tone="navy" /></div>
-              <div className="trust-row">
-                <span className="badge">
-                  <svg className="badge-check" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false">
-                    <path d="M16.5 5.5L8 14L4 10" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                  Verified identity
-                </span>
-                <span className="badge">
-                  <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false">
-                    <path
-                      d="M4 6.5A2.5 2.5 0 016.5 4h1.7c.5 0 .9.3 1 .8l.7 2.4c.1.5-.1 1-.5 1.2l-1.2.8a11 11 0 004.6 4.6l.8-1.2c.3-.4.8-.6 1.2-.5l2.4.7c.5.1.8.5.8 1v1.7a2.5 2.5 0 01-2.5 2.5A13.5 13.5 0 014 6.5z"
-                      stroke="currentColor"
-                      strokeWidth="1.6"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                  A real person to call
-                </span>
-              </div>
+              <TrustRow tone="navy" placement="cta_band" />
             </div>
           </div>
         </section>

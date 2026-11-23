@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import RegisterLink from "@/components/RegisterLink";
 import Footer from "@/components/Footer";
 import PhoneLink from "@/components/PhoneLink";
+import TrustRow from "@/components/TrustRow";
 import ResponsiveTable, { Verdict } from "@/components/ResponsiveTable";
 
 export const metadata: Metadata = {
@@ -152,6 +153,7 @@ export default function ComparePage() {
                 <RegisterLink className="btn btn-white btn-lg" />
               </div>
               <div className="cta-phone"><PhoneLink placement="cta_band" tone="navy" /></div>
+              <TrustRow tone="navy" placement="cta_band" />
             </div>
           </div>
         </section>
