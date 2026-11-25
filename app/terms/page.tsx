@@ -8,7 +8,8 @@ import { SECURITY_LINE } from "@/lib/trust";
 
 export const metadata: Metadata = {
   title: "Terms of Service | Fidura",
-  description: "Terms of Service for Fidura's early-access payment platform",
+  description:
+    "Fidura Terms of Service for our early access service.",
   alternates: { canonical: `${SITE_URL}/terms` },
   robots: { index: true, follow: true },
 };

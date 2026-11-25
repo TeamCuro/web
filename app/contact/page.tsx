@@ -7,9 +7,9 @@ import { SUPPORT_PHONE } from "@/lib/contact";
 import { SIGN_IN_URL } from "@/lib/register";
 
 export const metadata: Metadata = {
-  title: "Contact | Fidura",
+  title: "Contact Fidura: Call (256) 213-1733 or Email Support",
   description:
-    "Questions that aren't about a specific payment or a partnership? Send them our way — or use the shortcuts to sign in, become a partner, or see how Fidura works.",
+    "Contact Fidura by phone at (256) 213-1733, Mon-Fri 8am-8pm ET, or email support@fidurapay.com. A real person answers.",
 };
 
 export default function ContactPage() {

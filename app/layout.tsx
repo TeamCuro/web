@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Fidura | The Trust of a Certified Check, Brought to Digital Money",
+  title: "Write a Check Online | Print, Mail, or Send | Fidura",
   description:
-    "Fidura replaces the paper check with an identity-verified, funds-certified digital equivalent — printable, mailable, or sent instantly — without ever exposing an account or routing number.",
+    "Write a check online and print, mail, or send it instantly. Your account number never appears on it, and the person you pay needs no Fidura account.",
   keywords: ["digital checks", "e-checks", "secure payments", "trustee payments", "caregiver payments", "QR check"],
   icons: {
     icon: [

@@ -8,7 +8,8 @@ import { SITE_URL } from "@/lib/register";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Fidura",
-  description: "Privacy Policy for Fidura's early-access payment platform",
+  description:
+    "How Fidura collects, uses, and protects personal information.",
   alternates: { canonical: `${SITE_URL}/privacy` },
   robots: { index: true, follow: true },
 };

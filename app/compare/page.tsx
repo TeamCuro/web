@@ -7,9 +7,9 @@ import TrustRow from "@/components/TrustRow";
 import ResponsiveTable, { Verdict } from "@/components/ResponsiveTable";
 
 export const metadata: Metadata = {
-  title: "Compare | Fidura",
+  title: "Fidura vs Cashier's Checks, Zelle, and True Link",
   description:
-    "How Fidura compares to cashier's checks and money orders, Venmo & Zelle, and True Link — the same familiar check, identity-verified and funds-certified.",
+    "Compare Fidura with cashier's checks, money orders, Venmo and Zelle, and True Link on cost, verification, approvals, and records.",
 };
 
 const Y = (n: string) => <Verdict value="yes">{n}</Verdict>;

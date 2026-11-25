@@ -7,9 +7,9 @@ import TrustRow from "@/components/TrustRow";
 import ResponsiveTable from "@/components/ResponsiveTable";
 
 export const metadata: Metadata = {
-  title: "Fees | Fidura",
+  title: "Fidura Pricing: Free Bank Funded Checks, No Monthly Fee",
   description:
-    "Simple, transparent fees. Send by bank for free. Pay only when using card-based or faster payment options.",
+    "Fidura pricing: $0 for bank funded checks and standard bank deposits, 2.9% + $0.30 to fund by debit card, 1.5% for instant pay to a debit card. No monthly fees.",
 };
 
 export default function PricingPage() {

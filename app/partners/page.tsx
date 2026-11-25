@@ -6,9 +6,9 @@ import PartnerForm from "@/components/PartnerForm";
 import PartnerNav from "@/components/PartnerNav";
 
 export const metadata: Metadata = {
-  title: "Partners | Fidura",
+  title: "Partner Program for Attorneys, CPAs, and Banks | Fidura",
   description:
-    "Fidura partners with elder-law attorneys, CPAs, fiduciaries, community banks, and credit unions to protect the clients and members they already serve.",
+    "Refer clients to Fidura. A partner program for elder law attorneys, CPAs, fiduciaries, community banks, and credit unions.",
 };
 
 function CheckSvg() {

@@ -6,9 +6,9 @@ import PhoneLink from "@/components/PhoneLink";
 import TrustRow from "@/components/TrustRow";
 
 export const metadata: Metadata = {
-  title: "For Seniors | Fidura",
+  title: "A Safer Way to Mail a Check | Fidura",
   description:
-    "Keep sending checks exactly the way you always have — now with a verified identity behind every one, and a real person to call if anything is unclear.",
+    "Keep mailing checks the way you always have, now much harder to cash if stolen, with verified identity and a real person to call.",
 };
 
 function CheckSvg() {

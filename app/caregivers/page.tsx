@@ -7,9 +7,9 @@ import PhoneLink from "@/components/PhoneLink";
 import TrustRow from "@/components/TrustRow";
 
 export const metadata: Metadata = {
-  title: "For Caregivers & Fiduciaries | Fidura",
+  title: "Pay a Parent's Bills as POA or Trustee | Fidura",
   description:
-    "Fidura is built for trustees, POAs, and caregivers who move money on someone else's behalf — with role-based approvals, audit-ready receipts, and verified identity on every transfer.",
+    "Pay a parent's bills as a POA, trustee, or caregiver with approval rules, verified identity, and an audit ready record of every payment.",
 };
 
 function CheckSvg() {
