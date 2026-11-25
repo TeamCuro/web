@@ -4,11 +4,13 @@ import PhoneLink from "@/components/PhoneLink";
 import TrustRow from "@/components/TrustRow";
 import PartnerForm from "@/components/PartnerForm";
 import PartnerNav from "@/components/PartnerNav";
+import { PARTNERS_OG_IMAGE, socialImage } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Partner Program for Attorneys, CPAs, and Banks | Fidura",
   description:
     "Refer clients to Fidura. A partner program for elder law attorneys, CPAs, fiduciaries, community banks, and credit unions.",
+  ...socialImage(PARTNERS_OG_IMAGE),
 };
 
 function CheckSvg() {
