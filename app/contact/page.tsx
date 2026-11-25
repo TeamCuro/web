@@ -3,18 +3,24 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
-import { SUPPORT_PHONE } from "@/lib/contact";
+import JsonLd from "@/components/JsonLd";
+import { SUPPORT_EMAIL, SUPPORT_PHONE } from "@/lib/contact";
 import { SIGN_IN_URL } from "@/lib/register";
+import { contactPageSchema } from "@/lib/schema";
+
+const TITLE = "Contact Fidura: Call (256) 213-1733 or Email Support";
+const DESCRIPTION =
+  "Contact Fidura by phone at (256) 213-1733, Mon-Fri 8am-8pm ET, or email support@fidurapay.com. A real person answers.";
 
 export const metadata: Metadata = {
-  title: "Contact Fidura: Call (256) 213-1733 or Email Support",
-  description:
-    "Contact Fidura by phone at (256) 213-1733, Mon-Fri 8am-8pm ET, or email support@fidurapay.com. A real person answers.",
+  title: TITLE,
+  description: DESCRIPTION,
 };
 
 export default function ContactPage() {
   return (
     <div className="curopay-site">
+      <JsonLd data={contactPageSchema({ name: TITLE, description: DESCRIPTION })} />
       <Header active="/contact" />
       <main id="main" tabIndex={-1}>
         {/* HERO */}
@@ -49,8 +55,8 @@ export default function ContactPage() {
                   <div>
                     <h2>Email us</h2>
                     <p>
-                      <a href="mailto:support@fidurapay.com" style={{ textDecoration: "underline" }}>
-                        support@fidurapay.com
+                      <a href={SUPPORT_EMAIL.href} style={{ textDecoration: "underline" }}>
+                        {SUPPORT_EMAIL.address}
                       </a>
                       <br />
                       We reply within one business day.
