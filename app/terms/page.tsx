@@ -3,14 +3,12 @@ import LegalPage, { type LegalSection } from "@/components/LegalPage";
 import LegalSummary from "@/components/LegalSummary";
 import { LEGAL_EMAIL, SUPPORT_EMAIL, SUPPORT_PHONE } from "@/lib/contact";
 import { IDENTITY_CHECKS_LIVE, TERMS_UPDATED } from "@/lib/legal";
-import { SITE_URL } from "@/lib/register";
 import { SECURITY_LINE } from "@/lib/trust";
 
 export const metadata: Metadata = {
   title: "Terms of Service | Fidura",
   description:
     "Fidura Terms of Service for our early access service.",
-  alternates: { canonical: `${SITE_URL}/terms` },
   robots: { index: true, follow: true },
 };
 

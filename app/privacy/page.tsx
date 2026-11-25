@@ -4,13 +4,11 @@ import LegalSummary from "@/components/LegalSummary";
 import ResponsiveTable from "@/components/ResponsiveTable";
 import { PRIVACY_EMAIL, SUPPORT_PHONE } from "@/lib/contact";
 import { IDENTITY_CHECKS_LIVE, PRIVACY_UPDATED } from "@/lib/legal";
-import { SITE_URL } from "@/lib/register";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Fidura",
   description:
     "How Fidura collects, uses, and protects personal information.",
-  alternates: { canonical: `${SITE_URL}/privacy` },
   robots: { index: true, follow: true },
 };
 

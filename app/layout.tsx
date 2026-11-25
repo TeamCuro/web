@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { SITE_URL } from "@/lib/register";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  // "./" resolves against each page's own pathname, so every page gets a self-referencing canonical.
+  alternates: { canonical: "./" },
   title: "Write a Check Online | Print, Mail, or Send | Fidura",
   description:
     "Write a check online and print, mail, or send it instantly. Your account number never appears on it, and the person you pay needs no Fidura account.",
-  keywords: ["digital checks", "e-checks", "secure payments", "trustee payments", "caregiver payments", "QR check"],
   icons: {
     icon: [
       { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
