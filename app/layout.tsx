@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { SITE_URL } from "@/lib/register";
 import { defaultOpenGraph, defaultTwitter } from "@/lib/seo";
-import { siteGraph } from "@/lib/schema";
-import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -33,7 +31,6 @@ export default function RootLayout({
         <a className="skip-link" href="#main">
           Skip to main content
         </a>
-        <JsonLd data={siteGraph()} />
         {children}
       </body>
     </html>
