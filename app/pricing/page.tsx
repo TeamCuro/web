@@ -5,6 +5,8 @@ import Footer from "@/components/Footer";
 import PhoneLink from "@/components/PhoneLink";
 import TrustRow from "@/components/TrustRow";
 import ResponsiveTable from "@/components/ResponsiveTable";
+import JsonLd from "@/components/JsonLd";
+import { faqPageSchema, type FaqItem } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Fidura Pricing: Free Bank Funded Checks, No Monthly Fee",
@@ -12,11 +14,40 @@ export const metadata: Metadata = {
     "Fidura pricing: $0 for bank funded checks and standard bank deposits, 2.9% + $0.30 to fund by debit card, 1.5% for instant pay to a debit card. No monthly fees.",
 };
 
+// FAQ shown on the page and emitted as FAQPage JSON-LD from the same items, so the two can't drift.
+const FAQ: readonly FaqItem[] = [
+  {
+    question: "Is there a signup or monthly fee?",
+    answer:
+      "No. There’s no signup fee, no monthly fee, and no subscription. You only pay the per-transaction fees listed above — and only when you choose a card-based or instant option.",
+  },
+  {
+    question: "Are there any hidden fees?",
+    answer: "No. Every fee is shown before you confirm a payment, so you always see the exact cost up front.",
+  },
+  {
+    question: "What’s the cheapest way to send?",
+    answer:
+      "Fund the check from a linked bank account and let the recipient take a standard ACH payout. Both are free — start to finish, at no cost.",
+  },
+  {
+    question: "Who pays the instant-payout fee?",
+    answer:
+      "The recipient. The 1.5% is deducted from their payment only if they choose instant delivery to a debit card. The standard payout is always free.",
+  },
+  {
+    question: "What about physical check delivery?",
+    answer:
+      "We’re not publishing that fee yet. When it’s available, you’ll see the exact cost before you confirm the payment.",
+  },
+];
+
 export default function PricingPage() {
   return (
     <div className="curopay-site">
       <Header active="/pricing" />
       <main id="main" tabIndex={-1}>
+        <JsonLd data={faqPageSchema(FAQ)} />
         {/* HERO */}
         <section className="hero" style={{ paddingBottom: 40 }}>
           <div className="wrap wrap-narrow center" style={{ margin: "0 auto" }}>
@@ -132,35 +163,12 @@ export default function PricingPage() {
               <h2>No signup, monthly, or hidden fees.</h2>
             </div>
             <div className="faq">
-              <div className="faq-item">
-                <h3>Is there a signup or monthly fee?</h3>
-                <p>
-                  No. There&rsquo;s no signup fee, no monthly fee, and no subscription. You only pay the
-                  per-transaction fees listed above — and only when you choose a card-based or instant option.
-                </p>
-              </div>
-              <div className="faq-item">
-                <h3>Are there any hidden fees?</h3>
-                <p>No. Every fee is shown before you confirm a payment, so you always see the exact cost up front.</p>
-              </div>
-              <div className="faq-item">
-                <h3>What&rsquo;s the cheapest way to send?</h3>
-                <p>
-                  Fund the check from a linked bank account and let the recipient take a standard ACH payout. Both
-                  are free — start to finish, at no cost.
-                </p>
-              </div>
-              <div className="faq-item">
-                <h3>Who pays the instant-payout fee?</h3>
-                <p>
-                  The recipient. The 1.5% is deducted from their payment only if they choose instant delivery to a
-                  debit card. The standard payout is always free.
-                </p>
-              </div>
-              <div className="faq-item">
-                <h3>What about physical check delivery?</h3>
-                <p>We&rsquo;re not publishing that fee yet. When it&rsquo;s available, you&rsquo;ll see the exact cost before you confirm the payment.</p>
-              </div>
+              {FAQ.map(({ question, answer }) => (
+                <div className="faq-item" key={question}>
+                  <h3>{question}</h3>
+                  <p>{answer}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
