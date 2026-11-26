@@ -82,10 +82,8 @@ export default function ResponsiveTable({
             ),
             ...g.rows.map((r) => (
               <li className={g.label ? "rt-card rt-card--later" : "rt-card"} key={r.key}>
-                <Heading>
-                  {r.title}
-                  {r.badge && <span className="rt-badge">{r.badge}</span>}
-                </Heading>
+                <Heading>{r.title}</Heading>
+                {r.badge && <p className="rt-badge">{r.badge}</p>}
                 {r.sub && <p className="rt-sub">{r.sub}</p>}
                 <dl>
                   {columns.map((c) => (
