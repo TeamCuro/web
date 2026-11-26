@@ -6,7 +6,7 @@
 
 ## Overview
 
-This Privacy Policy describes how Curo Co LLC ("Curo", "we", "us", or "our") collects, uses, and discloses your personal information when you use our payment services at GetCuro.com (the "Platform") or otherwise communicate with us (collectively, the "Services").
+This Privacy Policy describes how Curo Co LLC ("Curo", "we", "us", or "our") collects, uses, and discloses your personal information when you use our payment services at FiduraPay.com (the "Platform") or otherwise communicate with us (collectively, the "Services").
 
 Curo is a payment platform that enables users to send and receive digital checks (e-checks) and physical checks with QR codes. For purposes of this Privacy Policy, "you" and "your" means you as the user of the Services, whether you are a sender, recipient, trustee, caregiver, or other individual whose information we have collected.
 
@@ -262,7 +262,7 @@ Depending on where you live, you may have some or all of the following rights:
 **Right to Appeal:**
 - Appeal our decision if we decline your request
 
-To exercise these rights, contact us at privacy@getcuro.com. We will verify your identity before processing requests to protect your information.
+To exercise these rights, contact us at privacy@fidurapay.com. We will verify your identity before processing requests to protect your information.
 
 **We will not discriminate against you for exercising your privacy rights.**
 
@@ -290,7 +290,7 @@ Our Platform may contain links to third-party websites or services. We are not r
 
 If you have questions about this Privacy Policy or our privacy practices, please contact us:
 
-**Email:** privacy@getcuro.com
+**Email:** privacy@fidurapay.com
 **Mail:** Curo Co LLC, [Business Address]
 **Phone:** [Business Phone Number]
 

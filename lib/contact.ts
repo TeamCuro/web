@@ -9,9 +9,10 @@ export const SUPPORT_PHONE = {
   schemaHours: "Mo-Fr 08:00-20:00", // schema.org openingHours, for the Organization schema ticket
 } as const;
 
+// Public contact email (BE-102). Change it here only.
 export const SUPPORT_EMAIL = {
-  address: "support@fidurapay.com",
-  href: "mailto:support@fidurapay.com",
+  address: "info@fidurapay.com",
+  href: "mailto:info@fidurapay.com",
 } as const;
 
 export const LEGAL_EMAIL = {

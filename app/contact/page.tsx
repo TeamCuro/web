@@ -10,7 +10,7 @@ import { contactPageSchema } from "@/lib/schema";
 
 const TITLE = "Contact Fidura: Call (256) 213-1733 or Email Support";
 const DESCRIPTION =
-  "Contact Fidura by phone at (256) 213-1733, Mon-Fri 8am-8pm ET, or email support@fidurapay.com. A real person answers.";
+  `Contact Fidura by phone at (256) 213-1733, Mon-Fri 8am-8pm ET, or email ${SUPPORT_EMAIL.address}. A real person answers.`;
 
 export const metadata: Metadata = {
   title: TITLE,

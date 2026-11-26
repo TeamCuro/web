@@ -6,7 +6,7 @@
 
 ## Overview
 
-These Terms of Service ("Terms") govern your use of Curo Co LLC's ("Curo", "we", "us", or "our") payment platform and services available at GetCuro.com (the "Platform"). Throughout these Terms, "you" and "your" refer to you as the user of the Services.
+These Terms of Service ("Terms") govern your use of Curo Co LLC's ("Curo", "we", "us", or "our") payment platform and services available at FiduraPay.com (the "Platform"). Throughout these Terms, "you" and "your" refer to you as the user of the Services.
 
 **By accessing or using the Platform, you agree to be bound by these Terms.** If you do not agree to these Terms, do not use the Platform or Services.
 
@@ -191,7 +191,7 @@ Curo may charge fees for:
 - Failed transactions
 - Account maintenance
 
-Current fees are available at [getcuro.com/pricing].
+Current fees are available at [fidurapay.com/pricing].
 
 ### 7.2 Fee Changes
 We reserve the right to modify fees with advance notice. Continued use of the Services constitutes acceptance of new fees.
@@ -205,7 +205,7 @@ Fees are deducted from your funding source along with the payment amount. You au
 
 ### 8.1 Payment Disputes
 If you dispute a payment:
-- Contact us immediately at support@getcuro.com
+- Contact us immediately at info@fidurapay.com
 - Provide all relevant information and documentation
 - Cooperate with our investigation
 
@@ -419,8 +419,8 @@ We are not liable for delays or failures due to circumstances beyond our reasona
 
 For questions about these Terms, contact us:
 
-**Email:** legal@getcuro.com
-**Support:** support@getcuro.com
+**Email:** legal@fidurapay.com
+**Support:** info@fidurapay.com
 **Mail:** Curo Co LLC, [Business Address]
 **Phone:** [Business Phone Number]
 
